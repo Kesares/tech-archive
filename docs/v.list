@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE vars SYSTEM "https://resources.jetbrains.com/writerside/1.0/vars.dtd">
+<vars>
+    <var name="product" value="Writerside"/>
+
+    <var name="GlossaryLinkColor" value="Orange"/>
+    <var name="LinkColor" value="LightSkyBlue"/>
+    <var name="ComingSoonColor" value="Red"/>
+
+    <var name="Highlight" value="LightSkyBlue"/>
+    <var name="TipLinkColor" value="LightSkyBlue"/>
+    <var name="NoteHighlight" value="LightGreen"/>
+    <var name="NoteLinkColor" value="LightGreen"/>
+    <var name="WarningHighlight" value="LightCoral"/>
+    <var name="WarningLinkColor" value="LightCoral"/>
+
+    <var name="c1" value="Coral"/>
+    <var name="c2" value="LimeGreen"/>
+    <var name="c3" value="CornflowerBlue"/>
+    <var name="c4" value="Purple"/>
+    <var name="c5" value="Crimson"/>
+    <var name="c6" value="LightSeaGreen"/>
+
+    <var name="KesaresBlue" value="#579dff"/>
+</vars>

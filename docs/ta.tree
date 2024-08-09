@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="ta"
+                 name="Tech Archive"
+                 start-page="00-java.md">
+
+    <toc-element topic="00-java.md">
+        <toc-element topic="01-java-token.md"/>
+        <toc-element topic="02-java-data-types.md"/>
+        <toc-element topic="03-java-variables.md"/>
+        <toc-element topic="04-java-io.md"/>
+        <toc-element topic="05-java-strings.md"/>
+        <toc-element topic="06-java-branches.md"/>
+        <toc-element topic="07-java-loops.md"/>
+        <toc-element topic="08-java-arrays.md"/>
+        <toc-element topic="09-java-methods.md"/>
+        <toc-element topic="10-java-classes.md"/>
+        <toc-element topic="11-java-objects.md"/>
+        <toc-element topic="12-java-modifier-access-rights.md"/>
+        <toc-element topic="13-java-enumerations.md"/>
+        <toc-element topic="14-java-oop.md"/>
+        <toc-element topic="15-java-exceptions.md"/>
+        <toc-element topic="16-java-packages-and-imports.md"/>
+        <toc-element topic="annotations.md"/>
+        <toc-element topic="threads.md"/>
+        <toc-element topic="gui.md"/>
+        <toc-element topic="collections.md"/>
+    </toc-element>
+
+    <toc-element topic="mathematics.md">
+        <toc-element topic="vectors.md"/>
+        <toc-element topic="matrices.md"/>
+    </toc-element>
+</instance-profile>

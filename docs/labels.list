@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE labels SYSTEM "https://resources.jetbrains.com/writerside/1.0/labels-list.dtd">
+<labels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/labels.xsd">
+    <primary-label id="jetbrains" short-name="JB" name="JetBrains" href="https://www.jetbrains.com" color="red">
+        Go to www.jetbrains.com
+    </primary-label>
+
+    <primary-label id="programming-lang" short-name="PL" name="Programming Language" color="red">
+        Go to www.jetbrains.com
+    </primary-label>
+
+    <secondary-label id="wip" name="WIP" color="purple"/>
+    <secondary-label id="beta" name="Beta" color="tangerine"/>
+    <secondary-label id="refactor" name="Refactor" color="red"/>
+</labels>
