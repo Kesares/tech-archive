@@ -1,3 +1,3 @@
-# 16 Java Pakete und Imports
+# 17 Java Lambda-Ausdrücke
 
 <format color="%ComingSoonColor%">Coming soon...</format>

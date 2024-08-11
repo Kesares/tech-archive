@@ -371,9 +371,9 @@ public static String getConcatString() {
 
 > `String` – <format color="%NoteHighlight%">unveränderlich (immutable)</format>. Einmal erstellt, kann der Wert eines `String`-Objekts nicht mehr geändert werden. Ein Änderungsversuch erzeugt ein neues `String`-Objekt, was <format color="%NoteHighlight%">ineffizient</format> sein kann, <format color="%NoteHighlight%">wenn viele Änderungen</format> vorgenommen werden.
 > 
-> `StringBuilder` – <format color="%NoteHighlight%">veränderlich (mutable)</format>. Der Inhalt kann nach der Erstellung geändert werden, ohne neue Objekte zu erzeugen. <format color="%NoteHighlight%">[Nicht thread-sicher](threads.md)</format>, da keine Synchronisation verwendet wird, was es schneller macht als `StringBuffer`.
+> `StringBuilder` – <format color="%NoteHighlight%">veränderlich (mutable)</format>. Der Inhalt kann nach der Erstellung geändert werden, ohne neue Objekte zu erzeugen. <format color="%NoteHighlight%">[Nicht thread-sicher](java-threads.md)</format>, da keine Synchronisation verwendet wird, was es schneller macht als `StringBuffer`.
 > 
-> `StringBuffer` – ähnlich wie `StringBuilder`, auch <format color="%NoteHighlight%">veränderlich (mutable)</format> und effizient bei häufigen Änderungen. <format color="%NoteLinkColor%">[Thread-sicher](threads.md)</format>, da alle Methoden synchronisiert sind. Aufgrund der Synchronisation etwas langsamer als `StringBuilder`.
+> `StringBuffer` – ähnlich wie `StringBuilder`, auch <format color="%NoteHighlight%">veränderlich (mutable)</format> und effizient bei häufigen Änderungen. <format color="%NoteLinkColor%">[Thread-sicher](java-threads.md)</format>, da alle Methoden synchronisiert sind. Aufgrund der Synchronisation etwas langsamer als `StringBuilder`.
 {style="note" title="String, StringBuilder und StringBuffer"}
 
 Folgendes Beispiel misst die Zeit um die jeweiligen Strings mittels `StringBuilder` und Konkatenation zu bilden.

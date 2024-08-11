@@ -113,7 +113,7 @@ do {
 
 ## <format color="%c4%">for-each-Schleife</format> {id="for-each-loop"}
 
-Die `for`-each oder auch enhanced-`for`-Schleife ist eine verkürzte Schreibweise der <format color="%c1%">for-Schleife</format>. Diese kann nur verwendet werden, wenn über <format color="%LinkColor%">[Collections](collections.md)</format> oder <format color="%LinkColor%">[Arrays](08-java-arrays.md)</format> iteriert werden soll.
+Die `for`-each oder auch enhanced-`for`-Schleife ist eine verkürzte Schreibweise der <format color="%c1%">for-Schleife</format>. Diese kann nur verwendet werden, wenn über <format color="%LinkColor%">[Collections](19-java-collections.md)</format> oder <format color="%LinkColor%">[Arrays](08-java-arrays.md)</format> iteriert werden soll.
 
 ```Java
 for (type identifier : array) {
@@ -131,7 +131,7 @@ for (int i : array) {
 
 Die Schleifenvariable `i` nimmt nacheinander alle Werte des <format color="%LinkColor%">[Arrays](08-java-arrays.md)</format> an.
 
-> Werden <format color="%NoteLinkColor%">[Collections](collections.md)</format> verwendet, kann auch auf die passende `forEach()`-Methode zurückgegriffen werden. Diese verwendet intern die `for`-each-Schleife.
+> Werden <format color="%NoteLinkColor%">[Collections](19-java-collections.md)</format> verwendet, kann auch auf die passende `forEach()`-Methode zurückgegriffen werden. Diese verwendet intern die `for`-each-Schleife.
 {style="note" title="forEach()-Methode"}
 
 ## `break` & `continue`

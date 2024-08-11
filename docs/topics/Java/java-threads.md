@@ -1,3 +1,3 @@
-# 16 Java Pakete und Imports
+# Threads
 
 <format color="%ComingSoonColor%">Coming soon...</format>

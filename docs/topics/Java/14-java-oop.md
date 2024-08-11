@@ -1,5 +1,8 @@
 # 14 Java OOP
 
-### Polymorphismus {id="polymorphism"}
+<format color="%ComingSoonColor%">Coming soon...</format>
 
-## `Sealed` und non-sealed Klassen und Interfaces
+### Polymorphismus {id="polymorphism"}
+#### Abstrakte Klassen {id="abstract-classes"}
+#### Interfaces {id="interfaces"}
+## Versiegelte Klassen und Interfaces {id="sealed-classes-and-interfaces"}

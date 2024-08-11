@@ -262,7 +262,7 @@ System.out.println(month); // März
 
 ### <format color="%c2%">switch-case mit versiegelten Klassen</format> {id="switch-case-sealed-classes"}
 
-Mit dem Konzept der <format color="%LinkColor%">[versiegelten Klassen](14-java-oop.md#sealed-und-non-sealed-klassen-und-interfaces)</format> (sealed classes), das ab Java 15 eingeführt und mit Java 17 finalisiert wurde, gibt es eine enge Integration mit `switch`. Wenn eine Klasse als `sealed` deklariert ist und nur eine festgelegte Gruppe von Unterklassen besitzt, kann ein `switch` auf Objekte dieser Klasse garantieren, dass alle möglichen Unterklassen abgedeckt sind.
+Mit dem Konzept der <format color="%LinkColor%">[versiegelten Klassen](14-java-oop.md#sealed-classes-and-interfaces)</format> (sealed classes), das ab Java 15 eingeführt und mit Java 17 finalisiert wurde, gibt es eine enge Integration mit `switch`. Wenn eine Klasse als `sealed` deklariert ist und nur eine festgelegte Gruppe von Unterklassen besitzt, kann ein `switch` auf Objekte dieser Klasse garantieren, dass alle möglichen Unterklassen abgedeckt sind.
 
 ```Java
 public sealed interface Shape permits Circle, Rectangle, Triangle {}

@@ -23,10 +23,13 @@
         <toc-element topic="14-java-oop.md"/>
         <toc-element topic="15-java-exceptions.md"/>
         <toc-element topic="16-java-packages-and-imports.md"/>
-        <toc-element topic="annotations.md"/>
-        <toc-element topic="threads.md"/>
-        <toc-element topic="gui.md"/>
-        <toc-element topic="collections.md"/>
+        <toc-element topic="18-java-generics.md"/>
+        <toc-element topic="17-java-lambda-expressions.md"/>
+        <toc-element topic="19-java-collections.md"/>
+        <toc-element topic="java-threads.md"/>
+        <toc-element topic="java-gui.md"/>
+        <toc-element topic="java-annotations.md"/>
+        <toc-element topic="java-design-patterns.md"/>
     </toc-element>
 
     <toc-element topic="mathematics.md">

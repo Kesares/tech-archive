@@ -1,3 +1,3 @@
-# 16 Java Pakete und Imports
+# 18 Java Generics
 
 <format color="%ComingSoonColor%">Coming soon...</format>

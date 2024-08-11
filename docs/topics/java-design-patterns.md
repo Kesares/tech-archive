@@ -1,5 +1,5 @@
-# 12 Java Modifizierer und Zugriffsrechte
+# Java Design Patterns
 
 <format color="%ComingSoonColor%">Coming soon...</format>
 
-## Access Modifier
+## Builder-Pattern

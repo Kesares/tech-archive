@@ -15,6 +15,7 @@
     <term name="Memoization">Memoization bezeichnet eine Technik zur Optimierung, bei der Ergebnisse von teuren Funktionsaufrufen (meist rekursive oder häufig aufgerufene Funktionen) gespeichert werden, um wiederholte Berechnungen zu vermeiden. Die gespeicherten Ergebnisse werden in einer Datenstruktur abgelegt, sodass bei erneutem Auftreten derselben Eingabewerte bereits berechnete Ergebnisse direkt zurückgegeben werden können.</term>
     <term name="PascalCase-Notation">Die PascalCase-Notation bezeichnet eine Schreibweise, wobei der Anfangsbuchstabe mit einem Großbuchstaben und jedes weitere Wort ebenfalls mit einem Großbuchstaben geschrieben wird.</term>
     <term name="String-Pool">Der String-Pool stellt sicher, dass identische Zeichenketten im Speicher nur einmal existieren.</term>
+    <term name="Utility-Class">Eine Utility-Klasse ist eine Klasse, die eine Sammlung von statischen Methoden und/oder Konstanten bietet, die allgemein nützliche Funktionen bereitstellt.</term>
     <term name="Wrapper-Class">In Java kapselt eine Wrapper-Klasse primitive Datentypen in eine objektorientierte Hülle und stellt eine Reihe von Hilfsmethoden und -konstanten für diese zur Verfügung.</term>
     <term name="placeholder">Platzhalter</term>
 </terms>

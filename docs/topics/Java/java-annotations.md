@@ -1,3 +1,3 @@
-# 16 Java Pakete und Imports
+# Annotationen
 
 <format color="%ComingSoonColor%">Coming soon...</format>

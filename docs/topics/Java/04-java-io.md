@@ -4,7 +4,7 @@ Beim Programmieren sind Ausgaben sehr essenziell. Zum einen können bestimmte We
 
 Eingaben wiederum ermöglichen uns die Interaktion mit Programmen und damit den Zugriff auf den weiteren Programmablauf – auch über die Konsole. Nahezu alles, was über elektronische Geräte getan wird, wird mit Eingaben realisiert – das Tippen auf der Tastatur, das Klicken mit der Maus oder sogar das Drücken von Tasten auf einem Controller so wie viele weitere Dinge.
 
-Demnach sind natürlich nicht nur Ein- und Ausgaben über die Konsole möglich. Dafür werden jedoch <format color="%LinkColor%">[Benutzeroberflächen](gui.md)</format> benötigt. In <format color="%LinkColor%">[Kapitel 2 – Datentypen](02-java-data-types.md)</format> gab es bereits einen kleinen Einblick zu den Konsolenausgaben.
+Demnach sind natürlich nicht nur Ein- und Ausgaben über die Konsole möglich. Dafür werden jedoch <format color="%LinkColor%">[Benutzeroberflächen](java-gui.md)</format> benötigt. In <format color="%LinkColor%">[Kapitel 2 – Datentypen](02-java-data-types.md)</format> gab es bereits einen kleinen Einblick zu den Konsolenausgaben.
 
 ## Ausgaben {id="outputs"}
 
