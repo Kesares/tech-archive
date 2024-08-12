@@ -240,8 +240,8 @@ Getter und Getter dienen dazu, <format color="%LinkColor%">[Objektvariablen](#ob
 ```Java
 public class Dog {
 
-    private String name; // außerhalb der Klasse nicht sichtbar
-    private int age;     // außerhalb der Klasse nicht sichtbar
+    private String name; // not visible outside the class
+    private int age;     // not visible outside the class
 
     public Dog(String name, int age) {
         this.name = name;
@@ -269,7 +269,7 @@ public class Dog {
     }
 
     public int getAge() {
-        retutn age;
+        return age;
     }
 }
 ```
@@ -378,6 +378,7 @@ Eine statische innere Klasse hat Zugriff auf <format color="%LinkColor%">[Klasse
 
 ```Java
 public class Product {
+
     private String name;
     private int quantity;
     private double price;
@@ -498,6 +499,46 @@ public class Main {
 ```
 
 Sie werden häufig in GUI-Umgebungen verwendet, um Event-Listener zu erstellen, ohne dafür eine benannte Klasse zu definieren und eignen sich für Aufgaben, die nur einmal ausgeführt werden und für die keine Wiederverwendbarkeit notwendig ist.
+
+## Records {id="records"}
+
+Records wurden mit Java 14 vorläufig eingeführt und mit dem Feedback der Community in Java 15 und 16 weiterentwickelt und verbessert, bis sie in Java 16 offiziell als Standfunktion etabliert wurden.
+
+Sie bieten eine kompakte Möglichkeit, unveränderliche Datenklassen zu definieren. Records sind im Wesentlichen eine Abkürzung für die Erstellung von Klassen, die hauptsächlich zur Speicherung von Daten verwendet werden. Im Gegensatz zu herkömmlichen Klassen nehmen sie dem Entwickler viel <tooltip term="Boilerplate-Code"><format color="%GlossaryLinkColor%">Boilerplate-Code</format></tooltip> ab, da sie automatisch <format color="%LinkColor%">[Konstruktoren](#constructors)</format>, <format color="%LinkColor%">[Getter-Methoden](#getter-and-setter)</format>, `equals()`, `hashCode()` und `toString()`-Methoden generieren.
+
+Records sind unveränderlich, was in vielen Fällen von Vorteil ist, aber es schränkt auch ihre Verwendung ein, wenn veränderbare Daten benötigt werden.
+
+```Java
+public record Point(double x, double y) {
+
+}
+```
+
+```Java
+Point point = new Point(34.5, 23.0);
+
+System.out.println(point.x()); // 34.5
+System.out.println(point.y()); // 23.0
+System.out.println(point);     // Point[x=34.5, y=23.0]
+```
+
+### Aktivierung von Records {id="activation-of-records"}
+
+- Für Versionen vor Java 14 sind Records nicht als Sprachfunktion verfügbar.
+- Für die Versionen zwischen Java 14 und 16 das Flag `--enable-preview` verwendet werden, um Records zu verwenden.
+- Für Versionen ab Java 16 und höher sind Records eine Standardfunktion und das Flag `--enable-preview` ist für die Verwendung von Records nicht mehr erforderlich.
+
+Um eine `.java`-Datei vor Java 16 mit dem Preview Feature zu kompilieren, muss folgender Befehl verwendet werden:
+
+```Console
+javac --enable-preview --release 14 Main.java
+```
+
+Zum Ausführen dient der folgende Befehl:
+
+```Console
+java --enable-preview Main
+```
 
 ## Coding Conventions {id="coding-conventions"}
 

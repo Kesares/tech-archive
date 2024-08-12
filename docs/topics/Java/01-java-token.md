@@ -40,70 +40,271 @@ Konventionen sind keine festen Regeln, sondern Richtlinien. Es kann zwar von ihn
 
 Schlüsselwörter (engl. Keywords) sind reservierte Wörter, die eine spezielle Bedeutung für den <tooltip term="Compiler"><format color="%GlossaryLinkColor%">Compiler</format></tooltip> haben. Diese Wörter dürfen nicht als Namen für <format color="%LinkColor%">[Variablen](03-java-variables.md)</format>, <format color="%LinkColor%">[Methoden](09-java-methods.md)</format>, <format color="%LinkColor%">[Klassen](10-java-classes.md)</format> oder andere <format color="%c1%">Bezeichner</format> verwendet werden, da sie zur Sprachsyntax von Java gehören und bestimmte Aktionen oder Strukturen definieren.
 
-| Schlüsselwort | Anwendungsbereich                                                                    | Beschreibung                                                                                                                                                                                                                                                                                       |
-|---------------|--------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `assert`      | - Annahmen                                                                           | - Stellt Annahmen über den Zustand des Programms sicher.<br/>- Müssen erst aktiviert werden, um verwendet werden zu können.                                                                                                                                                                        |
-| `boolean`     | - Variablen<br/>- Konstanten<br/>- Methoden (Rückgabetyp)<br/>- Methoden (Parameter) | - Primitiver Datentyp<br/>- Datentyp einer Variablen<br/>- Datentyp einer Konstante<br/>- Rückgabetyp einer Methode                                                                                                                                                                                |
-| `break`       | - Schleifen<br/>- `switch`-`case`-Ausdrücke                                          | - Beendet die Ausführung einer Schleife.<br/>- Verhindert das "Durchfallen" in einem `switch`-`case`-Ausdruck.                                                                                                                                                                                     |
-| `byte`        | - Variablen<br/>- Konstanten<br/>- Methoden (Rückgabetyp)<br/>- Methoden (Parameter) | - Primitiver Datentyp<br/>- Datentyp einer Variablen<br/>- Datentyp einer Konstante<br/>- Rückgabetyp einer Methode                                                                                                                                                                                |
-| `catch`       | - Ausnahmebehandlungsblock                                                           | - Beginnt einen Block, der einen bestimmten Ausnahmetyp behandelt.                                                                                                                                                                                                                                 |
-| `char`        | - Variablen<br/>- Konstanten<br/>- Methoden (Rückgabetyp)<br/>- Methoden (Parameter) | - Primitiver Datentyp<br/>- Datentyp einer Variablen<br/>- Datentyp einer Konstante<br/>- Rückgabetyp einer Methode                                                                                                                                                                                |
-| `class`       | - Klassen                                                                            | - Deklariert eine Klasse.                                                                                                                                                                                                                                                                          |
-| `const`*      | Keine                                                                                | - Reserviertes, aber nicht verwendetes Keyword.                                                                                                                                                                                                                                                    |
-| `continue`    | - Schleifen                                                                          | - Fährt mit dem nächsten Durchlauf der nächstgelegenen umschließenden Schleife fort.                                                                                                                                                                                                               |
-| `default`     | - Methoden (Interfaces)<br/>- `switch`-`case`-Ausdrücke                              | - Methoden mit diesem Modifier bringen in Interfaces Standardimplementierungen mit. Diese Methoden können, müssen aber nicht überschrieben werden, wenn das Interface implementiert wird.<br/>- Bei Abfragen mittels `switch`-`case`-Ausdrücken wird das Schlüsselwort als "else"-Zweig verwendet. |
-| `do`          | - `do`-`while`-Schleifen                                                             | - Beginnt eine fußgesteuerte `do`-`while`-Schleife.                                                                                                                                                                                                                                                |
-| `double`      | - Variablen<br/>- Konstanten<br/>- Methoden (Rückgabetyp)<br/>- Methoden (Parameter) | - Primitiver Datentyp<br/>- Datentyp einer Variablen<br/>- Datentyp einer Konstante<br/>- Rückgabetyp einer Methode                                                                                                                                                                                |
-| `else`        | - `if`-`else`-Abfragen                                                               | - Definiert einen Default-Zweig eines `if`-Ausdrucks, der ausgeführt wird, wenn alle vorherigen Bedingungen `false` ergeben.                                                                                                                                                                       |
-| `enum`        | - Enumerationen                                                                      | - Deklariert ein Enum.                                                                                                                                                                                                                                                                             |
-| `extends`     | - Klassen                                                                            | - Erbt von einer anderen Klasse.                                                                                                                                                                                                                                                                   |
-| `finally`     | - Ausnahmebehandlungsblöcke                                                          | - Der `finally`-Block wird optional nach einem `try`-Block definiert. Dieser wird jedes Mal ausgeführt, unabhängig davon, ob eine Exception geworfen wurde.                                                                                                                                        |
-| `float`       | - Variablen<br/>- Konstanten<br/>- Methoden (Rückgabetyp)<br/>- Methoden (Parameter) | - Primitiver Datentyp<br/>- Datentyp einer Variablen<br/>- Datentyp einer Konstante<br/>- Rückgabetyp einer Methode                                                                                                                                                                                |
-| `for`         | - `for`-Schleife<br/>- `for`-each-Schleife                                           | - Deklariert eine `for`-Schleife.<br/>- Deklariert eine `for`-each-Schleife                                                                                                                                                                                                                        |
-| `if`          | - `if`-`else`-Abfragen                                                               | - Deklariert eine `if`-Abfrage.                                                                                                                                                                                                                                                                    |
-| `goto`*       | Keine                                                                                | - Reserviertes, aber nicht verwendetes Keyword.                                                                                                                                                                                                                                                    |
-| `implements`  | - Klassen<br/>- Interfaces                                                           | - Implementiert ein Interface.                                                                                                                                                                                                                                                                     |
-| `import`      | - Importanweisungen                                                                  | - Importiert eine oder mehrere Klassen aus einem anderen Package zur Verwendung in die aktuelle Datei/Klasse.                                                                                                                                                                                      |
-| `instanceof`  | - Typüberprüfungen                                                                   | - Überprüft eine Variable auf seinen Typ.                                                                                                                                                                                                                                                          |
-| `int`         | - Variablen<br/>- Konstanten<br/>- Methoden (Rückgabetyp)<br/>- Methoden (Parameter) | - Primitiver Datentyp<br/>- Datentyp einer Variablen<br/>- Datentyp einer Konstante<br/>- Rückgabetyp einer Methode                                                                                                                                                                                |
-| `interface`   | - Interfaces                                                                         | - Deklariert ein Interface.                                                                                                                                                                                                                                                                        |
-| `long`        | - Variablen<br/>- Konstanten<br/>- Methoden (Rückgabetyp)<br/>- Methoden (Parameter) | - Primitiver Datentyp<br/>- Datentyp einer Variablen<br/>- Datentyp einer Konstante<br/>- Rückgabetyp einer Methode                                                                                                                                                                                |
-| `new`         | - Objekterzeugung / Instanziierung                                                   | - Erzeugt ein neues Objekt/Instanz.                                                                                                                                                                                                                                                                |
-| `package`     | - Package-Anweisungen                                                                | - Registriert die aktuelle Datei/Klasse für das Dateiverzeichnissystem, damit diese von anderen gefunden werden kann.                                                                                                                                                                              |
-| `return`      | - Methoden                                                                           | - Gibt den Rückgabewert an den Aufrufer der Methode zurück.                                                                                                                                                                                                                                        |
-| `short`       | - Variablen<br/>- Konstanten<br/>- Methoden (Rückgabetyp)<br/>- Methoden (Parameter) | - Primitiver Datentyp<br/>- Datentyp einer Variablen<br/>- Datentyp einer Konstante<br/>- Rückgabetyp einer Methode                                                                                                                                                                                |
-| `super`       | - Objektzugriff auf Oberklasse<br/>- Konstruktoren                                   | - Ruft Konstruktoren der Oberklasse auf.<br/>-  Ruft Variablen der Oberklasse auf.<br/>- Ruft Methoden der Oberklasse auf.                                                                                                                                                                         |
-| `switch`      | - `switch`-`case`-Ausdrücke                                                          | - Definiert einen `switch`-`case`-Ausdruck.                                                                                                                                                                                                                                                        |
-| `this`        | - Kontextueller Aufruf über Objekt                                                   | - Ruft im Kontext der Klasse, Objektvariablen auf.<br/>- Ruft im Kontext der Klasse, Objektmethoden auf.                                                                                                                                                                                           |
-| `throw`       | - Ausnahmebehandlungen                                                               | - "Wirft" eine Exception.                                                                                                                                                                                                                                                                          |
-| `throws`      | - Methoden (Ausnahmeweitergaben)                                                     | - Kennzeichnung einer Methode, dass diese eine Exception werfen kann, die abgefangen werden muss.                                                                                                                                                                                                  |
-| `try`         | - Ausnahmebehandlungsblöcke                                                          | - Deklariert einen `try`-`catch`-Block zum Abfangen von Exceptions.                                                                                                                                                                                                                                |
-| `void`        | - Methoden (Rückgabetyp)                                                             | - Gibt an, dass die Methode nichts zurückgibt.                                                                                                                                                                                                                                                     |
-| `while`       | - `while`-Schleifen<br/>- `do`-`while`-Schleifen                                     | - Deklariert eine `while`-Schleife.<br/>- Deklariert eine `do`-`while`-Schleife.                                                                                                                                                                                                                   |
+| Keyword      | Anwendungsbereich                                                                    | Beschreibung                                                                                                                                                                                                                                                                                       |
+|--------------|--------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `assert`     | - Annahmen                                                                           | - Stellt Annahmen über den Zustand des Programms sicher.<br/>- Müssen erst aktiviert werden, um verwendet werden zu können.                                                                                                                                                                        |
+| `boolean`    | - Variablen<br/>- Konstanten<br/>- Methoden (Rückgabetyp)<br/>- Methoden (Parameter) | - Primitiver Datentyp<br/>- Datentyp einer Variablen<br/>- Datentyp einer Konstante<br/>- Rückgabetyp einer Methode                                                                                                                                                                                |
+| `break`      | - Schleifen<br/>- `switch`-`case`-Ausdrücke                                          | - Beendet die Ausführung einer Schleife.<br/>- Verhindert das "Durchfallen" in einem `switch`-`case`-Ausdruck.                                                                                                                                                                                     |
+| `byte`       | - Variablen<br/>- Konstanten<br/>- Methoden (Rückgabetyp)<br/>- Methoden (Parameter) | - Primitiver Datentyp<br/>- Datentyp einer Variablen<br/>- Datentyp einer Konstante<br/>- Rückgabetyp einer Methode                                                                                                                                                                                |
+| `catch`      | - Ausnahmebehandlungsblock                                                           | - Beginnt einen Block, der einen bestimmten Ausnahmetyp behandelt.                                                                                                                                                                                                                                 |
+| `char`       | - Variablen<br/>- Konstanten<br/>- Methoden (Rückgabetyp)<br/>- Methoden (Parameter) | - Primitiver Datentyp<br/>- Datentyp einer Variablen<br/>- Datentyp einer Konstante<br/>- Rückgabetyp einer Methode                                                                                                                                                                                |
+| `class`      | - Klassen                                                                            | - Deklariert eine Klasse.                                                                                                                                                                                                                                                                          |
+| `const`*     | Keine                                                                                | - Reserviertes, aber nicht verwendetes Keyword.                                                                                                                                                                                                                                                    |
+| `continue`   | - Schleifen                                                                          | - Fährt mit dem nächsten Durchlauf der nächstgelegenen umschließenden Schleife fort.                                                                                                                                                                                                               |
+| `default`    | - Methoden (Interfaces)<br/>- `switch`-`case`-Ausdrücke                              | - Methoden mit diesem Modifier bringen in Interfaces Standardimplementierungen mit. Diese Methoden können, müssen aber nicht überschrieben werden, wenn das Interface implementiert wird.<br/>- Bei Abfragen mittels `switch`-`case`-Ausdrücken wird das Schlüsselwort als "else"-Zweig verwendet. |
+| `do`         | - `do`-`while`-Schleifen                                                             | - Beginnt eine fußgesteuerte `do`-`while`-Schleife.                                                                                                                                                                                                                                                |
+| `double`     | - Variablen<br/>- Konstanten<br/>- Methoden (Rückgabetyp)<br/>- Methoden (Parameter) | - Primitiver Datentyp<br/>- Datentyp einer Variablen<br/>- Datentyp einer Konstante<br/>- Rückgabetyp einer Methode                                                                                                                                                                                |
+| `else`       | - `if`-`else`-Abfragen                                                               | - Definiert einen Default-Zweig eines `if`-Ausdrucks, der ausgeführt wird, wenn alle vorherigen Bedingungen `false` ergeben.                                                                                                                                                                       |
+| `enum`       | - Enumerationen                                                                      | - Deklariert ein Enum.                                                                                                                                                                                                                                                                             |
+| `extends`    | - Klassen                                                                            | - Erbt von einer anderen Klasse.                                                                                                                                                                                                                                                                   |
+| `finally`    | - Ausnahmebehandlungsblöcke                                                          | - Der `finally`-Block wird optional nach einem `try`-Block definiert. Dieser wird jedes Mal ausgeführt, unabhängig davon, ob eine Exception geworfen wurde.                                                                                                                                        |
+| `float`      | - Variablen<br/>- Konstanten<br/>- Methoden (Rückgabetyp)<br/>- Methoden (Parameter) | - Primitiver Datentyp<br/>- Datentyp einer Variablen<br/>- Datentyp einer Konstante<br/>- Rückgabetyp einer Methode                                                                                                                                                                                |
+| `for`        | - `for`-Schleife<br/>- `for`-each-Schleife                                           | - Deklariert eine `for`-Schleife.<br/>- Deklariert eine `for`-each-Schleife                                                                                                                                                                                                                        |
+| `if`         | - `if`-`else`-Abfragen                                                               | - Deklariert eine `if`-Abfrage.                                                                                                                                                                                                                                                                    |
+| `goto`*      | Keine                                                                                | - Reserviertes, aber nicht verwendetes Keyword.                                                                                                                                                                                                                                                    |
+| `implements` | - Klassen<br/>- Interfaces                                                           | - Implementiert ein Interface.                                                                                                                                                                                                                                                                     |
+| `import`     | - Importanweisungen                                                                  | - Importiert eine oder mehrere Klassen aus einem anderen Package zur Verwendung in die aktuelle Datei/Klasse.                                                                                                                                                                                      |
+| `instanceof` | - Typüberprüfungen                                                                   | - Überprüft eine Variable auf seinen Typ.                                                                                                                                                                                                                                                          |
+| `int`        | - Variablen<br/>- Konstanten<br/>- Methoden (Rückgabetyp)<br/>- Methoden (Parameter) | - Primitiver Datentyp<br/>- Datentyp einer Variablen<br/>- Datentyp einer Konstante<br/>- Rückgabetyp einer Methode                                                                                                                                                                                |
+| `interface`  | - Interfaces                                                                         | - Deklariert ein Interface.                                                                                                                                                                                                                                                                        |
+| `long`       | - Variablen<br/>- Konstanten<br/>- Methoden (Rückgabetyp)<br/>- Methoden (Parameter) | - Primitiver Datentyp<br/>- Datentyp einer Variablen<br/>- Datentyp einer Konstante<br/>- Rückgabetyp einer Methode                                                                                                                                                                                |
+| `new`        | - Objekterzeugung / Instanziierung                                                   | - Erzeugt ein neues Objekt/Instanz.                                                                                                                                                                                                                                                                |
+| `package`    | - Package-Anweisungen                                                                | - Registriert die aktuelle Datei/Klasse für das Dateiverzeichnissystem, damit diese von anderen gefunden werden kann.                                                                                                                                                                              |
+| `return`     | - Methoden                                                                           | - Gibt den Rückgabewert an den Aufrufer der Methode zurück.                                                                                                                                                                                                                                        |
+| `short`      | - Variablen<br/>- Konstanten<br/>- Methoden (Rückgabetyp)<br/>- Methoden (Parameter) | - Primitiver Datentyp<br/>- Datentyp einer Variablen<br/>- Datentyp einer Konstante<br/>- Rückgabetyp einer Methode                                                                                                                                                                                |
+| `super`      | - Objektzugriff auf Oberklasse<br/>- Konstruktoren                                   | - Ruft Konstruktoren der Oberklasse auf.<br/>-  Ruft Variablen der Oberklasse auf.<br/>- Ruft Methoden der Oberklasse auf.                                                                                                                                                                         |
+| `switch`     | - `switch`-`case`-Ausdrücke                                                          | - Definiert einen `switch`-`case`-Ausdruck.                                                                                                                                                                                                                                                        |
+| `this`       | - Kontextueller Aufruf über Objekt                                                   | - Ruft im Kontext der Klasse, Objektvariablen auf.<br/>- Ruft im Kontext der Klasse, Objektmethoden auf.                                                                                                                                                                                           |
+| `throw`      | - Ausnahmebehandlungen                                                               | - "Wirft" eine Exception.                                                                                                                                                                                                                                                                          |
+| `throws`     | - Methoden (Ausnahmeweitergaben)                                                     | - Kennzeichnung einer Methode, dass diese eine Exception werfen kann, die abgefangen werden muss.                                                                                                                                                                                                  |
+| `try`        | - Ausnahmebehandlungsblöcke                                                          | - Deklariert einen `try`-`catch`-Block zum Abfangen von Exceptions.                                                                                                                                                                                                                                |
+| `void`       | - Methoden (Rückgabetyp)                                                             | - Gibt an, dass die Methode nichts zurückgibt.                                                                                                                                                                                                                                                     |
+| `while`      | - `while`-Schleifen<br/>- `do`-`while`-Schleifen                                     | - Deklariert eine `while`-Schleife.<br/>- Deklariert eine `do`-`while`-Schleife.                                                                                                                                                                                                                   |
 ### <format color="%c2%">Modifizierer – 12</format> {id="modifier"}
-| Schlüsselwort  | Anwendungsbereich                                                | Beschreibung                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|----------------|------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `abstract`     | - Methoden<br/> - Klassen                                        | - Enthält eine Klasse mindestens eine abstrakte Methode, muss auch diese Klasse den Modifizierer tragen.<br/>- Eine abstrakte Klasse kann nicht instanziiert werden.<br/>- Abstrakte Methoden besitzen keinen Rumpf und müssen von Kindklassen implementiert werden.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| `final`        | - Variablen<br/>- Konstanten<br/>- Methoden<br/>- Klassen        | - Variablen können nicht überschrieben werden.<br/>- Konstanten können nicht überschrieben werden.<br/>- Methoden können nicht überschrieben werden.<br/>- Von Klassen kann nicht geerbt werden.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| `native`       | - Methoden                                                       | - Gibt an, dass eine Methode in nativem Code mithilfe von <tooltip term="JNI"><format color="%GlossaryLinkColor%">JNI</format></tooltip> implementiert ist. Die in C oder C++ implementierten Methoden werden native Methoden oder fremde Methoden genannt. `native` gibt an, dass eine Methode in plattformabhängigem Code implementiert ist, der häufig in diesen Sprachen vorkommt.                                                                                                                                                                                                                                                                                                                                                                                                            |
-| `private`      | - Variablen<br/>- Konstanten<br/>- Methoden<br/>- Klassen        | - Zugriff nur innerhalb der Klasse.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| `protected`    | - Variablen<br/>- Konstanten<br/>- Methoden<br/>- Klassen        | - Zugriff von Kindklassen<br/>- Zugriff von allem innerhalb desselben Packages.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| `public`       | - Variablen<br/>- Konstanten<br/>- Methoden<br/>- Klassen        | - Zugriff von überall                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| `static`       | - Variablen<br/>- Konstanten<br/>- Methoden<br/>- Innere Klassen | Objektunabhängiger Zugriff.<br/>- Zugriff über den Klassennamen.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| `strictfp`     | - Methoden<br/>- Klassen                                         | - Sicherstellung, dass Gleitkomma-Operationen auf allen Plattformen gleich berechnet werden und nicht von der Art des Prozessors oder der Implementierung der <tooltip term="JVM"><format color="%GlossaryLinkColor%">JVM</format></tooltip> abhängen.<br/>- Klassen oder Methoden mit diesem Schlüsselwort führen alle Operationen in Übereinstimmung mit dem <tooltip term="IEEE-754"><format color="%GlossaryLinkColor%">IEEE-754</format></tooltip> Standard durch.<br/>- Ab Java 17 werden alle Operationen standardmäßig mit <tooltip term="IEEE-754"><format color="%GlossaryLinkColor%">IEEE-754</format></tooltip> durchgeführt. `strictfp` ist daher redundant geworden. In speziellen Umgebungen oder in älteren Java-Versionen hat dieses Schlüsselwort möglicherweise noch Relevanz. |
-| `synchronized` | - Methoden                                                       | - Auf Methoden kann immer nur von einem Thread zugegriffen werden.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| `transient`    | - Variablen<br/>- Methoden                                       | - Variablen eines Objekts werden bei der Serialisierung nicht berücksichtigt.<br/>- Methoden eines Objekts werden bei der Serialisierung nicht berücksichtigt.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| `volatile`     | - Variablen<br/>- Konstanten                                     | - Alle Threads lesen und schreiben den Wert der Variablen direkt aus dem Hauptspeicher, anstatt eine Kopie im Cache zu verwenden. Damit wird sichergestellt, dass die Threads den aktuellen Wert sehen und inkonsistente oder falsche Ergebnisse verhindert werden.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+
+<table>
+    <tr>
+        <td>Keyword</td>
+        <td>Anwendungsbereich</td>
+        <td>Beschreibung</td>
+    </tr>
+    <tr>
+        <td><code>abstract</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="09-java-methods.md">Methoden</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md">Klassen</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li>Enthält eine Klasse mindestens eine abstrakte Methode, muss auch diese Klasse den Modifier tragen.</li>
+                <li>Eine <format color="%LinkColor%"><a href="14-java-oop.md#abstract-classes">abstrakte Klasse</a></format> kann nicht instanziiert werden.</li>
+                <li>Abstrakte Methoden besitzen keinen Rumpf und müssen von Kindklassen implementiert werden.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>final</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="03-java-variables.md">Variablen</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#constants">Konstanten</a></format></p>
+            <p><format color="%LinkColor%"><a href="09-java-methods.md">Methoden</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md">Klassen</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li>Variablen können nicht überschrieben werden.</li>
+                <li>Konstanten können nicht überschrieben werden.</li>
+                <li>Methoden können nicht überschrieben werden.</li>
+                <li>Von Klassen kann nicht geerbt werden.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>native</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="09-java-methods.md">Methoden</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li>Gibt an, dass eine Methode in nativem Code mithilfe von <tooltip term="JNI"><format color="%GlossaryLinkColor%">JNI</format></tooltip> implementiert ist. Die in C oder C++ implementierten Methoden werden native Methoden oder fremde Methoden genannt. <code>native</code> gibt an, dass eine Methode in plattformabhängigem Code implementiert ist, der häufig in diesen Sprachen vorkommt.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>package-private</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="03-java-variables.md">Variablen</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#constants">Konstanten</a></format></p>
+            <p><format color="%LinkColor%"><a href="09-java-methods.md">Methoden</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md">Klassen</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#constructors">Konstruktoren</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li>Wird automatisch intern angewendet, wenn kein anderer <format color="%LinkColor%"><a href="12-java-modifier-access-rights.md#access-modifier">Access Modifier</a></format> zugewiesen wird. Eine Ausnahme sind Konstruktoren in <format color="%LinkColor%"><a href="13-java-enumerations.md">Enumerationen</a></format>. Dort ist es standardmäßig <code>private</code>.</li>
+                <li>Kann nicht von Entwicklern gesetzt werden.</li>
+                <li>Konstrukte mit diesem Modifier sind nur innerhalb desselben <format color="%LinkColor%"><a href="16-java-packages-and-imports.md">Package</a></format> sichtbar.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>private</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="03-java-variables.md">Variablen</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#constants">Konstanten</a></format></p>
+            <p><format color="%LinkColor%"><a href="09-java-methods.md">Methoden</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#inner-classes">Innere Klassen</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#constructors">Konstruktoren</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li>Zugriff nur innerhalb der Klasse.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>protected</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="03-java-variables.md">Variablen</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#constants">Konstanten</a></format></p>
+            <p><format color="%LinkColor%"><a href="09-java-methods.md">Methoden</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#inner-classes">Innere Klassen</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#constructors">Konstruktoren</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li>Zugriff von Kindklassen</li>
+                <li>Zugriff von allem innerhalb desselben <format color="%LinkColor%"><a href="16-java-packages-and-imports.md">Package</a></format>.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>public</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="03-java-variables.md">Variablen</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#constants">Konstanten</a></format></p>
+            <p><format color="%LinkColor%"><a href="09-java-methods.md">Methoden</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md">Klassen</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#constructors">Konstruktoren</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li>Zugriff von überall.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>static</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="03-java-variables.md">Variablen</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#constants">Konstanten</a></format></p>
+            <p><format color="%LinkColor%"><a href="09-java-methods.md">Methoden</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#inner-classes">Innere Klassen</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li>Objektunabhängiger Zugriff.</li>
+                <li>Zugriff über den Klassennamen.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>strictfp</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="09-java-methods.md">Methoden</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md">Klassen</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li>Sicherstellung, dass Fließkommaoperationen auf allen Plattformen gleich berechnet werden und nicht von der Art des Prozessors oder der Implementierung der <tooltip term="JVM"><format color="%GlossaryLinkColor%">JVM</format></tooltip> abhängen.</li>
+                <li>Klassen oder Methoden mit diesem <format color="%LinkColor%"><a href="01-java-token.md#keywords">Keyword</a></format> führen alle Operationen in Übereinstimmung mit dem <tooltip term="JVM"><format color="%GlossaryLinkColor%">IEEE 754</format></tooltip> Standard durch.</li>
+                <li>Ab Java 17 werden alle Operationen standardmäßig mit <tooltip term="JVM"><format color="%GlossaryLinkColor%">IEEE 754</format></tooltip> durchgeführt. <code>strictfp</code> ist daher redundant geworden. In speziellen Umgebungen oder in älteren Java-Versionen hat das <format color="%LinkColor%"><a href="01-java-token.md#keywords">Keyword</a></format> möglicherweise noch Relevanz.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>synchronized</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="09-java-methods.md">Methoden</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li>Auf Methoden kann immer nur von einem <format color="%LinkColor%"><a href="java-threads.md">Thread</a></format> zugegriffen werden.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>transient</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="03-java-variables.md">Variablen</a></format></p>
+            <p><format color="%LinkColor%"><a href="09-java-methods.md">Methoden</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li>Variablen eines <format color="%LinkColor%"><a href="11-java-objects.md">Objekts</a></format> werden bei der <tooltip term="Serialization"><format color="%GlossaryLinkColor%">Serialisierung</format></tooltip> nicht berücksichtigt.</li>
+                <li>Methoden eines <format color="%LinkColor%"><a href="11-java-objects.md">Objekts</a></format> werden bei der <tooltip term="Serialization"><format color="%GlossaryLinkColor%">Serialisierung</format></tooltip> nicht berücksichtigt.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>volatile</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="03-java-variables.md">Variablen</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#constants">Konstanten</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li>Alle <format color="%LinkColor%"><a href="java-threads.md">Threads</a></format> lesen und schreiben den Wert der Variablen direkt aus dem Hauptspeicher, anstatt eine Kopie im <tooltip term="Cache"><format color="%GlossaryLinkColor%">Cache</format></tooltip> zu verwenden. Damit wird sichergestellt, dass die Threads den aktuellen Wert sehen und inkonsistente oder falsche Ergebnisse verhindert werden.</li>
+            </list>
+        </td>
+    </tr>
+</table>
 
 ### <format color="%c2%">Kontextbezogene "Keywords" – 3</format> {id="contextual-keywords"}
 
-Kontextbezogene "Schlüsselwörter" dienen nur in bestimmten Ausdrücken als Schlüsselwörter und können als <format color="%c1%">Bezeichner</format> verwendet werden.
-
-| Schlüsselwort | Anwendungsbereich           | Beschreibung                                                                                                                                                                                                                                                                        |
-|---------------|-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `var`         | - Variablen                 | - Seit Java 10 gibt es die Möglichkeit eine Variable mit `var` zu deklarieren. Es dient im Rahmen der Type Inference als Platzhalter für einen Datentyp.<br/>- Es wird häufig als Keyword verwechselt, ist aber ein Reserved Type Name.                                             |
-| `yield`       | - `switch`-`case`-Ausdrücke | - `yield` wurde in Java 14 hinzugefügt.<br/>- Es wird ebenfalls häufig als Schlüsselwort verwechselt, ist aber ein Contextual Keyword und findet nur innerhalb eines <format color="%LinkColor%">[switch-case-Ausdrucks](06-java-branches.md#switch-case-yield)</format> Anwendung. |
-| `record`      | - Records                   | - Der Modifizierer `record` wurde in Verbindung mit Records neu als Vorschaufunktion in Java 14 und Java 15 eingeführt und mit Java 16 finalisiert.<br/>- Es wird anstelle des `class`-Schlüsselwortes verwendet, um eine Record-Klasse zu erstellen.                               |
+<table>
+    <tr>
+        <td>Keyword</td>
+        <td>Anwendungsbereich</td>
+        <td>Beschreibung</td>
+    </tr>
+    <tr>
+        <td><code>var</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="03-java-variables.md">Variablen</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li>Seit Java 10 gibt es die Möglichkeit eine <format color="%LinkColor%"><a href="03-java-variables.md#reserved-type-name-var">Variable</a></format> mit <code>var</code> zu deklarieren. Es dient im Rahmen der <format color="%Highlight%">Type Inference</format> als Platzhalter für einen <format color="%LinkColor%"><a href="02-java-data-types.md">Datentyp</a></format>.</li>
+                <li>Es wird häufig als <format color="%LinkColor%"><a href="#keywords">Keyword</a></format> verwechselt, ist aber ein <format color="%Highlight%">Reserved Type Name</format>.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>yield</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="06-java-branches.md#switch-case">switch-Ausdrücke</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li><code>yield</code> wurde in Java 14 hinzugefügt.</li>
+                <li>Es wird ebenfalls häufig als <format color="%LinkColor%"><a href="#keywords">Schlüsselwort</a></format> verwechselt, ist aber ein <format color="%Highlight%">Contextual Keyword</format> und findet nur innerhalb eines <format color="%LinkColor%"><a href="06-java-branches.md#switch-case-yield">switch-Ausdrucks</a></format> Anwendung.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>record</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#records">Records</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li>Der Modifizierer <code>record</code> wurde in Verbindung mit Records neu als Vorschaufunktion in Java 14 und Java 15 eingeführt und mit Java 16 finalisiert.</li>
+                <li>Es wird anstelle des <code>class</code>-Schlüsselwortes verwendet, um eine Record-Klasse zu erstellen.</li>
+            </list>
+        </td>
+    </tr>
+</table>
 
 ## <format color="%c3%">Literale</format> {id="literals"}
 Literale (engl. Literals) bzw. Literalkonstanten bezeichnen Werte, die sich im Programm nicht ändern können. Unterschieden wird unter den folgenden 7 Literal-Arten.
