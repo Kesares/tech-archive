@@ -19,6 +19,12 @@ Vektoren können nur addiert bzw. subtrahiert werden, wenn sie die <format color
     \end{pmatrix}
     =
     \begin{pmatrix}
+        \textcolor{red}{3+(-2)}\\
+        \textcolor{orange}{5+4}\\
+        \textcolor{lightgreen}{2+1}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
         \textcolor{red}{1}\\
         \textcolor{orange}{9}\\
         \textcolor{lightgreen}{3}
@@ -38,6 +44,12 @@ Vektoren können nur addiert bzw. subtrahiert werden, wenn sie die <format color
         \textcolor{red}{-2}\\
         \textcolor{orange}{4}\\
         \textcolor{lightgreen}{1}
+    \end{pmatrix}
+        =
+    \begin{pmatrix}
+        \textcolor{red}{3-(-2)}\\
+        \textcolor{orange}{5-4}\\
+        \textcolor{lightgreen}{2-1}
     \end{pmatrix}
     =
     \begin{pmatrix}

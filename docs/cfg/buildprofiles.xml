@@ -14,14 +14,13 @@
         <layout name="Linux" display-name="Linux"/>
         <layout name="macOS" display-name="macOS"/>
     </shortcuts>
-    <build-profile instance="in">
+    <build-profile instance="ta">
         <variables>
             <noindex-content>true</noindex-content>
         </variables>
     </build-profile>
     <footer>
         <copyright>Kesares</copyright>
-        <link href="https://github.com/Kesares">GitHub</link>
     </footer>
 
 </buildprofiles>

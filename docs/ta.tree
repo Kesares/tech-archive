@@ -4,8 +4,9 @@
 
 <instance-profile id="ta"
                  name="Tech Archive"
-                 start-page="00-java.md">
+                 start-page="tech-archive.md">
 
+    <toc-element topic="tech-archive.md"/>
     <toc-element topic="00-java.md">
         <toc-element topic="01-java-token.md"/>
         <toc-element topic="02-java-data-types.md"/>
