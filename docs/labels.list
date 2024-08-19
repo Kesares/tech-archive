@@ -6,9 +6,7 @@
         Go to www.jetbrains.com
     </primary-label>
 
-    <primary-label id="programming-lang" short-name="PL" name="Programming Language" color="red">
-        Go to www.jetbrains.com
-    </primary-label>
+    <primary-label id="programming-lang" short-name="PL" name="Programming Language" color="red"/>
 
     <secondary-label id="wip" name="WIP" color="purple"/>
     <secondary-label id="beta" name="Beta" color="tangerine"/>

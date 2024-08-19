@@ -1,4 +1,4 @@
-# 01 Java Token
+# 01 Java – Token
 
 Die deutsche Sprache besteht aus Sätzen, welche sich wiederum aus bestimmten Worten und Wortreihenfolgen zusammensetzen. Dies wird als Grammatik bezeichnet. Auch Java (so wie jede andere Programmiersprache) besitzt solch eine Grammatik. Diese wird als Syntax bezeichnet. Der <tooltip term="Compiler"><format color="%GlossaryLinkColor%">Compiler</format></tooltip> zerlegt diese Syntax oder auch Codezeilen in seine Bestandteile und identifiziert diese als Token. Diese Token sind die kleinsten Elemente eines Java-Programms. Unterschieden wird zwischen 6 Token-Arten.
 
@@ -35,10 +35,10 @@ Konventionen sind keine festen Regeln, sondern Richtlinien. Es kann zwar von ihn
 > Weitere Konventionen werden in den jeweiligen Kapiteln beschrieben.
 {style="note"}
 
-## <format color="%c2%">Keywords</format> {id="keywords"}
+## <format color="%c2%">Keywords – 56</format> {id="keywords"}
 <secondary-label ref="refactor"/>
 
-Schlüsselwörter (engl. Keywords) sind reservierte Wörter, die eine spezielle Bedeutung für den <tooltip term="Compiler"><format color="%GlossaryLinkColor%">Compiler</format></tooltip> haben. Diese Wörter dürfen nicht als Namen für <format color="%LinkColor%">[Variablen](03-java-variables.md)</format>, <format color="%LinkColor%">[Methoden](09-java-methods.md)</format>, <format color="%LinkColor%">[Klassen](10-java-classes.md)</format> oder andere <format color="%c1%">Bezeichner</format> verwendet werden, da sie zur Sprachsyntax von Java gehören und bestimmte Aktionen oder Strukturen definieren.
+Schlüsselwörter (engl. Keywords) sind reservierte Wörter, die eine spezielle Bedeutung für den <tooltip term="Compiler"><format color="%GlossaryLinkColor%">Compiler</format></tooltip> haben. Diese Wörter dürfen und können im Regelfall nicht als Namen für <format color="%LinkColor%">[Variablen](03-java-variables.md)</format>, <format color="%LinkColor%">[Methoden](09-java-methods.md)</format>, <format color="%LinkColor%">[Klassen](10-java-classes.md)</format> oder andere <format color="%c1%">[Bezeichner](#identifier)</format> verwendet werden, da sie zur Sprachsyntax von Java gehören und bestimmte Aktionen oder Strukturen definieren. Einige Ausnahmen werden im Abschnitt <format color="%c2%">[Kontextbezogene "Keywords"](#contextual-keywords)</format> beschrieben.
 
 | Keyword      | Anwendungsbereich                                                                    | Beschreibung                                                                                                                                                                                                                                                                                       |
 |--------------|--------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -260,22 +260,77 @@ Schlüsselwörter (engl. Keywords) sind reservierte Wörter, die eine spezielle 
     </tr>
 </table>
 
-### <format color="%c2%">Kontextbezogene "Keywords" – 3</format> {id="contextual-keywords"}
+### <format color="%c2%">Kontextbezogene "Keywords" – 6</format> {id="contextual-keywords"}
+
+Alle "Keywords" in der folgenden Tabelle können als <format color="%c1%">[Identifier](#identifier)</format> verwendet werden (mit Ausnahme von `non-sealed`).
 
 <table>
     <tr>
-        <td>Keyword</td>
-        <td>Anwendungsbereich</td>
+        <td width="100">Keyword</td>
+        <td width="180">Anwendungsbereich</td>
         <td>Beschreibung</td>
+    </tr>
+    <tr>
+        <td><code>non-sealed</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="14-java-oop.md#sealed-classes-and-interfaces">Versiegelte Klassen</a></format></p>
+            <p><format color="%LinkColor%"><a href="14-java-oop.md#sealed-classes-and-interfaces">Versiegelte Interfaces</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li>Der Modifizierer <code>non-sealed</code> wurde als Vorschaufunktion in Java 15 eingeführt und mit Java 17 finalisiert.</li>
+                <li>Es öffnet eine Klasse wieder ohne Beschränkungen für weitere Vererbungen.</li>
+                <li><code>non-sealed</code> ist das einzige Keyword, welches einen <format color="%c4%"><a href="#operators">Operator</a></format> besitzt und kann deshalb nicht als <format color="%c1%"><a href="#identifier">Identifier</a></format> genutzt werden.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>permits</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="14-java-oop.md#sealed-classes-and-interfaces">Versiegelte Klassen</a></format></p>
+            <p><format color="%LinkColor%"><a href="14-java-oop.md#sealed-classes-and-interfaces">Versiegelte Interfaces</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li><code>permits</code> wurde als Vorschaufunktion in Java 14 eingeführt und mit Java 16 finalisiert.</li>
+                <li>Es ermöglicht in Verbindung mit <code>sealed</code> und die explizite Angabe der Kindklassen, die Vererbung von Klassen einzuschränken.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>record</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#records">Records</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li>Der Modifizierer <code>record</code> wurde als Vorschaufunktion in Java 14 eingeführt und mit Java 16 finalisiert.</li>
+                <li>Es wird anstelle des <code>class</code>-Schlüsselwortes verwendet, um eine Record-Klasse zu erstellen.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>sealed</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="14-java-oop.md#sealed-classes-and-interfaces">Versiegelte Klassen</a></format></p>
+            <p><format color="%LinkColor%"><a href="14-java-oop.md#sealed-classes-and-interfaces">Versiegelte Interfaces</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li>Der Modifizierer <code>sealed</code> wurde als Vorschaufunktion in Java 15 eingeführt und mit Java 17 finalisiert.</li>
+                <li>Es ermöglicht in Verbindung mit <code>permits</code> und die explizite Angabe der Kindklassen, die Vererbung von Klassen einzuschränken.</li>
+            </list>
+        </td>
     </tr>
     <tr>
         <td><code>var</code></td>
         <td>
-            <p><format color="%LinkColor%"><a href="03-java-variables.md">Variablen</a></format></p>
+            <p><format color="%LinkColor%"><a href="03-java-variables.md#reserved-type-name-var">Variablen</a></format></p>
         </td>
         <td>
             <list>
-                <li>Seit Java 10 gibt es die Möglichkeit eine <format color="%LinkColor%"><a href="03-java-variables.md#reserved-type-name-var">Variable</a></format> mit <code>var</code> zu deklarieren. Es dient im Rahmen der <format color="%Highlight%">Type Inference</format> als Platzhalter für einen <format color="%LinkColor%"><a href="02-java-data-types.md">Datentyp</a></format>.</li>
+                <li>Seit Java 10 gibt es die Möglichkeit eine Variable mit <code>var</code> zu deklarieren.</li>
+                <li>Es dient im Rahmen der <format color="%Highlight%">Type Inference</format> als Platzhalter für einen <format color="%LinkColor%"><a href="02-java-data-types.md">Datentyp</a></format>.</li>
                 <li>Es wird häufig als <format color="%LinkColor%"><a href="#keywords">Keyword</a></format> verwechselt, ist aber ein <format color="%Highlight%">Reserved Type Name</format>.</li>
             </list>
         </td>
@@ -288,19 +343,7 @@ Schlüsselwörter (engl. Keywords) sind reservierte Wörter, die eine spezielle 
         <td>
             <list>
                 <li><code>yield</code> wurde in Java 14 hinzugefügt.</li>
-                <li>Es wird ebenfalls häufig als <format color="%LinkColor%"><a href="#keywords">Schlüsselwort</a></format> verwechselt, ist aber ein <format color="%Highlight%">Contextual Keyword</format> und findet nur innerhalb eines <format color="%LinkColor%"><a href="06-java-branches.md#switch-case-yield">switch-Ausdrucks</a></format> Anwendung.</li>
-            </list>
-        </td>
-    </tr>
-    <tr>
-        <td><code>record</code></td>
-        <td>
-            <p><format color="%LinkColor%"><a href="10-java-classes.md#records">Records</a></format></p>
-        </td>
-        <td>
-            <list>
-                <li>Der Modifizierer <code>record</code> wurde in Verbindung mit Records neu als Vorschaufunktion in Java 14 und Java 15 eingeführt und mit Java 16 finalisiert.</li>
-                <li>Es wird anstelle des <code>class</code>-Schlüsselwortes verwendet, um eine Record-Klasse zu erstellen.</li>
+                <li>Es findet nur innerhalb eines <format color="%LinkColor%"><a href="06-java-branches.md#switch-case-yield">switch-Ausdrucks</a></format> als Return-Anweisung Anwendung.</li>
             </list>
         </td>
     </tr>
@@ -309,17 +352,42 @@ Schlüsselwörter (engl. Keywords) sind reservierte Wörter, die eine spezielle 
 ## <format color="%c3%">Literale</format> {id="literals"}
 Literale (engl. Literals) bzw. Literalkonstanten bezeichnen Werte, die sich im Programm nicht ändern können. Unterschieden wird unter den folgenden 7 Literal-Arten.
 
-| Kategorie              | Literal              |
-|------------------------|----------------------|
-| Ganzzahl-Literal       | `42`                 |
-| Fließkommazahl-Literal | `3.14`               |
-| Boolean Literal        | `true` `false`       |
-| Zeichen-Literal        | `@`                  |
-| String Literal         | `"Hello World!"`     |
-| Text Block Literal     | `"""Hello World!"""` |
-| Null Literal           | `null`               |
+<table>
+    <tr>
+        <td>Kategorie</td>
+        <td>Literal</td>
+    </tr>
+    <tr>
+        <td>Ganzzahl-Literal</td>
+        <td><code>42</code></td>
+    </tr>
+    <tr>
+        <td>Fließkommazahl-Literal</td>
+        <td><code>3.14</code></td>
+    </tr>
+    <tr>
+        <td>Boolean Literal </td>
+        <td><code>true</code> <code>false</code></td>
+    </tr>
+    <tr>
+        <td>Zeichen-Literal </td>
+        <td><code>@</code></td>
+    </tr>
+    <tr>
+        <td>String Literal</td>
+        <td><code>"Hello World!"</code></td>
+    </tr>
+    <tr>
+        <td>Text Block Literal</td>
+        <td><code>"""Hello World!"""</code></td>
+    </tr>
+    <tr>
+        <td>Null Literal</td>
+        <td><code>null</code></td>
+    </tr>
+</table>
 
-> Die Literale `true`, `false` und `null` sind zwar keine <format color="%NoteLinkColor%">[Schlüsselwörter](#keywords)</format>, können aber ebenfalls nicht als <format color="%c1%">Bezeichner</format> verwendet werden.
+> Die Literale `true`, `false` und `null` sind zwar keine <format color="%NoteLinkColor%">[Schlüsselwörter](#keywords)</format>, können aber ebenfalls nicht als <format color="%c1%">[Bezeichner](#identifier)</format> verwendet werden.
 {style="note"}
 
 ## <format color="%c4%">Operatoren</format> {id="operators"}
@@ -329,25 +397,69 @@ Operatoren (engl. Operators) bezeichnen Zeichen(-folgen), welche in der Programm
 - <format color="%c4%">Binäre Operatoren</format> benötigen zwei Operanden.
 - <format color="%c4%">Ternäre Operatoren</format> werden durch drei Operanden verknüpft.
 
-| Operatoren                                                                                    | Kategorie                | Beschreibung                                                                                                                        |
-|-----------------------------------------------------------------------------------------------|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| `+` `-` `*` `/` `%`                                                                           | Arithmetische Operatoren | Arithmetische Operatoren führen mathematische Operationen auf numerischen Werten durch.                                             |
-| `=` `+=` `-=` `*=` `/=` `%=` `&=` `\|=`<format color="red">!</format> `^=` `<<=` `>>=` `>>>=` | Zuweisungsoperatoren     | Zuweisungsoperatoren führen (mal abgesehen von `=`) erst die geforderte Operation durch und weisen das Ergebnis einer Variablen zu. |
-| `&&` `\|\|`<format color="red">!</format> `!`                                                 | Logische Operatoren      | Logische Operatoren verknüpfen zwei boolesche Ausdrücke und geben ebenfalls ein boolesches Ergebnis (`true` oder `false`) zurück.   |
-| `>` `<` `>=` `<=` `==` `!=`                                                                   | Vergleichsoperatoren     | Vergleichsoperatoren vergleichen zwei Operanden und geben ein boolesches Ergebnis (`true` oder `false`) zurück.                     |
-| `~` `\|`<format color="red">!</format> `&` `^` `<<` `>>` `>>>`                                | Bitoperatoren            | Arbeiten direkt auf den einzelnen Bits eines Datenwerts.                                                                            |
-| `++` `--`                                                                                     | Inkrement / Dekrement    | Erhöht oder verringert einen Wert um `1`.                                                                                           |
-| `? :`                                                                                         | Ternäre Operator         | Dient einer verkürzten Schreibweise des `if`-`else`-Ausdrucks mit möglichem Rückgabewert.                                           |
-| `->`                                                                                          | Lambda Operator          | Definiert Lambda-Ausdrücke, welche mit Java 8 hinzugefügt wurden.                                                                   |
+<table>
+    <tr>
+        <td width="160">Operatoren</td>
+        <td width="200">Kategorie</td>
+        <td>Beschreibung</td>
+    </tr>
+    <tr>
+        <td><code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>%</code></td>
+        <td>Arithmetische Operatoren</td>
+        <td>Arithmetische Operatoren führen mathematische Operationen auf numerischen Werten durch.</td>
+    </tr>
+    <tr>
+        <td>
+            <code>=</code> <code>+=</code> <code>-=</code> <code>*=</code> <code>/=</code> <code>%=</code> <code>&=</code> <code>|=</code> <code>^=</code> <code>>>=</code> <code>&lt;&lt;=</code> <code>>>>=</code>
+        </td>
+        <td>Zuweisungsoperatoren</td>
+        <td>Zuweisungsoperatoren führen (mal abgesehen von <code>=</code>) erst die geforderte Operation durch und weisen das Ergebnis einer Variablen zu.</td>
+    </tr>
+    <tr>
+        <td><code>&&</code> <code>||</code> <code>!</code></td>
+        <td>Logische Operatoren</td>
+        <td>Logische Operatoren verknüpfen zwei boolesche Ausdrücke und geben ebenfalls ein boolesches Ergebnis (<code>true</code> oder <code>false</code>) zurück.</td>
+    </tr>
+    <tr>
+        <td>
+            <code>></code> <code>&lt;</code> <code>>=</code> <code>&lt;=</code> <code>==</code> <code>!=</code>
+        </td>
+        <td>Vergleichsoperatoren</td>
+        <td>Vergleichsoperatoren vergleichen zwei Operanden und geben ein boolesches Ergebnis (<code>true</code> oder <code>false</code>) zurück.</td>
+    </tr>
+    <tr>
+        <td>
+            <code>~</code> <code>|</code> <code>&</code> <code>^</code> <code>&lt;&lt;</code> <code>>></code> <code>>>></code>
+        </td>
+        <td>Bitoperatoren</td>
+        <td>Arbeiten direkt auf den einzelnen Bits eines Datenwerts.</td>
+    </tr>
+    <tr>
+        <td><code>++</code> <code>--</code></td>
+        <td>Inkrement / Dekrement</td>
+        <td>Erhöht oder verringert einen Wert um <code>1</code>.</td>
+    </tr>
+    <tr>
+        <td><code>? :</code></td>
+        <td>Ternäre Operator</td>
+        <td>Dient einer verkürzten Schreibweise des <code>if</code>- <code>else</code>-Ausdrucks mit möglichem Rückgabewert.</td>
+    </tr>
+    <tr>
+        <td><code>-></code></td>
+        <td>Lambda Operator</td>
+        <td>Definiert Lambda-Ausdrücke, welche mit Java 8 hinzugefügt wurden.</td>
+    </tr>
+</table>
+
 > Der ternäre Operator ist in Java der einzige Operator der drei Operanden verbindet.
 
 
 ## <format color="%c5%">Separatoren</format> {id="separators"}
-Separatoren (engl. Separators) dienen dem <tooltip term="Compiler"><format color="%GlossaryLinkColor%">Compiler</format></tooltip> dazu, einzelne <format color="%c1%">Bezeichner</format> und Anweisungen voneinander trennen zu können.
+Separatoren (engl. Separators) dienen dem <tooltip term="Compiler"><format color="%GlossaryLinkColor%">Compiler</format></tooltip> dazu, einzelne <format color="%c1%">[Bezeichner](#identifier)</format> und Anweisungen voneinander trennen zu können.
 
 | Separator | Beschreibung                                                                                                                                                                                                                                                                                                                            |
 |-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `(` `)`   | Dient als Kennzeichnung der Parameter und Attribute bei <format color="%LinkColor%">[Methodenaufrufen](09-java-methods.md)</format>, sowie der Änderung der Berechnungsvorschrift. <format color="red">!</format>                                                                                                                       |
+| `(` `)`   | Dient als Kennzeichnung der Parameter und Attribute bei <format color="%LinkColor%">[Methodenaufrufen](09-java-methods.md)</format>, sowie der Änderung der Berechnungsvorschrift.                                                                                                                                                      |
 | `{` `}`   | Kennzeichnen den Anfang und das Ende eines Anweisungsblocks.                                                                                                                                                                                                                                                                            |
 | `[` `]`   | Dient zur Definition von <format color="%LinkColor%">[Arrays](08-java-arrays.md)</format>, dessen Größen und den Zugriff auf einzelne Felder des Arrays.                                                                                                                                                                                |
 | `;`       | Wird als Abschluss einer Anweisung verwendet.                                                                                                                                                                                                                                                                                           |

@@ -1,4 +1,4 @@
-# 08 Java Arrays
+# 08 Java – Arrays
 
 Ein Array ist eine Art Container eines <format color="%LinkColor%">[Datentyps](02-java-data-types.md)</format>, in dessen Inhalt eine feste Anzahl von Elementen passt. Die Größe des Arrays muss am Anfang festgelegt werden – entweder durch den Entwickler selbst oder durch den Compiler. Da Arrays statisch sind, kann die Größe danach auch nicht mehr geändert werden. Zudem können sie aus jeder Art von Objekten gebildet werden.
 
@@ -31,7 +31,7 @@ int[] nums = {4, 6, 2, 5, 7};
 
 ## Indizes {id="indices"}
 
-Die Werte innerhalb eines Arrays werden über die Positionen (Indizes) referenziert. Arrays fangen standardmäßig bei `0` an zu zählen.
+In vielen Programmiersprachen beginnen Indizes aus historischen und praktischen Gründen bei `0` statt bei `1`. Diese Konvention hat sich im Laufe der Zeit etabliert und bietet einige Vorteile. Die Werte innerhalb eines Arrays werden über die Positionen (Indizes) referenziert.
 
 <tabs group="task">
     <tab title="Frage">
@@ -57,13 +57,13 @@ Die Zahl die in den eckigen Klammern angegeben wird, bezieht sich auf den Index 
 ```Java
 int[] nums = new int[10];
 
-// Elemente einfügen
+// Insert elements
 nums[0] = 3;
 nums[1] = 6;
 nums[2] = 4;
 nums[3] = 5;
 
-// Elemente auslesen
+// Read elements
 int i = nums[0];
 int j = nums[1];
 int k = nums[2];
@@ -86,7 +86,7 @@ for (int i = 0; i < nums.length; i++) {
 3 6 4 5 0 0 0 0 0 0
 ```
 
-Unser Array wurde mit einer Größe von `10` initialisiert. Da wir nur `4` Werte hinzugefügt haben, bleiben `6` frei Plätze. Java initialisiert standardmäßig leere numerische Arrays mit `0`, booleans mit `false` und Objects mit `null`.
+Unser Array wurde mit einer Größe von `10` initialisiert. Da wir nur `4` Werte hinzugefügt haben, bleiben `6` frei Plätze. Java initialisiert standardmäßig leere numerische Arrays mit `0`, booleans mit `false` und <format color="%LinkColor%">[Objekte](11-java-objects.md)</format> mit `null`.
 
 <tabs group="task">
     <tab title="Frage">

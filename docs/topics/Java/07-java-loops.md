@@ -1,4 +1,4 @@
-# 07 Java Schleifen
+# 07 Java – Schleifen
 
 Schleifen führen einen bestimmten Code-Abschnitt so lange aus, bis ein bestimmter Zustand erreicht ist. Dieser Zustand wird hier über eine Bedingung ermittelt. Solange die Bedingung zutrifft, wird der Schleifenrumpf ausgeführt. Alle Schleifen können die <format color="%LinkColor%">[Keywords](01-java-token.md#keywords)</format> `break` und `continue` verwenden. Weitere Keywords werden in den jeweiligen Abschnitten beschrieben. Schleifen können in die folgenden 4 Arten unterteilt werden.
 
@@ -217,15 +217,15 @@ Erweitert den Taschenrechner um eine Schleife. Das Programm soll nach jedem Erge
                 Scanner sc = new Scanner(System.in);  
                 boolean isRunning = true;
                 while (isRunning) {}
-                    System.out.print("1. Zahl: ");  
+                    System.out.print("1st number: ");  
                     int x = sc.nextInt();  
-                    System.out.print("2. Zahl: ");  
+                    System.out.print("2nd number: ");  
                     int y = sc.nextInt();  
                     System.out.print("""
                         =================
                         1: Addition
-                        2: Subtraktion
-                        3: Multiplikation
+                        2: Subtraction
+                        3: Multiplication
                         4: Division
                         =================
                         Option:\s""");
@@ -235,11 +235,11 @@ Erweitert den Taschenrechner um eine Schleife. Das Programm soll nach jedem Erge
                         case 2 -> System.out.println(x + " - " + y + " = " + (x - y));
                         case 3 -> System.out.println(x + " * " + y + " = " + (x * y));
                         case 4 -> System.out.println(x + " / " + y + " = " + (x / y));
-                        default -> System.out.println("Diese Option gibt es nicht.");
+                        default -> System.out.println("This option doesn't exist.");
                     } 
-                    System.out.println("Soll eine weitere Berechnung durchgeführt werden?");
+                    System.out.println("Should another calculation be performed?");
                     String keepGoing = sc.next();
-                    if (!keepGoing.equalsIgnoreCase("j")) {  
+                    if (!keepGoing.equalsIgnoreCase("y")) {  
                         isRunning = false;  
                     }
                 } 

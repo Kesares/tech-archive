@@ -1,4 +1,4 @@
-# 02 Java Datentypen
+# 02 Java – Datentypen
 
 Datentypen sind Schemen für die Verwendung von <tooltip term="Bit"><format color="%GlossaryLinkColor%">Bits</format></tooltip>. Mit ihnen lassen sich Werte, abhängig von der Größe der jeweiligen Datentypen, darstellen. Z.B. ist eine Ganzzahl ein anderer Datentyp als eine Fließkommazahl.
 
@@ -73,13 +73,13 @@ Um Gleitkommazahlen darstellen zu können, wurden die Datentypen `float` und `do
 </code-block>
 
 <tabs group="floating-point-1">
-    <tab id="floating-point-division-task-1" title="Aufgabe" group-key="task">
+    <tab id="floating-point-division-task-1" title="Aufgabe">
         <p>Was wird bei folgendem Beispiel auf der Konsole ausgegeben?</p><br/>
         <code-block lang="java">
             System.out.println(1 / 10);
         </code-block>
     </tab>
-    <tab id="floating-point-division-solution-1" title="Lösung" group-key="solution">
+    <tab id="floating-point-division-solution-1" title="Lösung">
         <p>Regulär würde man im Kopf auf das Ergebnis <code>0.1</code> kommen. Da in Java jedoch standardmäßig mit Ganzzahlen gearbeitet wird, wird alles, was nach dem Komma steht abgeschnitten. Das Ergebnis ist also <code>0</code>.</p>
     <note>
         Wenn das Ergebnis als Kommazahl vorliegen soll, muss bei mindestens einer der beiden Operanden angegeben werden, dass es sich bei dessen Datentyp um eine Kommazahl handelt.
@@ -88,10 +88,10 @@ Um Gleitkommazahlen darstellen zu können, wurden die Datentypen `float` und `do
 </tabs>
 
 <tabs group="floating-point-2">
-    <tab id="floating-point-division-task-2" title="Aufgabe" group-key="task">
+    <tab id="floating-point-division-task-2" title="Aufgabe">
         <p>Was ergibt <code>0.1 + 0.2</code>?</p><br/>
     </tab>
-    <tab id="floating-point-division-solution-2" title="Lösung" group-key="solution">
+    <tab id="floating-point-division-solution-2" title="Lösung">
         <code-block lang="java">
             ~0.30000000000000004
         </code-block>

@@ -1,4 +1,4 @@
-# 04 Java Ein- und Ausgaben
+# 04 Java – Ein- und Ausgaben
 
 Beim Programmieren sind Ausgaben sehr essenziell. Zum einen können bestimmte Werte auf der Konsole zur Überprüfung ausgegeben werden. Zum anderen können über die Ausgabe auf der Konsole <format color="%Highlight%">Errors</format> identifiziert werden, was wesentlich für die <format color="%Highlight%">Fehlersuche und –behebung</format> ist.
 
@@ -11,13 +11,13 @@ Demnach sind natürlich nicht nur Ein- und Ausgaben über die Konsole möglich. 
 Um Ausgaben über die Konsole zu realisieren, gibt es mehrere Möglichkeiten.
 
 ```Java
-System.out.print();   // Ausgabe ohne Zeilenumbruch am Ende
-System.out.println(); // Ausgabe mit Zeilenumbruch am Ende
-System.out.printf();  // Formatierte Ausgabe ohne Zeilenumbruch am Ende
+System.out.print();   // Output without line break
+System.out.println(); // Output with line break
+System.out.printf();  // Formatted output without line break
 
-System.err.print();   // Ausgabe eines Errors ohne Zeilenumbruch am Ende
-System.err.println(); // Ausgabe eines Errors mit Zeilenumbruch am Ende
-System.err.printf();  // Formatierte Ausgabe eines Errors ohne Zeilenumbruch am Ende
+System.err.print();   // Output of an error without line break
+System.err.println(); // Output of an error with line break
+System.err.printf();  // Formatted output of an error without line breaks
 ```
 Die `print`-Ausdrücke werden <format color="%LinkColor%">[Methoden](09-java-methods.md)</format> genannt. An diese können Werte übergeben werden. Diese Methoden sorgen dann dafür, dass die Werte auf der Konsole ausgegeben werden. Die `printf()`-Methode wird im nachfolgenden <format color="%LinkColor%">[Kapitel 5 – Zeichenketten](05-java-strings.md)</format> genauer betrachtet.
 
@@ -31,14 +31,14 @@ System.out.println(k); // 20
 ```
 
 ```Java
-System.out.println(5 + 11); // 16 (Zeilenumbruch)
+System.out.println(5 + 11); // 16 (Line break)
 System.out.println(3 + 8);  // 11
 ```
 
 ```Java
 System.out.print(1);
 System.out.print(1);
-System.out.print(1); // 111 (Keine Zeilenumbrüche)
+System.out.print(1); // 111 (No line breaks)
 ```
 
 ```Java
@@ -163,11 +163,11 @@ d
 
 > Sowohl beim `BufferedReader` als auch beim `Scanner` werden <format color="%WarningLinkColor%">[Strings](05-java-strings.md)</format> eingelesen. Diese werden über die <format color="%WarningLinkColor%">[Methoden](09-java-methods.md)</format> in die jeweiligen <format color="%WarningLinkColor%">[Datentypen](02-java-data-types.md)</format> umgewandelt. Beinhaltet beispielsweise ein `String` andere Zeichen als Zahlen, wenn er z.B. in ein `int` konvertiert wird, schmeißt der <tooltip term="Compiler"><format color="%GlossaryLinkColor%">Compiler</format></tooltip> einem eine <format color="%WarningLinkColor%">[Exception](15-java-exceptions.md)</format> um die Ohren.
 >```Java
->System.out.print("Bitte eine Zahl eingeben: ");
+>System.out.print("Please enter an integer: ");
 >int i = scanner.nextInt();
 >```
 >```Console
->Bitte eine Zahl eingeben: Hello!
+>Please enter an integer: Hello!
 >Exception in thread "main" java.util.InputMismatchException
 >at java.base/java.util.Scanner.throwFor(Scanner.java:947)
 >at java.base/java.util.Scanner.next(Scanner.java:1602)
@@ -196,11 +196,13 @@ reader.close();
 
 ## Farbliche Gestaltung (Ausblick) {id="color-design-outlook"}
 
-Wir Menschen bevorzugen oft ansprechend gestaltete Benutzeroberflächen, weil sie eine einfachere und schnellere Navigation ermöglichen. Wer jedoch in die Programmierung einsteigt, wird früher oder später mit der Arbeit auf der Konsole konfrontiert.
+Wir Menschen lieben es, uns durch schicke, benutzerfreundliche Oberflächen zu klicken. Kein Wunder, sie machen das Leben einfacher und sorgen dafür, dass wir uns nicht im digitalen Dschungel verirren. Doch wenn du dich in die Programmierung stürzt, wirst du irgendwann auf einen unverzichtbaren Begleiter treffen: die Konsole.
 
-Viele empfinden die Konsole als mühsam oder langweilig. Gleichzeitig bin ich der Meinung, dass das direkte Arbeiten mit der Konsole und simplen Ein- und Ausgaben einen einfachen Einstieg in die Programmierung ermöglicht. Ich schätze jedoch auch Möglichkeiten zur kreativen Gestaltung von Elementen und nutze daher <format color="%LinkColor%">[ANSI-Zeichencodes](https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797)</format>, um die Konsolenausgaben etwas farbenfroher zu gestalten.
+Viele sehen die Konsole als das graue, langweilige Arbeitszimmer der Programmierung – keine Fenster, keine Bilder, nur Text, Text, Text. Aber lass dich nicht täuschen! Die Konsole ist wie ein treuer Trainingspartner im Fitnessstudio der Programmierung: unaufgeregt, direkt und genau das, was du brauchst, um die Grundlagen zu meistern. Klar, sie ist nicht so bunt und aufregend wie die Benutzeroberflächen, die du vielleicht gewohnt bist, aber genau das ist ihre Stärke!
 
-Wer also den Standard-Look als etwas eintönig empfindet, könnte darin die Motivation finden, sich intensiver mit der Konsole zu beschäftigen. Im folgenden <format color="%LinkColor%">[Kapitel 5 – Zeichenketten](05-java-strings.md)</format> wird ein Abschnitt den <format color="%LinkColor%">[ANSI Escape Codes](05-java-strings.md#ansi-escape-sequences)</format> gewidmet sein.
+Doch keine Sorge, du musst nicht ganz auf Farben verzichten! Mit ein paar <format color="%LinkColor%">[ANSI-Zeichencodes](https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797)</format> kann man der Konsole durchaus etwas Farbe und Leben einhauchen. So wird aus einem grauen, langweiligen Arbeitszimmer plötzlich eine farbenfrohe Wohlfühloase (mehr oder weniger). Wer also genug vom Standard-Look hat und sich nach etwas Abwechslung sehnt, könnte in dieser kleinen Designfreiheit den nötigen Ansporn finden, sich näher mit der Konsole anzufreunden.
+
+Im nächsten Kapitel – <format color="%LinkColor%">[Kapitel 5 – Zeichenketten](05-java-strings.md)</format> – werde ich dir zeigen, wie du die Konsole mit <format color="%LinkColor%">[ANSI Escape Codes](05-java-strings.md#ansi-escape-sequences)</format> aufpeppen kannst. Denn Programmieren muss ja nicht immer nur schwarz-weiß sein, oder?
 
 >Hinweis: Die meisten <tooltip term="IDE"><format color="%GlossaryLinkColor%">IDEs</format></tooltip> unterstützen die Darstellung von ANSI-Farbcodes in der Konsole. Es wird jedoch möglicherweise nicht immer die vollständige Palette von 256 Farben in jeder Umgebung unterstützt werden.
 
@@ -218,9 +220,9 @@ Da wir jetzt alle nötigen Bausteine zusammen haben, um ein einfaches Programm m
         <code-block lang="java">
             public static void main(String[] args) {
                 Scanner sc = new Scanner(System.in);
-                System.out.print("1. Zahl: ");
+                System.out.print("1st number: ");
                 int x = sc.nextInt();
-                System.out.print("2. Zahl: ");
+                System.out.print("2nd number: ");
                 int y = sc.nextInt();
                 System.out.println(x + y);
                 System.out.println(x - y);

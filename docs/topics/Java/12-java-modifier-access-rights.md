@@ -1,4 +1,4 @@
-# 12 Java Modifizierer und Zugriffsrechte
+# 12 Java – Modifizierer und Zugriffsrechte
 
 In Java sind Modifizierer (engl. modifiers) <format color="%LinkColor%">[Schlüsselwörter](01-java-token.md#keywords)</format>, die die Eigenschaften von <format color="%LinkColor%">[Klassen](10-java-classes.md)</format>, <format color="%LinkColor%">[Methoden](09-java-methods.md)</format>, <format color="%LinkColor%">[Variablen](03-java-variables.md)</format> und anderen Elementen ändern. Sie beeinflussen den Zugriff, das Verhalten und die Lebensdauer dieser Elemente. Es kann zwischen 6 Kategorien von Modifizieren unterschieden werden.
 
@@ -9,7 +9,7 @@ In Java sind Modifizierer (engl. modifiers) <format color="%LinkColor%">[Schlüs
 - <format color="%c5%">Interface-Modifizierer</format>
 - <format color="%c6%">Konstruktormodifizierer</format>
 
-## Zugriffsmodifizierer {id="access-modifier"}
+## <format color="%c1%">Zugriffsmodifizierer</format> {id="access-modifier"}
 
 Ob auf <format color="%LinkColor%">[Klassen](10-java-classes.md)</format>, <format color="%LinkColor%">[Schnittstellen](14-java-oop.md#interfaces)</format>, <format color="%LinkColor%">[Methoden](09-java-methods.md)</format> etc. zugegriffen werden kann, wird über die <format color="%Highlight%">Access Modifier</format> gesteuert. Sie können auf fast allen Konstrukten wie Klassen, Interfaces, <format color="%LinkColor%">[Variablen](03-java-variables.md)</format> etc. angewendet werden. Die folgenden vier Access Modifier werden verwendet.
 
@@ -23,7 +23,7 @@ Ob auf <format color="%LinkColor%">[Klassen](10-java-classes.md)</format>, <form
 
 > Es wird empfohlen die <format color="%Highlight%">Access Modifier</format> immer explizit anzugeben.
 
-## Klassenmodifizierer {id="class-modifier"}
+## <format color="%c2%">Klassenmodifizierer</format> {id="class-modifier"}
 
 Klassen können die folgenden Modifier verwenden.
 
@@ -36,7 +36,7 @@ Klassen können die folgenden Modifier verwenden.
 - `strictfp` (Seit Java 17 redundant)
 - `static`
 
-## Feldmodifizierer {id="field-modifier"}
+## <format color="%c3%">Feldmodifizierer</format> {id="field-modifier"}
 
 <format color="%LinkColor%">[Klassen-](10-java-classes.md#class-variables)</format> und <format color="%LinkColor%">[Objektvariablen](10-java-classes.md#object-variables)</format> können die folgenden Modifier verwenden.
 
@@ -46,7 +46,7 @@ Klassen können die folgenden Modifier verwenden.
 - `transient`
 - `volatile`
 
-## Methodenmodifizierer {id="method-modifier"}
+## <format color="%c4%">Methodenmodifizierer</format> {id="method-modifier"}
 
 <format color="%LinkColor%">[Methoden](09-java-methods.md)</format> können die folgenden Modifier verwenden.
 
@@ -58,7 +58,7 @@ Klassen können die folgenden Modifier verwenden.
 - `strictfp` (Seit Java 17 redundant)
 - `synchronized`
 
-## Interface-Modifizierer {id="interface-modifier"}
+## <format color="%c5%">Interface-Modifizierer</format> {id="interface-modifier"}
 
 <format color="%LinkColor%">[Interfaces](14-java-oop.md#interfaces)</format> können die folgenden Modifier verwenden.
 
@@ -69,7 +69,7 @@ Klassen können die folgenden Modifier verwenden.
 - `sealed` (Seit Java 17)
 - `non-sealed` (Seit Java 17)
 
-## Konstruktormodifizierer {id="constructor-modifier"}
+## <format color="%c6%">Konstruktormodifizierer</format> {id="constructor-modifier"}
 
 Mit Ausnahme der <format color="%c1%">[Access Modifier](#access-modifier)</format> verwenden Konstruktoren keine zusätzlichen Modifier.
 
@@ -110,7 +110,7 @@ Folgende Tabelle wurde bereits in <format color="%LinkColor%">[Kapitel 1 – Tok
                 <li>Variablen können nicht überschrieben werden.</li>
                 <li>Konstanten können nicht überschrieben werden.</li>
                 <li>Methoden können nicht überschrieben werden.</li>
-                <li>Von Klassen kann nicht geerbt werden.</li>
+                <li>Von Klassen kann nicht <format color="%LinkColor%"><a href="14-java-oop.md#inheritance">geerbt</a></format> werden.</li>
             </list>
         </td>
     </tr>
@@ -261,5 +261,7 @@ Folgende Tabelle wurde bereits in <format color="%LinkColor%">[Kapitel 1 – Tok
 ## `sealed`, `non-sealed` & `permits` {id="sealed-non-sealed-and-permits"}
 
 Seit Java 17 gibt es die Modifier `sealed`, `non-sealed` und `permits`. Obwohl auch diese häufig als <format color="%LinkColor%">[Keywords](01-java-token.md#keywords)</format> bezeichnet werden, ist es zumindest bei `sealed` und `permits` möglich, diese als <format color="%LinkColor%">[Identifier](01-java-token.md#identifier)</format> zu nutzen. Da `non-sealed` einen <format color="%LinkColor%">[Operator](01-java-token.md#operators)</format> enthält, funktioniert dies nicht bei diesem Modifier.
+
+> `non-sealed` ist das einzige <format color="%LinkColor%">[Keyword](01-java-token.md#keywords)</format>, welches einen <format color="%LinkColor%">[Operator](01-java-token.md#operators)</format> besitzt.
 
 Die Keywords dienen dazu <format color="%LinkColor%">[Klassen](10-java-classes.md)</format> und <format color="%LinkColor%">[Interfaces](14-java-oop.md#interfaces)</format> zu versiegeln und somit die Erweiterbarkeit (<format color="%LinkColor%">[Vererbung](14-java-oop.md#inheritance)</format>) einer Klassenhierarchie einzuschränken. Mehr dazu in <format color="%LinkColor%">[Kapitel 14 – OOP: Versiegelte Klassen und Interfaces](14-java-oop.md#sealed-classes-and-interfaces)</format>.

@@ -155,7 +155,6 @@ Als Alternative zum normalen Texteditor auf Windows, ist <format color="%LinkCol
         <p><format color="%LinkColor%"><a href="https://maven.apache.org/">Maven</a></format> und <format color="%LinkColor%"><a href="https://gradle.org">Gradle</a></format> können ausgewählt werden, wenn bereits etwas Erfahrung gesammelt wurde, da das Projektverzeichnis bei diesen beiden im Vergleich zum Build System IntelliJ anders aufgebaut ist. Daher wird hier IntelliJ als Build System verwendet.</p>
         <p>Falls IntelliJ das erforderliche <tooltip term="JDK"><format color="%GlossaryLinkColor%">JDK</format></tooltip> nicht finden kann, muss das Verzeichnis manuell ausgewählt werden. Standardmäßig sollte unter Windows das <tooltip term="JDK"><format color="%GlossaryLinkColor%">JDK</format></tooltip> in <code>C:/Program Files/Eclipse Adoptium/&lt;package&gt;</code> installiert sein.</p>
         <p>Sind alle Einstellungen angepasst, kann rechts unten auf <code>Create</code> geklickt werden und IntelliJ erstellt das Projekt.</p>
-        <img src="https://placehold.co/200x140?text=Image Placeholder" alt="Placeholder Image"/>
         <p>Schließt das Fenster <code>Tip of the day`</code> Klickt nun mit rechter Maustaste links im Projektverzeichnis auf den Ordner <ui-path>src | New | Java Class</ui-path>, gebt z.B. <code>Main</code> als Name für die Klasse ein und bestätigt mit <shortcut>Enter</shortcut>.</p>
         <p>Fügt die Code-Zeilen in der folgenden Art hinzu.</p>
         <code-block lang="java">

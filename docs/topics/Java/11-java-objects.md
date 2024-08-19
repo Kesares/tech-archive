@@ -1,4 +1,4 @@
-# 11 Java Objekte
+# 11 Java – Objekte
 
 
 Nachdem ich euch jetzt gefühlt ein Dutzend Mal das Wort „Objekt“ um die Ohren gehauen habe, wird es höchste Zeit, dass wir uns endlich diesem mysteriösen Thema widmen. Was sind eigentlich Objekte? Fast alles, was in Java existiert, besteht aus Objekten, die auf sogenannten <format color="%LinkColor%">[Referenzdatentypen](02-java-data-types.md#reference-data-types)</format> basieren – die <format color="%LinkColor%">[primitiven Datentypen](02-java-data-types.md#primitive-data-types)</format> wie `int` und `boolean` einmal ausgenommen.
@@ -130,20 +130,20 @@ public static void main(String[] args) {
     Dog bello = new Dog("Bello");
     Dog killer = new Dog("Killer", 5);
 
-    System.out.println(bello.name);  // no access
-    System.out.println(killer.name); // no access
-    System.out.println(bello.age);   // no access
-    System.out.println(killer.age);  // no access
+    System.out.println(bello.name);  // No access
+    System.out.println(killer.name); // No access
+    System.out.println(bello.age);   // No access
+    System.out.println(killer.age);  // No access
 
-    bello.name = "Balu";             // no access
-    killer.name = "Rocky";           // no access
-    bello.age = 10;                  // no access
-    killer.age = 3;                  // no access
+    bello.name = "Balu";             // No access
+    killer.name = "Rocky";           // No access
+    bello.age = 10;                  // No access
+    killer.age = 3;                  // No access
 
-    System.out.println(bello.name);  // no access
-    System.out.println(killer.name); // no access
-    System.out.println(bello.age);   // no access
-    System.out.println(killer.age);  // no access
+    System.out.println(bello.name);  // No access
+    System.out.println(killer.name); // No access
+    System.out.println(bello.age);   // No access
+    System.out.println(killer.age);  // No access
 }
 ```
 
@@ -169,15 +169,15 @@ public static void main(String[] args) {
     System.out.println(bello.getAge());   // 0
     System.out.println(killer.getAge());  // 5
 
-    bello.name = "Balu";             // no access
-    killer.name = "Rocky";           // no access
-    bello.age = 10;                  // no access
-    killer.age = 3;                  // no access
+    bello.name = "Balu";                  // No access
+    killer.name = "Rocky";                // No access
+    bello.age = 10;                       // No access
+    killer.age = 3;                       // No access
 
-    System.out.println(bello.name);  // no access
-    System.out.println(killer.name); // no access
-    System.out.println(bello.age);   // no access
-    System.out.println(killer.age);  // no access
+    System.out.println(bello.name);       // No access
+    System.out.println(killer.name);      // No access
+    System.out.println(bello.age);        // No access
+    System.out.println(killer.age);       // No access
 }
 ```
 
@@ -217,6 +217,43 @@ kesares.techarchive.Dog@65ab7765
 
 Der Teil vor dem Klassennamen bezieht sich auf den Speicherort der <format color="%LinkColor%">[Klasse](10-java-classes.md)</format> im Projektverzeichnis. Unter der <format color="%Highlight%">Referenzadresse</format> ist dieses Objekt im <tooltip term="Java-Heap"><format color="%GlossaryLinkColor%">Java-Heap</format></tooltip> abgelegt.
 
+## Der Garbage Collector {id="the-garbage-collector"}
+
+In Programmiersprachen wie Java spielt der <tooltip term="GC"><format color="%GlossaryLinkColor%">Garbage Collector</format></tooltip> (GC) eine zentrale Rolle bei der Speicherverwaltung. Er sorgt dafür, dass nicht mehr benötigte Objekte aus dem Speicher entfernt werden, um Platz für neue Objekte zu schaffen und den <tooltip term="Java-Heap"><format color="%GlossaryLinkColor%">Heap-Speicher</format></tooltip> effizient zu nutzen.
+
+In einer Welt ohne GC, wie C oder C++, müsstest ihr selbst darauf achten, wann welche Objekte nicht mehr gebraucht und diese manuell aus dem Speicher entfernt werden. Klingt anstrengend, oder? In Java und in vielen anderen Programmiersprachen übernimmt diese Aufgabe der Garbage Collector für euch.
+
+#### Was ist der Heap-Speicher? {id="what-is-the-heap-memory"}
+
+Der <tooltip term="Java-Heap"><format color="%GlossaryLinkColor%">Heap</format></tooltip> ist ein Bereich des Arbeitsspeichers, der zur Laufzeit dynamisch Speicherplatz für Objekte bereitstellt. Immer wenn ein neues Objekt erstellt wird, wird dafür Platz im Heap reserviert. Da der Speicher im Heap begrenzt ist, ist es wichtig, dass nicht mehr benötigte Objekte freigegeben werden, um Speicherlecks zu vermeiden und die Leistung der Anwendung zu erhalten.
+
+#### Wie funktioniert der Garbage Collector? {id="how-does-the-garbage-collector-work"}
+
+Der <tooltip term="GC"><format color="%GlossaryLinkColor%">Garbage Collector</format></tooltip> verfolgt, welche Objekte im <tooltip term="Java-Heap"><format color="%GlossaryLinkColor%">Heap</format></tooltip> noch genutzt werden und welche nicht mehr erreichbar sind. Dies geschieht typischerweise durch Algorithmen wie Mark-and-Sweep oder Generational Garbage Collection.
+
+- <format color="%Highlight%">Mark-and-Sweep</format>: Der GC markiert alle Objekte, die noch von aktiven <format color="%LinkColor%">[Threads](java-threads.md)</format> oder anderen Objekten referenziert werden. Danach „fegt“ er den Heap, indem er alle nicht markierten Objekte entfernt und den freigewordenen Speicher zurückgibt.
+
+- <format color="%Highlight%">Generational Garbage Collection</format>: Diese Methode unterteilt den Heap in verschiedene Generationen (Young Generation, Old Generation, Permanent Generation). Objekte, die gerade erst erstellt wurden, landen in der Young Generation und werden dort häufiger überprüft. Objekte, die länger leben, werden in die Old Generation verschoben, wo sie seltener überprüft werden. Objekte, die während der gesamten Laufzeit des Programms existieren, werden in die Permanent Generation verschoben. Dies ist effizient, da viele Objekte nur kurzzeitig existieren und schnell wieder entfernt werden können.
+
+> Wer sich genauer in das Thema <format color="%NoteHighlight%">Garbage Collection</format> in Java einlesen möchte, findet <format color="%NoteLinkColor%">[hier](https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html)</format> mehr Infos dazu.
+{style="note"}
+
+#### Wie erkennt der Garbage Collector ungenutzte Objekte? {id="how-does-the-garbage-collector-detect-unused-objects?"}
+
+Der GC identifiziert zerstörbare Objekte, indem er den Referenzgraphen der Objekte analysiert. Wenn ein Objekt keine Referenzen mehr hat, also von keinem anderen Objekt oder aktiven <format color="%LinkColor%">[Thread](java-threads.md)</format> mehr erreicht werden kann, wird es als "garbage" (Müll) betrachtet und zur Entfernung freigegeben. Dies geschieht automatisch, ohne dass der Entwickler sich aktiv um die Speicherfreigabe kümmern muss.
+
+#### Speichermanagement in C/C++ {id="memory-management-in-c-and-cpp"}
+
+In Sprachen wie C und C++ liegt die Speicherverwaltung vollständig in der Hand des Entwicklers. Hier gibt es keinen automatischen Garbage Collector. Stattdessen muss der Entwickler den Speicher manuell verwalten – Speicher für Objekte reservieren und ihn nach Gebrauch explizit wieder freigeben.
+
+Diese manuelle Verwaltung ermöglicht eine sehr feinkörnige Kontrolle über den Speicher, was in einigen Szenarien, wie bei der Systemprogrammierung oder Spielen, Vorteile in Bezug auf Leistung und Speicheroptimierung bieten kann.
+
+Die manuelle Speicherverwaltung ist jedoch anfälliger für Fehler wie Speicherlecks oder Dangling Pointers (Referenzen auf Speicher, der bereits freigegeben wurde). Solche Fehler können schwerwiegende Abstürze oder Sicherheitslücken verursachen.
+
+Im Vergleich dazu bietet der <tooltip term="GC"><format color="%GlossaryLinkColor%">Garbage Collector</format></tooltip> in Java und ähnlichen Sprachen den Vorteil, dass der Entwickler sich nicht um die Speicherfreigabe kümmern muss, wodurch das Risiko von Speicherfehlern stark reduziert wird. Allerdings kommt dies oftmals mit einem kleinen Leistungseinbruch daher, da der Speicherverbrauch regelmäßig analysiert und bereinigt werden muss.
+
+![Java vs CPP Memory](11_java_objects_1.jpg){width="400"}
+
 ## Komplexität von Referenzdatentypen {id="complexity-of-reference-data-types"}
 
 Wie wir am Beispiel unserer `Dog`-Klasse gesehen haben, können <format color="%LinkColor%">[Referenztypen](02-java-data-types.md)</format> auch andere Referenztypen als Eigenschaften besitzen. Der Umfang eines Objekts oder einer Klassenhierarchie kann dabei so flexibel wie die Anforderungen der jeweiligen Anwendung sein – von schlicht und einfach bis hin zu regelrechten Code-Monstern.
@@ -227,5 +264,5 @@ Um einmal ganz kurz das Thema der <format color="%LinkColor%">[Vererbung](14-jav
 
 Kurz gesagt: Die Komplexität und Struktur der Klassen hängt ganz von den Bedürfnissen und Anforderungen eurer Anwendung ab. Braucht ihr eine einfache Lösung, reichen vielleicht ein paar grundlegende Objekte. Wird es komplizierter, könnt ihr eine detailliertere Klassenhierarchie aufbauen und eure <format color="%LinkColor%">[Referenztypen](02-java-data-types.md)</format> nach Herzenslust schachteln. Es ist ein bisschen wie beim Kochen: Manchmal reicht ein Sandwich und manchmal wird es ein Fünf-Gänge-Menü – es kommt ganz darauf an, was ihr auf den Tisch bringen wollt.
 
-> Aber Vorsicht, meine Freunde der Vererbung! So faszinierend es auch ist, Klassenhierarchien zu bauen, denkt daran, dass zu viel des Guten schnell ins Chaos führen kann.
-{style="note" title="Tiefe Vererbungshierarchien"}
+> Aber Vorsicht, Freunde der Vererbung! So faszinierend es auch ist, Klassenhierarchien zu bauen, denkt daran, dass zu tiefe Vererbungshierarchien schnell ins Chaos führen können.
+{title="Tiefe Vererbungshierarchien"}

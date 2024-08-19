@@ -24,8 +24,8 @@
         <toc-element topic="14-java-oop.md"/>
         <toc-element topic="15-java-exceptions.md"/>
         <toc-element topic="16-java-packages-and-imports.md"/>
-        <toc-element topic="18-java-generics.md"/>
         <toc-element topic="17-java-lambda-expressions.md"/>
+        <toc-element topic="18-java-generics.md"/>
         <toc-element topic="19-java-collections.md"/>
         <toc-element topic="java-threads.md"/>
         <toc-element topic="java-gui.md"/>
@@ -33,7 +33,12 @@
         <toc-element topic="java-design-patterns.md"/>
     </toc-element>
 
-    <toc-element topic="mathematics.md">
+    <toc-element topic="00-html.md">
+        <toc-element topic="01-html-tags-and-elements.md"/>
+        <toc-element topic="02-html-attributes-and-values.md"/>
+    </toc-element>
+
+    <toc-element topic="00-mathematics.md">
         <toc-element topic="vectors.md"/>
         <toc-element topic="matrices.md"/>
     </toc-element>

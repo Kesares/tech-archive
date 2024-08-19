@@ -1,6 +1,6 @@
-# 06 Java Verzweigungen
+# 06 Java – Verzweigungen
 
-Verzweigungen (engl. Branches) können den Programmverlauf ändern. Welche Code-Teile ausgeführt werden, hängt von den Bedingungen (engl. Conditions) ab. Java bietet 3 Sprachkonstrukte um Verzweigungen realisieren zu können:
+Verzweigungen (engl. Branches) können den Programmverlauf ändern. Welche Code-Teile ausgeführt werden, hängt von den Bedingungen (engl. Conditions) ab. Java bietet drei Sprachkonstrukte um Verzweigungen realisieren zu können.
 
 - <format color="%c1%">[if-else](#if-else)</format>
 - <format color="%c2%">[switch-case](#switch-case)</format>
@@ -19,7 +19,7 @@ if (condition) {
 ```Java
 int n = 7;
 if (n <= 10) {
-    System.out.println("n ist kleiner oder gleich 10!");
+    System.out.println("n is less than or equal to 10!");
 }
 ```
 
@@ -28,9 +28,9 @@ Mehrstufige Verzweigungen sind mit `else if` möglich. Dadurch wird der zutreffe
 ```Java
 int n = 7;
 if (n <= 10) {
-    System.out.println("n ist kleiner oder gleich 10!");
+    System.out.println("n is less than or equal to 10!");
 } else if (n <= 20) {
-    System.out.println("n ist kleiner oder gleich 20!");
+    System.out.println("n is less than or equal to 20!");
 }
 ```
 
@@ -39,11 +39,11 @@ Der `else`-Block bietet einen alternativen Code-Block, der ausgeführt wird, wen
 ```Java
 int n = 7;
 if (n <= 10) {
-    System.out.println("n ist kleiner oder gleich 10!");
+    System.out.println("n is less than or equal to 10!");
 } else if (n <= 20) {
-    System.out.println("n ist kleiner oder gleich 20!");
+    System.out.println("n is less than or equal to 20!");
 } else {
-    System.out.println("n ist größer als 20!");
+    System.out.println("n is greater than 20!!");
 }
 ```
 
@@ -52,11 +52,11 @@ Die Reihenfolge ist zu beachten. Würde die `n <= 20`-Abfrage wie im Folgenden a
 ```Java
 int n = 7;
 if (n <= 20) {
-    System.out.println("n ist kleiner oder gleich 10!");
+    System.out.println("n is less than or equal to 20!");
 } else if (n <= 10) {
-    System.out.println("n ist kleiner oder gleich 20!");
+    System.out.println("n is less than or equal to 10!");
 } else {
-    System.out.println("n ist größer als 20!");
+    System.out.println("n is greater than 20!");
 }
 ```
 
@@ -65,7 +65,7 @@ Die geschweiften Klammern können weggelassen werden, wenn nur eine Anweisung au
 ```Java
 int n = 7;
 if (n <= 10) 
-    System.out.println("n ist kleiner oder gleich 10!");
+    System.out.println("n is less than or equal to 10!");
 ```
 
 Zu beachten ist, dass im folgenden Beispiel die zweite Ausgabe immer ausgeführt wird. Nur die erste Anweisung ohne die geschweiften Klammern besteht in Abhängigkeit zur Bedingung.
@@ -73,7 +73,7 @@ Zu beachten ist, dass im folgenden Beispiel die zweite Ausgabe immer ausgeführt
 ```Java
 int n = 7;
 if (n <= 10) 
-    System.out.println("n ist kleiner oder gleich 10!");
+    System.out.println("n is less than or equal to 10!");
 System.out.println("n = " + n);
 ```
 
@@ -82,7 +82,7 @@ Bedingungen können auch verknüpft werden.
 ```Java
 int n = 13;
 if (n >= 10 && < 20) {
-    System.out.println("n liegt zwischen einschließlich 10 und ausschließlich 20!");
+    System.out.println("n is between 10 and 20!");
 }
 ```
 
@@ -91,7 +91,7 @@ Auch die Negierung von Bedingungen ist möglich.
 ```Java
 int n = 7;
 if (!(n >= 10 && < 20)) {
-    System.out.println("n liegt nicht zwischen einschließlich 10 und ausschließlich 20!");
+    System.out.println("n isn't between 10 and 20!");
 }
 ```
 
@@ -114,29 +114,29 @@ Die einzelnen Cases müssen mit einer `break`-Anweisung beendet werden. Ansonste
     <code-block lang="java">
         int option = 2;
         if (option == 1) {
-            System.out.println("Es wurde Option 1 gewählt.");
+            System.out.println("Option 1 was chosen.");
         } else if (option == 2) {
-            System.out.println("Es wurde Option 2 gewählt.");
+            System.out.println("Option 2 was chosen.");
         } else if (option == 3) {
-            System.out.println("Es wurde Option 3 gewählt.");
+            System.out.println("Option 3 was chosen.);
         } else {
-            System.out.println("Diese Option gibt es nicht.");
+            System.out.println("This option doesn't exist.");
         }
     </code-block>
     <code-block lang="java">
         int option = 2;
         switch (option) {
             case 1:
-                System.out.println("Es wurde Option 1 gewählt.");
+                System.out.println("Option 1 was chosen.");
                 break;
             case 2:
-                System.out.println("Es wurde Option 2 gewählt.");
+                System.out.println("Option 2 was chosen.");
                 break;
             case 3:
-                System.out.println("Es wurde Option 3 gewählt.");
+                System.out.println("Option 3 was chosen.");
                 break;
             default:
-                System.out.println("Diese Option gibt es nicht.");
+                System.out.println("This option doesn't exist.");
         }
     </code-block>
 </compare>
@@ -149,35 +149,35 @@ Seit Java 12 gab es einige Änderungen und syntaktische Anpassungen, welche in J
 int option = 2;
 switch (option) {
     case 1:
-        System.out.println("Es wurde Option 1 gewählt.");
+        System.out.println("Option 1 was chosen.");
         break;
     case 2, 3:
-        System.out.println("Es wurde Option 2 oder 3 gewählt.");
+        System.out.println("Option 2 or 3 was chosen.");
         break;
     default:
-        System.out.println("Diese Option gibt es nicht.");
+        System.out.println("This option doesn't exist.");
 }
 ```
 
 Seit Java 14 ist nun auch die folgende Syntax möglich. Implizit beendet ein `break` den Anweisungsblock. Daher muss dieser nicht selbst hinzugefügt werden.
 
-```Java
+<code-block lang="java">
 int option = 2;
 switch (option) {
     case 1 -> {
-        System.out.println("Es wurde Option 1 gewählt.");
+        System.out.println("Option 1 was chosen.");
     }
     case 2 -> {
-        System.out.println("Es wurde Option 2 gewählt.");
+        System.out.println("Option 2 was chosen.");
     }
     case 3 -> {
-        System.out.println("Es wurde Option 3 gewählt.");
+        System.out.println("Option 3 was chosen.");
     }
     default -> {
-        System.out.println("Diese Option gibt es nicht.");
+        System.out.println("This option doesn't exist.");
     }
 }
-```
+</code-block>
 
 Auch hier können die Klammern bei einzelnen Anweisungen weggelassen werden.
 
@@ -186,25 +186,25 @@ Auch hier können die Klammern bei einzelnen Anweisungen weggelassen werden.
         int option = 2;
         switch (option) {
             case 1:
-                System.out.println("Es wurde Option 1 gewählt.");
+                System.out.println("Option 1 was chosen.");
                 break;
             case 2:
-                System.out.println("Es wurde Option 2 gewählt.");
+                System.out.println("Option 2 was chosen.");
                 break;
             case 3:
-                System.out.println("Es wurde Option 3 gewählt.");
+                System.out.println("Option 3 was chosen.");
                 break;
             default:
-                System.out.println("Diese Option gibt es nicht.");
+                System.out.println("This option doesn't exist.");
         }
     </code-block>
     <code-block lang="java">
         int option = 2;
         switch (option) {
-            case 1 -> System.out.println("Es wurde Option 1 gewählt.");
-            case 2 -> System.out.println("Es wurde Option 2 gewählt.");
-            case 3 -> System.out.println("Es wurde Option 3 gewählt.");
-            default -> System.out.println("Diese Option gibt es nicht.");
+            case 1 -> System.out.println("Option 1 was chosen.");
+            case 2 -> System.out.println("Option 2 was chosen.");
+            case 3 -> System.out.println("Option 3 was chosen.");
+            default -> System.out.println("This option doesn't exist.");
         }
     </code-block>
 </compare>
@@ -218,21 +218,21 @@ Anweisungen liefern normalerweise keinen Rückgabewert. Seit Java 14 ist auch di
 ```Java
 int monthNumber = 3;
 String month = switch (monthNumber) {
-    case 1 -> "Januar";
-    case 2 -> "Februar";
-    case 3 -> "März";
+    case 1 -> "January";
+    case 2 -> "February";
+    case 3 -> "March";
     case 4 -> "April";
-    case 5 -> "Mai";
-    case 6 -> "Juni";
-    case 7 -> "Juli";
+    case 5 -> "May";
+    case 6 -> "June";
+    case 7 -> "July";
     case 8 -> "August";
     case 9 -> "September";
-    case 10 -> "Oktober";
+    case 10 -> "October";
     case 11 -> "November";
-    case 12 -> "Dezember";
-    default -> "Unbekannter Monat";
+    case 12 -> "December";
+    default -> "Unknown month";
 };
-System.out.println(month); // März
+System.out.println(month); // March
 ```
 
 Wird in solchen Fällen mit Blockanweisungen gearbeitet, muss auch dieser Block ein Ergebnis zurückliefern. Hier kommt das Contextual Keyword `yield` ins Spiel. Dieses findet nur in `switch`-`case`-Konstrukten Anwendung.
@@ -240,29 +240,29 @@ Wird in solchen Fällen mit Blockanweisungen gearbeitet, muss auch dieser Block 
 ```Java
 int monthNumber = 3;  
 String month = switch (monthNumber) {  
-    case 1 -> "Januar";  
-    case 2 -> "Februar";  
+    case 1 -> "January";  
+    case 2 -> "February";  
     case 3 -> {  
-       System.out.println("Es wurde März ausgewählt.");  
-       yield "März";  
+       System.out.println("March was chosen.");  
+       yield "March";  
     }  
     case 4 -> "April";  
-    case 5 -> "Mai";  
-    case 6 -> "Juni";  
-    case 7 -> "Juli";  
+    case 5 -> "May";  
+    case 6 -> "June";  
+    case 7 -> "July";  
     case 8 -> "August";  
     case 9 -> "September";  
-    case 10 -> "Oktober";  
+    case 10 -> "October";  
     case 11 -> "November";  
-    case 12 -> "Dezember";  
-    default -> "Unbekannter Monat";  
+    case 12 -> "December";  
+    default -> "Unknown month";  
 };
-System.out.println(month); // März
+System.out.println(month); // March
 ```
 
 ### <format color="%c2%">switch-case mit versiegelten Klassen</format> {id="switch-case-sealed-classes"}
 
-Mit dem Konzept der <format color="%LinkColor%">[versiegelten Klassen](14-java-oop.md#sealed-classes-and-interfaces)</format> (sealed classes), das ab Java 15 eingeführt und mit Java 17 finalisiert wurde, gibt es eine enge Integration mit `switch`. Wenn eine Klasse als `sealed` deklariert ist und nur eine festgelegte Gruppe von Unterklassen besitzt, kann ein `switch` auf Objekte dieser Klasse garantieren, dass alle möglichen Unterklassen abgedeckt sind.
+Mit dem Konzept der <format color="%LinkColor%">[versiegelten Klassen](14-java-oop.md#sealed-classes-and-interfaces)</format> (sealed classes), das ab Java 15 eingeführt und mit Java 17 finalisiert wurde, gibt es eine enge Integration mit `switch`. Wenn eine <format color="%LinkColor%">[Klasse](10-java-classes.md)</format> als `sealed` deklariert ist und nur eine festgelegte Gruppe von Unterklassen besitzt, kann ein `switch` auf <format color="%LinkColor%">[Objekte](11-java-objects.md)</format> dieser Klasse garantieren, dass alle möglichen Unterklassen abgedeckt sind.
 
 ```Java
 public sealed interface Shape permits Circle, Rectangle, Triangle {}
@@ -273,10 +273,10 @@ public final class Triangle implements Shape {}
 
 public String describeShape(Shape shape) {
     return switch (shape) {
-        case Circle c -> "Kreis";
-        case Rectangle r -> "Rechteck";
-        case Triangle t -> "Dreieck";
-        // Kein `default` notwendig, da alle erlaubten Typen abgedeckt sind.
+        case Circle c -> "Circle";
+        case Rectangle r -> "Rectangle";
+        case Triangle t -> "Triangle";
+        // No 'default' necessary, since all allowed types are covered.
     };
 }
 
@@ -284,7 +284,7 @@ public String describeShape(Shape shape) {
 
 ## <format color="%c3%">Ternäre Operator</format> {id="ternary-operator"}
 
-Der ternäre Operator ist der einzige Operator der 3 Operanden verwendet. Er wird häufig angewendet um schnell den einen oder anderen Ausdruck zu berechnen, da er in einer Zeile geschrieben werden kann. Der Operator besteht aus `?` und `:`.
+Der ternäre Operator ist der einzige Operator der 3 Operanden verwendet. Er wird häufig angewendet um schnell den einen oder anderen Ausdruck zu berechnen, da er in einer Zeile geschrieben werden kann. Der <format color="%LinkColor%">[Operator](01-java-token.md#operators)</format> besteht aus `?` und `:`.
 
 ```
 condition ? expression, if true : expression, if false
@@ -292,7 +292,7 @@ condition ? expression, if true : expression, if false
 
 > Je nachdem, welche Operationen ausgewertet werden sollen, kann der ternäre Operator sehr lang werden.
 
-Im folgenden Beispiel wird einmal <format color="%c1%">if-else</format> und einmal der ternäre Operator verwendet, um den Maximalwert zu bestimmen.
+Im folgenden Beispiel wird einmal <format color="%c1%">if-else</format> und einmal der <format color="%c3%">ternäre Operator</format> verwendet, um den Maximalwert zu bestimmen.
 
 <compare first-title="if-else" second-title="Ternäre Operator">
     <code-block lang="java">
@@ -316,7 +316,7 @@ Im folgenden Beispiel wird einmal <format color="%c1%">if-else</format> und einm
 
 Die Kurzschlussauswertung (engl. short-circuit evaluation) beschreibt den Abbruch der Auswertung auf der rechten Seite, wenn das Endergebnis bereits feststeht. Mit anderen Worten: Eine Auswertung die nicht (mehr) benötigt wird, wird nicht evaluiert.
 
-Es gibt nur 2 Operatoren die diese Auswertung unterstützen.
+Es gibt nur zwei <format color="%LinkColor%">[Operatoren](01-java-token.md#operators)</format> die diese Auswertung unterstützen.
 
 <table>
     <tr>
@@ -406,13 +406,13 @@ Assertions können sowohl mit als auch ohne zusätzliche Meldung geschrieben wer
 
 ```Java
 int n = 13;
-assert n < 10 : "n ist nicht kleiner als 10";
+assert n < 10 : "n is not less than 10";
 ```
 
 Ist eine Bedingung nicht erfüllt, wird ein Error ausgegeben – speziell ein `AssertionError`.
 
 >```Java
->Exception in thread "main" java.lang.AssertionError: n ist nicht kleiner als 10
+>Exception in thread "main" java.lang.AssertionError: n is not less than 10
 >at kesares.techarchive.Main.main(Main.java:11)
 >```
 {style="warning"}
@@ -429,7 +429,7 @@ Assertions müssen explizit aktiviert werden um sie nutzen zu können. Dabei mus
             <li><ui-path>+</ui-path> bzw. <ui-path>Add New Configuration</ui-path> links oben.</li>
             <li><ui-path>Application</ui-path></li>
             <li>Wählt einen Namen für diese Applikation.</li>
-            <li>Wählt die Main-Klasse mit der `main`-Methode der Applikation unter dem Writer <ui-path>Build and run</ui-path>.</li>
+            <li>Wählt die Main-Klasse mit der <code>main</code>-Methode der Applikation unter dem Writer <ui-path>Build and run</ui-path>.</li>
             <li><ui-path>Okay | Modify options | Add VM options</ui-path></li>
             <li>Fügt <code>-ea</code> in das Feld <ui-path>VM options</ui-path> hinzu.</li>
             <li><ui-path>Okay | Run Main</ui-path></li>
@@ -455,15 +455,15 @@ Erweitern wir unseren Taschenrechner mit einigen Abfragen und dem Wissen aus <fo
         <code-block lang="java">
             public static void main(String[] args) {
                 Scanner sc = new Scanner(System.in);  
-                System.out.print("1. Zahl: ");  
+                System.out.print("1st number: ");  
                 int x = sc.nextInt();  
-                System.out.print("2. Zahl: ");  
+                System.out.print("2nd number: ");  
                 int y = sc.nextInt();  
                 System.out.print("""
                     =================
                     1: Addition
-                    2: Subtraktion
-                    3: Multiplikation
+                    2: Subtraction
+                    3: Multiplication
                     4: Division
                     =================
                     Option:\s""");
@@ -473,7 +473,7 @@ Erweitern wir unseren Taschenrechner mit einigen Abfragen und dem Wissen aus <fo
                     case 2 -> System.out.println(x + " - " + y + " = " + (x - y));
                     case 3 -> System.out.println(x + " * " + y + " = " + (x * y));
                     case 4 -> System.out.println(x + " / " + y + " = " + (x / y));
-                    default -> System.out.println("Diese Option gibt es nicht.");
+                    default -> System.out.println("This option doesn't exist.");
                 }  
                 sc.close();
             }

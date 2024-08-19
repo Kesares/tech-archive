@@ -1,4 +1,4 @@
-# 03 Java Variablen
+# 03 Java – Variablen
 
 Variablen sind benannte Speicherstellen und dienen dazu, Daten im Hauptspeicher zu allokieren. Durch die Benennung kann auf die Variablen zugegriffen werden und Datenwerte hineingeschrieben und später wieder ausgelesen oder verändert werden. Es wird zwischen 5 Variablenarten unterschieden.
 
@@ -12,7 +12,7 @@ Variablen sind benannte Speicherstellen und dienen dazu, Daten im Hauptspeicher 
 > 
 > Mit <format color="%c2%">Parametervariablen</format> wird sich in <format color="%LinkColor%">[Kapitel 9 – Methoden](09-java-methods.md)</format> beschäftigt.
 > 
-> <format color="%c3%">Objektvariablen</format>, <format color="%c4%">Klassenvariablen</format> und <format color="%c5%">Konstanten</format> werden in <format color="%LinkColor%">[Kapitel 10 – Klassen](10-java-classes.md)</format> behandelt.
+> <format color="%c3%">Objektvariablen</format>, <format color="%c4%">Klassenvariablen</format> und <format color="%c5%">Konstanten</format> werden in <format color="%LinkColor%">[Kapitel 10 – Klassen](10-java-classes.md)</format> vorgestellt.
 
 ## Variablendeklaration {id="variable-declaration"}
 Eine Variable besteht, abhängig vom <format color="%LinkColor%">[primitiven](02-java-data-types.md#primitive-data-types)</format> oder <format color="%LinkColor%">[Referenzdatentyp](02-java-data-types.md#reference-data-types)</format>, aus verschiedenen Bestandteilen.
@@ -97,18 +97,18 @@ Durch eine Deklaration wird eine Variable erstellt und Speicherplatz für sie re
 Die Deklaration und Initialisierung einer Variablen kann entweder in einer oder in zwei separaten Zeilen erfolgen.
 
 ```java
-int x;       // Deklaration
-x = 15;      // Initialisierung
+int x;       // declaration
+x = 15;      // initialization
 
-int y = 10;  // Deklaration & Initialisierung
-y = 42;      // Zuweisung, Wert wird überschrieben
+int y = 10;  // declaration & initialization
+y = 42;      // assignment, value is overwritten
 ```
 
 Auch mehrere Variablen in einer Zeile sind möglich.
 
 ```java
-int v1, v2, v3;                // Deklaration
-int v4 = 10, v5 = 11, v6 = 12; // Deklaration & Initialisierung
+int v1, v2, v3;                // declaration
+int v4 = 10, v5 = 11, v6 = 12; // declaration & initialization
 ```
 
 >Ein guter Programmierstil sieht vor, dass jede Variable in einer eigenen Zeile deklariert wird, um die Übersichtlichkeit des Codes zu gewährleisten.
@@ -184,27 +184,27 @@ Die Lebensdauer beschreibt die Zeitspanne von der „Geburt“ bis zum „Tod“
 Folgendes Beispiel zur Veranschaulichung. Zu beachten sind die geschweiften Klammern `{}`:
 
 ```Java
-{ // Beginn 1. Block
+{ // Start of 1st block
 	int i = 10;
 	i++;
-	{ // Beginn 2. Block
+	{ // Start of 2nd block
 		int j = 10;
 		i++;
 		j++;
-		{ // Beginn 3. Block
+		{ // Start of 3rd block
 			int k = 10;
 			i++;
 			j++;
 			k++;
-		} // Ende 3. Block
+		} // End of 3rd block
 		i++;
 		j++;
-		k++; // !
-	} // Ende 2. Block
+		k++; // Out of scope
+	} // End of 2nd block
 	i++;
-	j++; // !
-	k++; // !
-} // Ende 1. Block
+	j++; // Out of scope
+	k++; // Out of scope
+} // End of 1st block
 ```
 
 Die Variable `i` ist in allen Anweisungsblöcken sichtbar.
@@ -243,8 +243,8 @@ Bei der <format color="%Highlight%">dynamischen Typisierung</format> findet dies
 > Dynamische typisierte Sprachen sind z.B. Python, Smalltalk, PHP, JavaScript und Perl.
 
 ## Coding Conventions {id="coding-conventions"}
-- Variablen sollten mit einem Kleinbuchstaben beginnen.
-- Besteht der Name aus mehreren Wörtern, sollte nach der <tooltip term="CamelCase-Notation"><format color="%GlossaryLinkColor%">CamelCase-Notation</format></tooltip> mit einem Kleinbuchstaben begonnen und jedes weitere Wort mit einem Großbuchstaben geschrieben werden.
+
+- Variablen sollten nach der <tooltip term="CamelCase-Notation"><format color="%GlossaryLinkColor%">CamelCase-Notation</format></tooltip> geschrieben werden.
 - Bei einer <format color="%LinkColor%">[Schleifenvariable](07-java-loops.md)</format> ist auch ein Buchstabe ausreichend.
 - Variablen vom Typ `boolean`, sollten nach Möglichkeit mit `is` beginnen. Alternativ kann auch auf `has` zurückgegriffen werden.
-- <format color="%c5%">Konstanten</format> sollten nach der <tooltip term="Constants-Notation"><format color="%GlossaryLinkColor%">SCREAMING_SNAKE_CASE-Notation</format></tooltip> ausschließlich mit Großbuchstaben geschrieben werden und durch einen Unterstrich `_` getrennt werden, wenn sie aus mehreren Wörtern bestehen.
+- <format color="%c5%"><a href="10-java-classes.md#constants">Konstanten</a></format> sollten nach der <tooltip term="Constants-Notation"><format color="%GlossaryLinkColor%">SCREAMING_SNAKE_CASE-Notation</format></tooltip> geschrieben werden.

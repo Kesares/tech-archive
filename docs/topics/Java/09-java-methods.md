@@ -1,4 +1,4 @@
-# 09 Java Methoden
+# 09 Java – Methoden
 
 Methoden bestimmen das Verhalten von <format color="%LinkColor%">[Objekten](11-java-objects.md)</format> und des Programms. Sie werden innerhalb einer <format color="%LinkColor%">[Klasse](10-java-classes.md)</format> angelegt. Wird derselbe Programmcode an mehreren Stellen verwendet, kann dieser in eine Methode ausgelagert werden und stattdessen die Methode aufgerufen werden.
 
@@ -8,7 +8,7 @@ Grundsätzlich kann zwischen zwei Methodenarten unterschieden werden.
 - <format color="%c1%">Objektmethoden</format> (auch Instanzmethoden)
 - <format color="%c2%">Klassenmethoden</format> (auch statische Methoden)
 
-Objektmethoden können nur über konkret instanziierte Objekte aufgerufen werden. Klassenmethoden brauchen kein instanziiertes Objekt. Sie können über die Klasse direkt aufgerufen werden. In diesem Kapitel fokussieren wir uns auf die Klassenmethoden, da wir diese aus der <format color="%LinkColor%">[main-Methode](#main-method)</format> aufrufen können, ohne dass ein Objekt instanziiert werden muss.
+<format color="%LinkColor%">[Objektmethoden](10-java-classes.md#object-methods)</format> können nur über konkret instanziierte <format color="%LinkColor%">[Objekte](11-java-objects.md)</format> aufgerufen werden. <format color="%LinkColor%">[Klassenmethoden](10-java-classes.md#class-methods)</format> brauchen kein instanziiertes Objekt. Sie können über die Klasse direkt aufgerufen werden. In diesem Kapitel fokussieren wir uns auf die Klassenmethoden, da wir diese aus der <format color="%LinkColor%">[main-Methode](#main-method)</format> aufrufen können, ohne dass ein Objekt instanziiert werden muss.
 
 ## Methodenstruktur {id="method-structure"}
 
@@ -16,14 +16,14 @@ Allgemein wird eine Methode in zwei Bereiche unterteilt. Zum einen den <format c
 
 
 ```
-// Klassenmethode
+// Class methodf
 access-modifier static return-type methodName(parameter) {
     // Code...
 }
 ```
 
 ```
-// Objektmethode
+// Object method
 access-modifier return-type methodName(parameter) {
     // Code...
 }
@@ -285,6 +285,7 @@ public static int calculateChecksum(int n) {
     return n % 10 + calculateChecksum(n / 10);
 }
 ```
+![Recursion Meme](09_java_methods_1.jpg){width="400"}
 
 ## Die `Math`-Klasse {id="the-math-class"}
 
@@ -367,23 +368,23 @@ Erweitert den Taschenrechner mit dem Wissen aus diesem Kapitel um eine Methode, 
                 Scanner sc = new Scanner(System.in);  
                 boolean isRunning = true;
                 while (isRunning) {}
-                    System.out.print("1. Zahl: ");  
+                    System.out.print("1st number: ");  
                     int x = sc.nextInt();  
-                    System.out.print("2. Zahl: ");  
+                    System.out.print("2nd number: ");  
                     int y = sc.nextInt();  
                     System.out.print("""
                         =================
                         1: Addition
-                        2: Subtraktion
-                        3: Multiplikation
+                        2: Subtraction
+                        3: Multiplication
                         4: Division
                         =================
                         Option:\s""");
                     int option = sc.nextInt();
                     printCalculations(x, y, option);
-                    System.out.println("Soll eine weitere Berechnung durchgeführt werden?");
+                    System.out.println("Should another calculation be performed?");
                     String keepGoing = sc.next();
-                    if (!keepGoing.equalsIgnoreCase("j")) {  
+                    if (!keepGoing.equalsIgnoreCase("y")) {  
                         isRunning = false;  
                     }
                 } 
@@ -396,7 +397,7 @@ Erweitert den Taschenrechner mit dem Wissen aus diesem Kapitel um eine Methode, 
                     case 2 -> System.out.println(x + " - " + y + " = " + (x - y));
                     case 3 -> System.out.println(x + " * " + y + " = " + (x * y));
                     case 4 -> System.out.println(x + " / " + y + " = " + (x / y));
-                    default -> System.out.println("Diese Option gibt es nicht.");  
+                    default -> System.out.println("This option does not exist.");  
                }  
             }
         </code-block>

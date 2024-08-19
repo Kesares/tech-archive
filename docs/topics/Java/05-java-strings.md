@@ -1,4 +1,4 @@
-# 05 Java Zeichenketten
+# 05 Java – Zeichenketten
 
 Zeichenketten (auch Strings genannt) sind eine der häufigsten angewendeten Datentypen. Sie repräsentieren eine Folge von Zeichen, gehören zu den <format color="%LinkColor%">[Referenzdatentypen](02-java-data-types.md#reference-data-types)</format> (Objekte) und sind daher keine <format color="%LinkColor%">[primitiven Datentypen](02-java-data-types.md#primitive-data-types)</format>. Wird eine Variable vom Typ `String` angelegt, enthält diese nicht die Zeichenkette selbst, sondern eine Referenz (Verweis) auf das eigentliche Objekt der Klasse `String`. Ein `char` ist ein primitiver Datentyp und kann nur ein einziges Zeichen darstellen. Sollen mehr dargestellt werden muss auf einen `String` zurückgegriffen werden.
 
@@ -318,17 +318,17 @@ Die `conversion` ist der eigentliche Spezifizierer. Optional kann noch eine Brei
 - `%n$` – gibt das n-te Argument an, dass an die `format()`-Methode übergeben wird. Dadurch ist es möglich die Reihenfolge der Argumente zu vertauschen oder die Argumente mehrmals verwenden zu können.
 
 ```Java
-System.out.println(String.format("Hallo %s!", "Welt"));
-System.out.println(String.format("Die Zahl ist %d.", 42));
-System.out.println(String.format("Der Preis ist %.2f Euro.", 12.3456));
-System.out.println(String.format("Die Zahl in Hexadezimal: %x", 255));
-System.out.println(String.format("Die Zahl in Oktal: %o", 8));
-System.out.println(String.format("Das Zeichen ist %c.", 'A'));
-System.out.println(String.format("Der Wert ist %b.", true));
-System.out.println(String.format("Erste Zeile%nZweite Zeile"));
+System.out.println(String.format("Hello %s!", "World"));
+System.out.println(String.format("The number is %d.", 42));
+System.out.println(String.format("The price is %.2f euro.", 12.3456));
+System.out.println(String.format("The number in hexadecimal: %x", 255));
+System.out.println(String.format("The number in octal: %o", 8));
+System.out.println(String.format("The character is %c.", 'A'));
+System.out.println(String.format("The value is %b.", true));
+System.out.println(String.format("First line%nSecond line"));
 System.out.println(String.format("Wert: %8.2f", 123.4567));
 System.out.println(String.format("Name: %-10s", "Java"));
-System.out.println(String.format("Der Betrag ist %,d.", 1000000));
+System.out.println(String.format("The amount is %,d.", 1000000));
 System.out.println(String.format("%2$d + %1$d = %3$d", 5, 3, 8));
 ```
 
@@ -390,7 +390,7 @@ for (int i = 0; i < 1000; i++) {
 }
   
 timeTaken = System.nanoTime() - now;  
-System.out.printf("1. Zeit: %d ns%n", timeTaken);
+System.out.printf("1st time: %d ns%n", timeTaken);
 
 
 
@@ -402,7 +402,7 @@ for (int i = 0; i < 1000; i++) {
 }
   
 timeTaken = System.nanoTime() - now;  
-System.out.printf("2. Zeit: %d ns%n", timeTaken);
+System.out.printf("2nd time: %d ns%n", timeTaken);
 ```
 
 > Die Zeiten können sich je nach System unterscheiden. Je nachdem wie stark der Prozessor ist.
@@ -419,7 +419,7 @@ Eine ANSI Escape-Sequenz beginnt immer mit einem Escape-Zeichen wie `\033` oder 
 Um die Formatierung nach einer ANSI-Sequenz zurückzusetzen und zur Standardkonfiguration zurückzukehren, wird `\u001B[0m` verwendet.
 
 ```Java
-System.out.println("\u001B[31mDieser Text ist rot!\u001B[0m");
+System.out.println("\u001B[31mThis text is red!\u001B[0m");
 ```
 
 ### Farbcodes {id="color-codes"}
@@ -531,9 +531,9 @@ System.out.println("\u001B[31mDieser Text ist rot!\u001B[0m");
 Mehrere Codes können kombiniert werden, indem sie durch Semikolons getrennt werden.
 
 ```Java
-System.out.println("\u001B[31mDieser Text ist rot!\u001B[0m");
-System.out.println("\u001B[32mDieser Text ist grün!\u001B[0m");
-System.out.println("\u001B[1;34mDieser Text ist blau und fett!\u001B[0m");
+System.out.println("\u001B[31mThis text is red!\u001B[0m");
+System.out.println("\u001B[32mThis text is green!\u001B[0m");
+System.out.println("\u001B[1;34mThis text is blue and bold!\u001B[0m");
 ```
 
 >Nicht alle Terminals unterstützen <format color="%NoteHighlight%">ANSI Escape-Sequenzen</format> und ihre Unterstützung kann auf verschiedenen Betriebssystemen variieren. In Windows-Terminals kann es z.B. erforderlich sein, die Unterstützung für ANSI-Sequenzen explizit zu aktivieren, da ältere Versionen dies standardmäßig nicht unterstützen.

@@ -1,4 +1,4 @@
-# 10 Java Klassen
+# 10 Java – Klassen
 
 Klassen sind ein wesentlicher Bestandteil der <format color="%LinkColor%">[OOP – Objektorientierten Programmierung](14-java-oop.md)</format>. Sie sind vergleichbar mit Rezepten oder Blueprints und stellen die grundsätzliche Struktur und den Aufbau von konkret instanziierten <format color="%LinkColor%">[Objekten](11-java-objects.md)</format> dar – deren Eigenschaften (<format color="%LinkColor%">[Objektvariablen](#object-variables)</format>) und Funktionalitäten (<format color="%LinkColor%">[Objektmethoden](#object-methods)</format>).
 
@@ -11,19 +11,19 @@ Der Aufbau einer Klasse ist nicht in Stein gemeißelt. Er kann sich von Unterneh
 ```Console
 public class ClassName {
 
-    // Konstanten und statische bzw. Klassenvariablen
+    // Constants and static or class variables
 
-    // Instanz- bzw. Objektvariablen
+    // Instance or object variables
 
-    // Konstruktoren
+    // Constructors
 
-    // Statische bzw. Klassenmethoden
+    // Static or class methods
 
-    // Instanz- bzw. Objektmethoden
+    // Instance or object methods
 
-    // Getter & Setter
+    // Getters and Setters
 
-    // Innere Klassen
+    // Inner classes
 }
 ```
 
@@ -131,12 +131,12 @@ public class Dog {
     public int age;
 
     public Dog(String name, int age) {
-        name = name; // <-- hier
-        age = age;   // <-- hier
+        name = name; // <-- here
+        age = age;   // <-- here
     }
 
     public Dog(String name) {
-        name = name; // <-- hier
+        name = name; // <-- here
         age = 0;
     }
 }
@@ -240,8 +240,8 @@ Getter und Getter dienen dazu, <format color="%LinkColor%">[Objektvariablen](#ob
 ```Java
 public class Dog {
 
-    private String name; // not visible outside the class
-    private int age;     // not visible outside the class
+    private String name; // Not visible outside the class
+    private int age;     // Not visible outside the class
 
     public Dog(String name, int age) {
         this.name = name;
@@ -334,7 +334,7 @@ public class Player {
         return properties;
     }
 
-    // Inner class
+    // Inner non-static class
     public class Properties {
     
         private int level;
@@ -389,6 +389,7 @@ public class Product {
         this.price = builder.price;
     }
 
+    // Inner static class
     public static class Builder {
         private String name;
         private int quantity;
@@ -447,7 +448,7 @@ public class EmailSender {
 
     public void sendEmail(String recipient, String message) {
 
-        // Local class
+        // Inner local class
         class EmailConnection {
         
             public void connect() {
@@ -482,12 +483,13 @@ Sie eignen sich auch zur Implementierung von vorübergehenden Datenstrukturen od
 
 ### Anonyme Klassen {id="anonymous-inner-classes"}
 
-Diese Klassen haben keinen Namen und werden direkt bei der Instanziierung definiert. Sie werden häufig verwendet, um <format color="%LinkColor%">[Schnittstellen](14-java-oop.md#interfaces)</format> oder <format color="%LinkColor%">[abstrakte Klassen](14-java-oop.md#abstract-classes)</format> zu implementieren, wenn nur eine einzelne <format color="%LinkColor%">[Instanz](11-java-objects.md)</format> benötigt wird.
+Diese Klassen haben keinen Namen und werden gleichzeitig deklariert und initialisiert. Sie werden häufig verwendet, um <format color="%LinkColor%">[Schnittstellen](14-java-oop.md#interfaces)</format> oder <format color="%LinkColor%">[abstrakte Klassen](14-java-oop.md#abstract-classes)</format> zu implementieren, wenn nur eine einzelne <format color="%LinkColor%">[Instanz](11-java-objects.md)</format> benötigt wird.
 
 ```Java
 public class Main {
 
     public static void main(String[] args) {
+           // Inner anonymous class
         new Runnable() {
             @Override
             public void run() {
@@ -498,7 +500,7 @@ public class Main {
 }
 ```
 
-Sie werden häufig in GUI-Umgebungen verwendet, um Event-Listener zu erstellen, ohne dafür eine benannte Klasse zu definieren und eignen sich für Aufgaben, die nur einmal ausgeführt werden und für die keine Wiederverwendbarkeit notwendig ist.
+Zudem finden sie häufig in GUI-Umgebungen Anwendung, um Event-Listener zu erstellen, ohne dafür eine benannte Klasse zu definieren und eignen sich für Aufgaben, die nur einmal ausgeführt werden und für die keine Wiederverwendbarkeit notwendig ist.
 
 ## Records {id="records"}
 
