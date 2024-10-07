@@ -3,11 +3,11 @@
 
 Nachdem ich euch jetzt gefühlt ein Dutzend Mal das Wort „Objekt“ um die Ohren gehauen habe, wird es höchste Zeit, dass wir uns endlich diesem mysteriösen Thema widmen. Was sind eigentlich Objekte? Fast alles, was in Java existiert, besteht aus Objekten, die auf sogenannten <format color="%LinkColor%">[Referenzdatentypen](02-java-data-types.md#reference-data-types)</format> basieren – die <format color="%LinkColor%">[primitiven Datentypen](02-java-data-types.md#primitive-data-types)</format> wie `int` und `boolean` einmal ausgenommen.
 
-Ein Objekt ist im Wesentlichen eine Instanz einer Klasse und diese Instanz kann so ziemlich alles sein, was ihr euch vorstellen könnt – von Bällen, über Menschen, bis hin zu abstrakten Konzepten wie Aktivitäten oder sogar Dimensionen.
+Ein Objekt ist im Wesentlichen eine Instanz einer Klasse und diese Instanz kann so ziemlich alles sein, was ihr euch vorstellen könnt – von Bällen, über Menschen, bis hin zu abstrakten Konzepten wie Aktivitäten oder Dimensionen.
 
-Stellt euch vor, ihr seid im Spielzeugladen: Da gibt es Bälle, Figuren, Autos und ja, vielleicht sogar eine mysteriöse Dimension in eine andere Welt. All diese Spielzeuge, äh, Objekte, stammen aus einer Art Bauanleitung – der <format color="%LinkColor%">[Klasse](10-java-classes.md)</format>. Und hier kommt der Clou: Jede dieser Klassen ist ein stolzer Nachfahre der Klasse <format color="%LinkColor%">[Object](14-java-oop.md#the-mother-of-all-classes-object)</format> – der Urmutter aller Klassen in Java. Aber keine Sorge. Die Details dazu werden wir in <format color="%LinkColor%">[Kapitel 14 – OOP: Vererbung](14-java-oop.md#inheritance)</format> noch genau unter die Lupe nehmen.
+Stellt euch vor, ihr seid im Spielzeugladen: Dort gibt es Bälle, Autos und vielleicht sogar eine mysteriöse Dimension in eine andere Welt. All diese Spielzeuge, äh, Objekte, stammen aus einer Art Bauanleitung – der <format color="%LinkColor%">[Klasse](10-java-classes.md)</format>. Jede dieser Klassen ist ein Nachfahre der Klasse <format color="%LinkColor%">[Object](14-java-oop.md#the-mother-of-all-classes-object)</format> – der Urmutter aller Klassen in Java. Aber keine Sorge. Die Details dazu werden wir in <format color="%LinkColor%">[Kapitel 14 – OOP: Vererbung](14-java-oop.md#inheritance)</format> noch genau unter die Lupe nehmen.
 
-Also egal, ob ihr euch einen Ball oder eine neue Dimension vorstellen könnt, in Java ist es immer ein Objekt. Dieses Objekt ist nicht nur irgendein zufälliger Datenhaufen, sondern ein ordentlicher Codebaustein der brav die <format color="%LinkColor%">[Regeln der objektorientierten Programmierung](14-java-oop.md#principles-of-oop)</format> befolgt und durch die Eigenschaften (<format color="%LinkColor%">[Objektvariablen](10-java-classes.md#object-variables)</format>) und Funktionalitäten (<format color="%LinkColor%">[Objektmethoden](10-java-classes.md#object-methods)</format>) beschrieben wird.
+Also egal, ob ein Ball oder eine andere Dimension, in Java ist es immer ein Objekt. Ein Objekt ist nicht nur irgendein zufälliger Datenhaufen, sondern ein Codebaustein der brav die <format color="%LinkColor%">[Regeln der objektorientierten Programmierung](14-java-oop.md#principles-of-oop)</format> befolgt (in den meisten Fällen) und durch die Eigenschaften (<format color="%LinkColor%">[Objektvariablen](10-java-classes.md#object-variables)</format>) und Funktionalitäten (<format color="%LinkColor%">[Objektmethoden](10-java-classes.md#object-methods)</format>) beschrieben wird.
 
 Zwei bestimmte Typen wurden bereits in früheren Kapiteln betrachtet.
 
@@ -111,7 +111,7 @@ public static void main(String[] args) {
 
 Die beiden Objekte haben jeweils eine Objektvariable für den Namen und eine für das Alter. Die <format color="%LinkColor%">[Objektvariablen](10-java-classes.md#object-variables)</format> sind abhängig von einem konkreten Objekt und somit auch dessen Werte. Werden die Werte eines Objekts verändert, hat dies keine Auswirkungen auf die Werte eines anderen Objekts.
 
-> Bei <format color="%NoteLinkColor%">[Klassenvariablen](10-java-classes.md#class-variables)</format> sieht dies anders aus, da diese von den Objekten geteilt werden.
+> Bei <format color="%NoteLinkColor%">[Klassenvariablen](10-java-classes.md#class-variables)</format> sieht dies anders aus. Denn sie gehören zur Klasse und nicht zu einem Objekt.
 {style="note"}
 
 ## Zugriff auf Objektvariablen und Objektmethoden {id="access-to-object-variables-and-methods"}
@@ -215,7 +215,7 @@ Wird diese Objektmethode von einem Objekt aufgerufen, welche nicht die Objektmet
 kesares.techarchive.Dog@65ab7765
 ```
 
-Der Teil vor dem Klassennamen bezieht sich auf den Speicherort der <format color="%LinkColor%">[Klasse](10-java-classes.md)</format> im Projektverzeichnis. Unter der <format color="%Highlight%">Referenzadresse</format> ist dieses Objekt im <tooltip term="Java-Heap"><format color="%GlossaryLinkColor%">Java-Heap</format></tooltip> abgelegt.
+Der Teil vor dem `@` repräsentiert den vollständigen Klassennamen der <format color="%LinkColor%">[Klasse](10-java-classes.md)</format>, inklusive <format color="%LinkColor%">[Package](16-java-packages-and-imports.md)</format>. Der Hashcode wird typischerweise durch die Methode `hashCode()` berechnet, die standardmäßig für jedes Objekt eine eindeutige Kennung zurückgibt.
 
 ## Der Garbage Collector {id="the-garbage-collector"}
 
@@ -231,7 +231,7 @@ Der <tooltip term="Java-Heap"><format color="%GlossaryLinkColor%">Heap</format><
 
 Der <tooltip term="GC"><format color="%GlossaryLinkColor%">Garbage Collector</format></tooltip> verfolgt, welche Objekte im <tooltip term="Java-Heap"><format color="%GlossaryLinkColor%">Heap</format></tooltip> noch genutzt werden und welche nicht mehr erreichbar sind. Dies geschieht typischerweise durch Algorithmen wie Mark-and-Sweep oder Generational Garbage Collection.
 
-- <format color="%Highlight%">Mark-and-Sweep</format>: Der GC markiert alle Objekte, die noch von aktiven <format color="%LinkColor%">[Threads](java-threads.md)</format> oder anderen Objekten referenziert werden. Danach „fegt“ er den Heap, indem er alle nicht markierten Objekte entfernt und den freigewordenen Speicher zurückgibt.
+- <format color="%Highlight%">Mark-and-Sweep</format>: Der GC markiert alle Objekte, die noch von aktiven <format color="%LinkColor%">[Threads](java-multithreading.md)</format> oder anderen Objekten referenziert werden. Danach „fegt“ er den Heap, indem er alle nicht markierten Objekte entfernt und den freigewordenen Speicher zurückgibt.
 
 - <format color="%Highlight%">Generational Garbage Collection</format>: Diese Methode unterteilt den Heap in verschiedene Generationen (Young Generation, Old Generation, Permanent Generation). Objekte, die gerade erst erstellt wurden, landen in der Young Generation und werden dort häufiger überprüft. Objekte, die länger leben, werden in die Old Generation verschoben, wo sie seltener überprüft werden. Objekte, die während der gesamten Laufzeit des Programms existieren, werden in die Permanent Generation verschoben. Dies ist effizient, da viele Objekte nur kurzzeitig existieren und schnell wieder entfernt werden können.
 
@@ -240,7 +240,7 @@ Der <tooltip term="GC"><format color="%GlossaryLinkColor%">Garbage Collector</fo
 
 #### Wie erkennt der Garbage Collector ungenutzte Objekte? {id="how-does-the-garbage-collector-detect-unused-objects?"}
 
-Der GC identifiziert zerstörbare Objekte, indem er den Referenzgraphen der Objekte analysiert. Wenn ein Objekt keine Referenzen mehr hat, also von keinem anderen Objekt oder aktiven <format color="%LinkColor%">[Thread](java-threads.md)</format> mehr erreicht werden kann, wird es als "garbage" (Müll) betrachtet und zur Entfernung freigegeben. Dies geschieht automatisch, ohne dass der Entwickler sich aktiv um die Speicherfreigabe kümmern muss.
+Der GC identifiziert zerstörbare Objekte, indem er den Referenzgraphen der Objekte analysiert. Wenn ein Objekt keine Referenzen mehr hat, also von keinem anderen Objekt oder aktiven <format color="%LinkColor%">[Thread](java-multithreading.md)</format> mehr erreicht werden kann, wird es als "garbage" (Müll) betrachtet und zur Entfernung freigegeben. Dies geschieht automatisch, ohne dass der Entwickler sich aktiv um die Speicherfreigabe kümmern muss.
 
 #### Speichermanagement in C/C++ {id="memory-management-in-c-and-cpp"}
 
@@ -250,9 +250,13 @@ Diese manuelle Verwaltung ermöglicht eine sehr feinkörnige Kontrolle über den
 
 Die manuelle Speicherverwaltung ist jedoch anfälliger für Fehler wie Speicherlecks oder Dangling Pointers (Referenzen auf Speicher, der bereits freigegeben wurde). Solche Fehler können schwerwiegende Abstürze oder Sicherheitslücken verursachen.
 
-Im Vergleich dazu bietet der <tooltip term="GC"><format color="%GlossaryLinkColor%">Garbage Collector</format></tooltip> in Java und ähnlichen Sprachen den Vorteil, dass der Entwickler sich nicht um die Speicherfreigabe kümmern muss, wodurch das Risiko von Speicherfehlern stark reduziert wird. Allerdings kommt dies oftmals mit einem kleinen Leistungseinbruch daher, da der Speicherverbrauch regelmäßig analysiert und bereinigt werden muss.
+Im Vergleich dazu bietet ein <tooltip term="GC"><format color="%GlossaryLinkColor%">Garbage Collector</format></tooltip> in Java oder ähnlichen Sprachen den Vorteil, dass der Entwickler sich nicht um die Speicherfreigabe kümmern muss, wodurch das Risiko von Speicherfehlern stark reduziert wird. Allerdings kommt dies oftmals mit einem kleinen Leistungseinbruch daher, da der Speicherverbrauch regelmäßig analysiert und bereinigt werden muss.
 
 ![Java vs CPP Memory](11_java_objects_1.jpg){width="400"}
+
+## Objektstruktur im Speicher {id="object-structure-in-memory"}
+
+<format color="%ComingSoonColor%">Coming soon...</format>
 
 ## Komplexität von Referenzdatentypen {id="complexity-of-reference-data-types"}
 
@@ -265,4 +269,4 @@ Um einmal ganz kurz das Thema der <format color="%LinkColor%">[Vererbung](14-jav
 Kurz gesagt: Die Komplexität und Struktur der Klassen hängt ganz von den Bedürfnissen und Anforderungen eurer Anwendung ab. Braucht ihr eine einfache Lösung, reichen vielleicht ein paar grundlegende Objekte. Wird es komplizierter, könnt ihr eine detailliertere Klassenhierarchie aufbauen und eure <format color="%LinkColor%">[Referenztypen](02-java-data-types.md)</format> nach Herzenslust schachteln. Es ist ein bisschen wie beim Kochen: Manchmal reicht ein Sandwich und manchmal wird es ein Fünf-Gänge-Menü – es kommt ganz darauf an, was ihr auf den Tisch bringen wollt.
 
 > Aber Vorsicht, Freunde der Vererbung! So faszinierend es auch ist, Klassenhierarchien zu bauen, denkt daran, dass zu tiefe Vererbungshierarchien schnell ins Chaos führen können.
-{title="Tiefe Vererbungshierarchien"}
+{style="note" title="Tiefe Vererbungshierarchien"}

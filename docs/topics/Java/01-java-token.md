@@ -33,53 +33,480 @@ Konventionen sind keine festen Regeln, sondern Richtlinien. Es kann zwar von ihn
 - <format color="%LinkColor%">[Konstanten](10-java-classes.md#constants)</format> sollten nach der <tooltip term="Constants-Notation"><format color="%GlossaryLinkColor%">SCREAMING_SNAKE_CASE-Notation</format></tooltip> benannt werden.
 
 > Weitere Konventionen werden in den jeweiligen Kapiteln beschrieben.
-{style="note"}
+> {style="note"}
 
-## <format color="%c2%">Keywords – 56</format> {id="keywords"}
-<secondary-label ref="refactor"/>
+## <format color="%c2%">Keywords – 57</format> {id="keywords"}
 
 Schlüsselwörter (engl. Keywords) sind reservierte Wörter, die eine spezielle Bedeutung für den <tooltip term="Compiler"><format color="%GlossaryLinkColor%">Compiler</format></tooltip> haben. Diese Wörter dürfen und können im Regelfall nicht als Namen für <format color="%LinkColor%">[Variablen](03-java-variables.md)</format>, <format color="%LinkColor%">[Methoden](09-java-methods.md)</format>, <format color="%LinkColor%">[Klassen](10-java-classes.md)</format> oder andere <format color="%c1%">[Bezeichner](#identifier)</format> verwendet werden, da sie zur Sprachsyntax von Java gehören und bestimmte Aktionen oder Strukturen definieren. Einige Ausnahmen werden im Abschnitt <format color="%c2%">[Kontextbezogene "Keywords"](#contextual-keywords)</format> beschrieben.
 
-| Keyword      | Anwendungsbereich                                                                    | Beschreibung                                                                                                                                                                                                                                                                                       |
-|--------------|--------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `assert`     | - Annahmen                                                                           | - Stellt Annahmen über den Zustand des Programms sicher.<br/>- Müssen erst aktiviert werden, um verwendet werden zu können.                                                                                                                                                                        |
-| `boolean`    | - Variablen<br/>- Konstanten<br/>- Methoden (Rückgabetyp)<br/>- Methoden (Parameter) | - Primitiver Datentyp<br/>- Datentyp einer Variablen<br/>- Datentyp einer Konstante<br/>- Rückgabetyp einer Methode                                                                                                                                                                                |
-| `break`      | - Schleifen<br/>- `switch`-`case`-Ausdrücke                                          | - Beendet die Ausführung einer Schleife.<br/>- Verhindert das "Durchfallen" in einem `switch`-`case`-Ausdruck.                                                                                                                                                                                     |
-| `byte`       | - Variablen<br/>- Konstanten<br/>- Methoden (Rückgabetyp)<br/>- Methoden (Parameter) | - Primitiver Datentyp<br/>- Datentyp einer Variablen<br/>- Datentyp einer Konstante<br/>- Rückgabetyp einer Methode                                                                                                                                                                                |
-| `catch`      | - Ausnahmebehandlungsblock                                                           | - Beginnt einen Block, der einen bestimmten Ausnahmetyp behandelt.                                                                                                                                                                                                                                 |
-| `char`       | - Variablen<br/>- Konstanten<br/>- Methoden (Rückgabetyp)<br/>- Methoden (Parameter) | - Primitiver Datentyp<br/>- Datentyp einer Variablen<br/>- Datentyp einer Konstante<br/>- Rückgabetyp einer Methode                                                                                                                                                                                |
-| `class`      | - Klassen                                                                            | - Deklariert eine Klasse.                                                                                                                                                                                                                                                                          |
-| `const`*     | Keine                                                                                | - Reserviertes, aber nicht verwendetes Keyword.                                                                                                                                                                                                                                                    |
-| `continue`   | - Schleifen                                                                          | - Fährt mit dem nächsten Durchlauf der nächstgelegenen umschließenden Schleife fort.                                                                                                                                                                                                               |
-| `default`    | - Methoden (Interfaces)<br/>- `switch`-`case`-Ausdrücke                              | - Methoden mit diesem Modifier bringen in Interfaces Standardimplementierungen mit. Diese Methoden können, müssen aber nicht überschrieben werden, wenn das Interface implementiert wird.<br/>- Bei Abfragen mittels `switch`-`case`-Ausdrücken wird das Schlüsselwort als "else"-Zweig verwendet. |
-| `do`         | - `do`-`while`-Schleifen                                                             | - Beginnt eine fußgesteuerte `do`-`while`-Schleife.                                                                                                                                                                                                                                                |
-| `double`     | - Variablen<br/>- Konstanten<br/>- Methoden (Rückgabetyp)<br/>- Methoden (Parameter) | - Primitiver Datentyp<br/>- Datentyp einer Variablen<br/>- Datentyp einer Konstante<br/>- Rückgabetyp einer Methode                                                                                                                                                                                |
-| `else`       | - `if`-`else`-Abfragen                                                               | - Definiert einen Default-Zweig eines `if`-Ausdrucks, der ausgeführt wird, wenn alle vorherigen Bedingungen `false` ergeben.                                                                                                                                                                       |
-| `enum`       | - Enumerationen                                                                      | - Deklariert ein Enum.                                                                                                                                                                                                                                                                             |
-| `extends`    | - Klassen                                                                            | - Erbt von einer anderen Klasse.                                                                                                                                                                                                                                                                   |
-| `finally`    | - Ausnahmebehandlungsblöcke                                                          | - Der `finally`-Block wird optional nach einem `try`-Block definiert. Dieser wird jedes Mal ausgeführt, unabhängig davon, ob eine Exception geworfen wurde.                                                                                                                                        |
-| `float`      | - Variablen<br/>- Konstanten<br/>- Methoden (Rückgabetyp)<br/>- Methoden (Parameter) | - Primitiver Datentyp<br/>- Datentyp einer Variablen<br/>- Datentyp einer Konstante<br/>- Rückgabetyp einer Methode                                                                                                                                                                                |
-| `for`        | - `for`-Schleife<br/>- `for`-each-Schleife                                           | - Deklariert eine `for`-Schleife.<br/>- Deklariert eine `for`-each-Schleife                                                                                                                                                                                                                        |
-| `if`         | - `if`-`else`-Abfragen                                                               | - Deklariert eine `if`-Abfrage.                                                                                                                                                                                                                                                                    |
-| `goto`*      | Keine                                                                                | - Reserviertes, aber nicht verwendetes Keyword.                                                                                                                                                                                                                                                    |
-| `implements` | - Klassen<br/>- Interfaces                                                           | - Implementiert ein Interface.                                                                                                                                                                                                                                                                     |
-| `import`     | - Importanweisungen                                                                  | - Importiert eine oder mehrere Klassen aus einem anderen Package zur Verwendung in die aktuelle Datei/Klasse.                                                                                                                                                                                      |
-| `instanceof` | - Typüberprüfungen                                                                   | - Überprüft eine Variable auf seinen Typ.                                                                                                                                                                                                                                                          |
-| `int`        | - Variablen<br/>- Konstanten<br/>- Methoden (Rückgabetyp)<br/>- Methoden (Parameter) | - Primitiver Datentyp<br/>- Datentyp einer Variablen<br/>- Datentyp einer Konstante<br/>- Rückgabetyp einer Methode                                                                                                                                                                                |
-| `interface`  | - Interfaces                                                                         | - Deklariert ein Interface.                                                                                                                                                                                                                                                                        |
-| `long`       | - Variablen<br/>- Konstanten<br/>- Methoden (Rückgabetyp)<br/>- Methoden (Parameter) | - Primitiver Datentyp<br/>- Datentyp einer Variablen<br/>- Datentyp einer Konstante<br/>- Rückgabetyp einer Methode                                                                                                                                                                                |
-| `new`        | - Objekterzeugung / Instanziierung                                                   | - Erzeugt ein neues Objekt/Instanz.                                                                                                                                                                                                                                                                |
-| `package`    | - Package-Anweisungen                                                                | - Registriert die aktuelle Datei/Klasse für das Dateiverzeichnissystem, damit diese von anderen gefunden werden kann.                                                                                                                                                                              |
-| `return`     | - Methoden                                                                           | - Gibt den Rückgabewert an den Aufrufer der Methode zurück.                                                                                                                                                                                                                                        |
-| `short`      | - Variablen<br/>- Konstanten<br/>- Methoden (Rückgabetyp)<br/>- Methoden (Parameter) | - Primitiver Datentyp<br/>- Datentyp einer Variablen<br/>- Datentyp einer Konstante<br/>- Rückgabetyp einer Methode                                                                                                                                                                                |
-| `super`      | - Objektzugriff auf Oberklasse<br/>- Konstruktoren                                   | - Ruft Konstruktoren der Oberklasse auf.<br/>-  Ruft Variablen der Oberklasse auf.<br/>- Ruft Methoden der Oberklasse auf.                                                                                                                                                                         |
-| `switch`     | - `switch`-`case`-Ausdrücke                                                          | - Definiert einen `switch`-`case`-Ausdruck.                                                                                                                                                                                                                                                        |
-| `this`       | - Kontextueller Aufruf über Objekt                                                   | - Ruft im Kontext der Klasse, Objektvariablen auf.<br/>- Ruft im Kontext der Klasse, Objektmethoden auf.                                                                                                                                                                                           |
-| `throw`      | - Ausnahmebehandlungen                                                               | - "Wirft" eine Exception.                                                                                                                                                                                                                                                                          |
-| `throws`     | - Methoden (Ausnahmeweitergaben)                                                     | - Kennzeichnung einer Methode, dass diese eine Exception werfen kann, die abgefangen werden muss.                                                                                                                                                                                                  |
-| `try`        | - Ausnahmebehandlungsblöcke                                                          | - Deklariert einen `try`-`catch`-Block zum Abfangen von Exceptions.                                                                                                                                                                                                                                |
-| `void`       | - Methoden (Rückgabetyp)                                                             | - Gibt an, dass die Methode nichts zurückgibt.                                                                                                                                                                                                                                                     |
-| `while`      | - `while`-Schleifen<br/>- `do`-`while`-Schleifen                                     | - Deklariert eine `while`-Schleife.<br/>- Deklariert eine `do`-`while`-Schleife.                                                                                                                                                                                                                   |
+<table>
+    <tr>
+        <td width="100"><p>Keywords</p></td>
+        <td width="240"><p>Anwendungsbereich</p></td>
+        <td><p>Beschreibung</p></td>
+    </tr>
+    <tr>
+        <td><code>assert</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="06-java-branches.md#assertions">Annahmen</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li>Stellt Annahmen über den Zustand des Programms sicher.</li>
+                <li>Müssen erst aktiviert werden, um verwendet werden zu können.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>boolean</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="03-java-variables.md">Variablen</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#constants">Konstanten</a></format></p>
+            <p><format color="%LinkColor%"><a href="09-java-methods.md#return-type">Methoden (Rückgabetyp)</a></format></p>
+            <p><format color="%LinkColor%"><a href="09-java-methods.md#method-signature">Methoden (Parameter)</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li><format color="%LinkColor%"><a href="02-java-data-types.md#primitive-data-types">Primitiver Datentyp</a></format></li>
+                <li>Datentyp einer Variablen</li>
+                <li>Datentyp einer Konstanten</li>
+                <li>Rückgabetyp einer Methode</li>
+                <li>Parameter einer Methode</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>break</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="07-java-loops.md">Schleifen</a></format></p>
+            <p><format color="%LinkColor%"><a href="06-java-branches.md#switch-case">switch-Ausdrücke</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li>Beendet die Ausführung einer Schleife.</li>
+                <li>Verhindert das "Durchfallen" in einem <code>switch</code>-Ausdruck.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>byte</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="03-java-variables.md">Variablen</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#constants">Konstanten</a></format></p>
+            <p><format color="%LinkColor%"><a href="09-java-methods.md#return-type">Methoden (Rückgabetyp)</a></format></p>
+            <p><format color="%LinkColor%"><a href="09-java-methods.md#method-signature">Methoden (Parameter)</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li><format color="%LinkColor%"><a href="02-java-data-types.md#primitive-data-types">Primitiver Datentyp</a></format></li>
+                <li>Datentyp einer Variablen</li>
+                <li>Datentyp einer Konstanten</li>
+                <li>Rückgabetyp einer Methode</li>
+                <li>Parameter einer Methode</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>case</code></td>
+        <td><p><format color="%LinkColor%"><a href="06-java-branches.md#switch-case">switch-Ausdrücke</a></format></p></td>
+        <td>
+            <list>
+                <li>Definiert einen <code>case</code> innerhalb eines <code>switch</code>-Ausdrucks, der ausgeführt wird, wenn der Wert der <code>switch</code>-Variablen mit dem Wert des <code>case</code> übereinstimmt.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>catch</code></td>
+        <td><p><format color="%LinkColor%"><a href="15-java-exceptions.md">Exceptions</a></format></p></td>
+        <td>
+            <list>
+                <li>Beginnt einen Block, der einen bestimmten Ausnahmetyp behandelt.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>char</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="03-java-variables.md">Variablen</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#constants">Konstanten</a></format></p>
+            <p><format color="%LinkColor%"><a href="09-java-methods.md#return-type">Methoden (Rückgabetyp)</a></format></p>
+            <p><format color="%LinkColor%"><a href="09-java-methods.md#method-signature">Methoden (Parameter)</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li><format color="%LinkColor%"><a href="02-java-data-types.md#primitive-data-types">Primitiver Datentyp</a></format></li>
+                <li>Datentyp einer Variablen</li>
+                <li>Datentyp einer Konstanten</li>
+                <li>Rückgabetyp einer Methode</li>
+                <li>Parameter einer Methode</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>class</code></td>
+        <td><p><format color="%LinkColor%"><a href="10-java-classes.md">Klassen</a></format></p></td>
+        <td>
+            <list>
+                <li>Deklariert eine Klasse.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>const</code>*</td>
+        <td>-</td>
+        <td>
+            <list>
+                <li>Reserviertes, aber nicht verwendetes Keyword.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>continue</code></td>
+        <td><p><format color="%LinkColor%"><a href="07-java-loops.md">Schleifen</a></format></p></td>
+        <td>
+            <list>
+                <li>Fährt mit dem nächsten Durchlauf der nächstgelegenen umschließenden Schleife fort.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>default</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="14-java-oop.md#default-methods">Interfaces (Default-Methoden)</a></format></p>
+            <p><format color="%LinkColor%"><a href="06-java-branches.md#switch-case">switch-Ausdrücke</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li>Methoden mit diesem Modifier bringen in Interfaces Standardimplementierungen mit. Diese Methoden können, müssen aber nicht überschrieben werden, wenn das Interface implementiert wird.</li>
+                <li>Bei <format color="%LinkColor%"><a href="06-java-branches.md">Abfragen</a></format> mittels <code>switch</code>-Ausdrücken wird das Schlüsselwort als "else"-Zweig verwendet.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>do</code></td>
+        <td><p><format color="%LinkColor%"><a href="07-java-loops.md#do-while-loop">do-while-Schleife</a></format></p></td>
+        <td>
+            <list>
+                <li>Beginnt eine fußgesteuerte <code>do</code>-<code>while</code>-Schleife.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>double</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="03-java-variables.md">Variablen</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#constants">Konstanten</a></format></p>
+            <p><format color="%LinkColor%"><a href="09-java-methods.md#return-type">Methoden (Rückgabetyp)</a></format></p>
+            <p><format color="%LinkColor%"><a href="09-java-methods.md#method-signature">Methoden (Parameter)</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li><format color="%LinkColor%"><a href="02-java-data-types.md#primitive-data-types">Primitiver Datentyp</a></format></li>
+                <li>Datentyp einer Variablen</li>
+                <li>Datentyp einer Konstanten</li>
+                <li>Rückgabetyp einer Methode</li>
+                <li>Parameter einer Methode</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>else</code></td>
+        <td><p><format color="%LinkColor%"><a href="06-java-branches.md#if-else">if-Abfragen</a></format></p></td>
+        <td>
+            <list>
+                <li>Definiert einen Default-Zweig eines <code>if</code>-Ausdrucks, der ausgeführt wird, wenn alle vorherigen Bedingungen <code>false</code> ergeben.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>enum</code></td>
+        <td><p><format color="%LinkColor%"><a href="13-java-enumerations.md">Enumerationen</a></format></p></td>
+        <td>
+            <list>
+                <li>Deklariert ein Enum.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>extends</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md">Klassen</a></format></p>
+            <p><format color="%LinkColor%"><a href="14-java-oop.md#interfaces">Interfaces</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li>Lässt eine Klasse von einer anderen erben.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>finally</code></td>
+        <td><p><format color="%LinkColor%"><a href="15-java-exceptions.md">Exceptions</a></format></p></td>
+        <td>
+            <list>
+                <li>Der <code>finally</code>-Block wird optional nach einem <code>try</code>-Block definiert. Dieser wird jedes Mal ausgeführt, unabhängig davon, ob eine Exception geworfen wurde.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>float</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="03-java-variables.md">Variablen</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#constants">Konstanten</a></format></p>
+            <p><format color="%LinkColor%"><a href="09-java-methods.md#return-type">Methoden (Rückgabetyp)</a></format></p>
+            <p><format color="%LinkColor%"><a href="09-java-methods.md#method-signature">Methoden (Parameter)</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li><format color="%LinkColor%"><a href="02-java-data-types.md#primitive-data-types">Primitiver Datentyp</a></format></li>
+                <li>Datentyp einer Variablen</li>
+                <li>Datentyp einer Konstanten</li>
+                <li>Rückgabetyp einer Methode</li>
+                <li>Parameter einer Methode</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>for</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="07-java-loops.md#for-loop">for-Schleife</a></format></p>
+            <p><format color="%LinkColor%"><a href="07-java-loops.md#for-each-loop">for-each-Schleife</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li>Deklariert eine <code>for</code>-Schleife.</li>
+                <li>Deklariert eine <code>for</code>-each-Schleife.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>goto</code>*</td>
+        <td>-</td>
+        <td>
+            <list>
+                <li>Reserviertes, aber nicht verwendetes Keyword.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>if</code></td>
+        <td><p><format color="%LinkColor%"><a href="06-java-branches.md#if-else">if-Abfragen</a></format></p></td>
+        <td>
+            <list>
+                <li>Deklariert eine <code>if</code>-Abfrage.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>implements</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md">Klassen</a></format></p>
+            <p><format color="%LinkColor%"><a href="14-java-oop.md#interfaces">Interfaces</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li>Implementiert ein Interface.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>import</code></td>
+        <td><p><format color="%LinkColor%"><a href="16-java-packages-and-imports.md">Importanweisungen</a></format></p></td>
+        <td>
+            <list>
+                <li>Importiert eine oder mehrere <format color="%LinkColor%"><a href="10-java-classes.md">Klassen</a></format> aus einem anderen <format color="%LinkColor%"><a href="16-java-packages-and-imports.md">Package</a></format> zur Verwendung in die aktuelle Datei/Klasse.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>instanceof</code></td>
+        <td><p><format color="%LinkColor%"><a href="14-java-oop.md#the-keyword-instanceof">Typüberprüfungen</a></format></p></td>
+        <td>
+            <list>
+                <li>Überprüft eine <format color="%LinkColor%"><a href="03-java-variables.md">Variable</a></format> auf seinen <format color="%LinkColor%"><a href="02-java-data-types.md#reference-data-types">Referenztyp</a></format>.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>int</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="03-java-variables.md">Variablen</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#constants">Konstanten</a></format></p>
+            <p><format color="%LinkColor%"><a href="09-java-methods.md#return-type">Methoden (Rückgabetyp)</a></format></p>
+            <p><format color="%LinkColor%"><a href="09-java-methods.md#method-signature">Methoden (Parameter)</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li><format color="%LinkColor%"><a href="02-java-data-types.md#primitive-data-types">Primitiver Datentyp</a></format></li>
+                <li>Datentyp einer Variablen</li>
+                <li>Datentyp einer Konstanten</li>
+                <li>Rückgabetyp einer Methode</li>
+                <li>Parameter einer Methode</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>interface</code></td>
+        <td><p><format color="%LinkColor%"><a href="14-java-oop.md#interfaces">Interfaces</a></format></p></td>
+        <td>
+            <list>
+                <li>Deklariert ein Interface.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>long</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="03-java-variables.md">Variablen</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#constants">Konstanten</a></format></p>
+            <p><format color="%LinkColor%"><a href="09-java-methods.md#return-type">Methoden (Rückgabetyp)</a></format></p>
+            <p><format color="%LinkColor%"><a href="09-java-methods.md#method-signature">Methoden (Parameter)</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li><format color="%LinkColor%"><a href="02-java-data-types.md#primitive-data-types">Primitiver Datentyp</a></format></li>
+                <li>Datentyp einer Variablen</li>
+                <li>Datentyp einer Konstanten</li>
+                <li>Rückgabetyp einer Methode</li>
+                <li>Parameter einer Methode</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>new</code></td>
+        <td><p><format color="%LinkColor%"><a href="11-java-objects.md">Objekterzeugung / Instanziierung</a></format></p></td>
+        <td>
+            <list>
+                <li>Erzeugt ein neues Objekt/Instanz.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>package</code></td>
+        <td><p><format color="%LinkColor%"><a href="16-java-packages-and-imports.md">Package-Anweisung</a></format></p></td>
+        <td>
+            <list>
+                <li>Registriert die aktuelle Datei/Klasse für das Dateiverzeichnissystem, damit diese von anderen gefunden werden kann.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>return</code></td>
+        <td><p><format color="%LinkColor%"><a href="09-java-methods.md">Methoden</a></format></p></td>
+        <td>
+            <list>
+                <li>Gibt den Rückgabewert an den Aufrufer der Methode zurück.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>short</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="03-java-variables.md">Variablen</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#constants">Konstanten</a></format></p>
+            <p><format color="%LinkColor%"><a href="09-java-methods.md#return-type">Methoden (Rückgabetyp)</a></format></p>
+            <p><format color="%LinkColor%"><a href="09-java-methods.md#method-signature">Methoden (Parameter)</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li><format color="%LinkColor%"><a href="02-java-data-types.md#primitive-data-types">Primitiver Datentyp</a></format></li>
+                <li>Datentyp einer Variablen</li>
+                <li>Datentyp einer Konstanten</li>
+                <li>Rückgabetyp einer Methode</li>
+                <li>Parameter einer Methode</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>super</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#object-variables">Objektvariablen</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#object-methods">Objektmethoden</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#constructors">Konstruktoren</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li>Ruft Konstruktoren der Oberklasse auf.</li>
+                <li>Ruft Objektvariablen der Oberklasse auf.</li>
+                <li>Ruft Objektmethoden der Oberklasse auf.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>switch</code></td>
+        <td><p><format color="%LinkColor%"><a href="06-java-branches.md#switch-case">switch-Ausdrücke</a></format></p></td>
+        <td>
+            <list>
+                <li>Definiert einen <code>switch</code>-<code>case</code>-Ausdruck.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>this</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#object-variables">Objektvariablen</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#object-methods">Objektmethoden</a></format></p>
+            <p><format color="%LinkColor%"><a href="10-java-classes.md#constructors">Konstruktoren</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li>Ruft Konstruktoren der Klasse auf.</li>
+                <li>Ruft Objektvariablen der Klasse auf.</li>
+                <li>Ruft Objektmethoden der Klasse auf.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>throw</code></td>
+        <td><p><format color="%LinkColor%"><a href="15-java-exceptions.md">Exceptions</a></format></p></td>
+        <td>
+            <list>
+                <li>"Wirft" eine Exception.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>throws</code></td>
+        <td><p><format color="%LinkColor%"><a href="15-java-exceptions.md">Methoden (Ausnahmenweitergabe)</a></format></p></td>
+        <td>
+            <list>
+                <li>Kennzeichnung einer Methode, dass diese eine Exception werfen kann, die welche an den Aufrufer weitergeleitet wird.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>try</code></td>
+        <td><p><format color="%LinkColor%"><a href="15-java-exceptions.md">Exceptions</a></format></p></td>
+        <td>
+            <list>
+                <li>Deklariert einen <code>try</code>-<code>catch</code>-Block zum Abfangen von Exceptions.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>void</code></td>
+        <td><p><format color="%LinkColor%"><a href="09-java-methods.md">Methoden (Rückgabetyp)</a></format></p></td>
+        <td>
+            <list>
+                <li>Gibt an, dass die Methode keinen Rückgabetyp hat.</li>
+            </list>
+        </td>
+    </tr>
+    <tr>
+        <td><code>while</code></td>
+        <td>
+            <p><format color="%LinkColor%"><a href="07-java-loops.md#while-loop">while-Schleife</a></format></p>
+            <p><format color="%LinkColor%"><a href="07-java-loops.md#do-while-loop">do-while-Schleife</a></format></p>
+        </td>
+        <td>
+            <list>
+                <li>Deklariert eine <code>while</code>-Schleife.</li>
+                <li>Deklariert eine <code>do</code>-<code>while</code>-Schleife.</li>
+            </list>
+        </td>
+    </tr>
+</table>
+                                                                            
 ### <format color="%c2%">Modifizierer – 12</format> {id="modifier"}
 
 <table>
@@ -229,7 +656,7 @@ Schlüsselwörter (engl. Keywords) sind reservierte Wörter, die eine spezielle 
         </td>
         <td>
             <list>
-                <li>Auf Methoden kann immer nur von einem <format color="%LinkColor%"><a href="java-threads.md">Thread</a></format> zugegriffen werden.</li>
+                <li>Auf Methoden kann immer nur von einem <format color="%LinkColor%"><a href="java-multithreading.md">Thread</a></format> zugegriffen werden.</li>
             </list>
         </td>
     </tr>
@@ -254,7 +681,7 @@ Schlüsselwörter (engl. Keywords) sind reservierte Wörter, die eine spezielle 
         </td>
         <td>
             <list>
-                <li>Alle <format color="%LinkColor%"><a href="java-threads.md">Threads</a></format> lesen und schreiben den Wert der Variablen direkt aus dem Hauptspeicher, anstatt eine Kopie im <tooltip term="Cache"><format color="%GlossaryLinkColor%">Cache</format></tooltip> zu verwenden. Damit wird sichergestellt, dass die Threads den aktuellen Wert sehen und inkonsistente oder falsche Ergebnisse verhindert werden.</li>
+                <li>Alle <format color="%LinkColor%"><a href="java-multithreading.md">Threads</a></format> lesen und schreiben den Wert der Variablen direkt aus dem Hauptspeicher, anstatt eine Kopie im <tooltip term="Cache"><format color="%GlossaryLinkColor%">Cache</format></tooltip> zu verwenden. Damit wird sichergestellt, dass die Threads den aktuellen Wert sehen und inkonsistente oder falsche Ergebnisse verhindert werden.</li>
             </list>
         </td>
     </tr>
@@ -388,7 +815,7 @@ Literale (engl. Literals) bzw. Literalkonstanten bezeichnen Werte, die sich im P
 </table>
 
 > Die Literale `true`, `false` und `null` sind zwar keine <format color="%NoteLinkColor%">[Schlüsselwörter](#keywords)</format>, können aber ebenfalls nicht als <format color="%c1%">[Bezeichner](#identifier)</format> verwendet werden.
-{style="note"}
+> {style="note"}
 
 ## <format color="%c4%">Operatoren</format> {id="operators"}
 Operatoren (engl. Operators) bezeichnen Zeichen(-folgen), welche in der Programmierung und der Mathematik verwendet werden, um Operationen wie Additionen oder Multiplikationen durchzuführen. Diese Operatoren können in <format color="%c4%">unäre</format>, <format color="%c4%">binäre</format> und <format color="%c4%">ternäre</format> Operatoren unterteilt werden. Darüber hinaus gibt es noch Kategorien wie <format color="%c4%">arithmetische Operatoren</format>, <format color="%c4%">Zuweisungsoperatoren</format>, <format color="%c4%">Vergleichsoperatoren</format>, <format color="%c4%">logische Operatoren</format>, <format color="%c4%">Bitoperatoren</format> und <format color="%c4%">In- / Dekrement</format>.
@@ -457,17 +884,67 @@ Operatoren (engl. Operators) bezeichnen Zeichen(-folgen), welche in der Programm
 ## <format color="%c5%">Separatoren</format> {id="separators"}
 Separatoren (engl. Separators) dienen dem <tooltip term="Compiler"><format color="%GlossaryLinkColor%">Compiler</format></tooltip> dazu, einzelne <format color="%c1%">[Bezeichner](#identifier)</format> und Anweisungen voneinander trennen zu können.
 
-| Separator | Beschreibung                                                                                                                                                                                                                                                                                                                            |
-|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `(` `)`   | Dient als Kennzeichnung der Parameter und Attribute bei <format color="%LinkColor%">[Methodenaufrufen](09-java-methods.md)</format>, sowie der Änderung der Berechnungsvorschrift.                                                                                                                                                      |
-| `{` `}`   | Kennzeichnen den Anfang und das Ende eines Anweisungsblocks.                                                                                                                                                                                                                                                                            |
-| `[` `]`   | Dient zur Definition von <format color="%LinkColor%">[Arrays](08-java-arrays.md)</format>, dessen Größen und den Zugriff auf einzelne Felder des Arrays.                                                                                                                                                                                |
-| `;`       | Wird als Abschluss einer Anweisung verwendet.                                                                                                                                                                                                                                                                                           |
-| `,`       | Dient als Abtrennung zwischen Werten, Anweisungen, und Parametern.                                                                                                                                                                                                                                                                      |
-| `.`       | Trennt Paketnamen von <format color="%LinkColor%">[Unterpakten](16-java-packages-and-imports.md)</format> und <format color="%LinkColor%">[Klassen](10-java-classes.md)</format>, sowie <format color="%LinkColor%">[Variablen](03-java-variables.md)</format> von <format color="%LinkColor%">[Methoden](09-java-methods.md)</format>. |
-| `...`     | Dient als variable Parameterangabe bei <format color="%LinkColor%">[Methoden](09-java-methods.md)</format>.                                                                                                                                                                                                                             |
-| `@`       | Wird als Präfix für <format color="%LinkColor%">[Annotationen](java-annotations.md)</format> verwendet.                                                                                                                                                                                                                                 |
-| `::`      | Dient als Methodenreferenz und alternative zu Lambda-Ausdrücken.                                                                                                                                                                                                                                                                        |
+<table>
+    <tr>
+        <td>Separator</td>
+        <td>Beschreibung</td>
+    </tr>
+    <tr>
+        <td><code>(</code> <code>)</code></td>
+        <td>
+            <p>Dient als Kennzeichnung der Parameter und Attribute bei <format color="%LinkColor%"><a href="09-java-methods.md#static-method-call">Methodenaufrufen</a></format>, sowie der Änderung der Berechnungsvorschrift.</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code>{</code> <code>}</code></td>
+        <td>
+            <p>Kennzeichnen den Anfang und das Ende eines Anweisungsblocks.</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code>[</code> <code>]</code></td>
+        <td>
+            <p>Dient zur Definition von <format color="%LinkColor%"><a href="08-java-arrays.md">Arrays</a></format>, dessen Größen und den Zugriff auf einzelne Felder des Arrays.</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code>;</code></td>
+        <td>
+            <p>Wird als Abschluss einer Anweisung verwendet.</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code>,</code></td>
+        <td>
+            <p>Dient als Abtrennung zwischen Werten, Anweisungen und Parametern.</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code>.</code></td>
+        <td>
+            <p>Trennt Paketnamen von <format color="%LinkColor%"><a href="16-java-packages-and-imports.md">Unterpaketen</a></format> und <format color="%LinkColor%"><a href="10-java-classes.md">Klassen</a></format>, sowie <format color="%LinkColor%"><a href="03-java-variables.md">Variablen</a></format> von <format color="%LinkColor%"><a href="09-java-methods.md">Methoden</a></format>.</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code>...</code></td>
+        <td>
+            <p>Dient als <format color="%LinkColor%"><a href="09-java-methods.md#varargs">variable Parameterangabe</a></format> bei <format color="%LinkColor%"><a href="09-java-methods.md">Methoden</a></format>.</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code>@</code></td>
+        <td>
+            <p>Wird als Präfix für <format color="%LinkColor%"><a href="java-annotations.md">Annotationen</a></format> verwendet.</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code>::</code></td>
+        <td>
+            <p>Dient als Methodenreferenz und Alternative zu Lambda-Ausdrücken.</p>
+        </td>
+    </tr>
+</table>
+
 ## <format color="%c6%">Kommentare</format> {id="comments"}
 Kommentare (engl. Comments) können dabei helfen, anderen Entwicklern (und auch einem selbst) den eigenen Code verständlicher zu machen. Dies erhöht die Wartbarkeit, Lesbarkeit und das Verständnis für die Funktion des Codes. Unterschieden wird zwischen drei Kommentararten.
 
@@ -502,4 +979,8 @@ Wird in einer <tooltip term="IDE"><format color="%GlossaryLinkColor%">IDE</forma
 ![](01_java_token_2.jpg){border-effect="line"}
 
 > Die <format color="%NoteLinkColor%">Java-Dokumentation</format> ist ein spezielles Tool, welches aus Java-Quellcodes auch automatisch HTML-Dokumentationsdateien erstellen kann.
-{style="note" title="Die Java-Dokumentation"}
+> {style="note" title="Die Java-Dokumentation"}
+
+## Assoziativität {id="associativity"}
+
+Die <format color="%LinkColor%">[Assoziativität](https://en.wikipedia.org/wiki/Java_syntax#Operators)</format> beschreibt die genaue Reihenfolge, in der die <format color="%c4%">[Operatoren](#operators)</format> und <format color="%c5%">[Separatoren](#separators)</format> ausgewertet werden. Operatoren mit einer höheren Priorität oder Vorrang werden vor Operatoren mit einer niedrigeren Priorität ausgewertet. Besitzen zwei Operatoren die gleiche Priorität, entscheidet die Assoziativität über die Auswertungsreihenfolge.

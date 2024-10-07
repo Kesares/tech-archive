@@ -393,9 +393,12 @@ Da hier eine UND-Verknüpfung besteht, muss sowohl die linke als auch die rechte
     </tr>
 </table>
 
+> Etwas tiefgehendere Informationen über die <format color="%NoteHighlight%">Short-Circuit Evaluation</format>, die logischen Operatoren `&&` und `||` und den bitweisen Operatoren `&` und `|` könnt ihr in diesem interessanten Artikel "<format color="%NoteHighlight%">[Bitwise operators in Java: unpacking ambiguities](https://pvs-studio.com/en/blog/posts/java/1135/?ref=dailydev)</format>" finden.
+{style="note"}
+
 ## Assertions {id="assertions"}
 
-Assertions sind Zusicherungen. Sie sind eine Methode zur Laufzeitüberprüfung von Annahmen, die ein Entwickler während der Implementierung seines Codes macht und dienen dazu, potenzielle Fehler während der Entwicklungsphase zu erkennen.
+Assertions sind eine Methode zur Laufzeitüberprüfung von Annahmen, die ein Entwickler während der Implementierung seines Codes macht und dienen dazu, potenzielle Fehler während der Entwicklungsphase zu erkennen.
 
 ```Java
 int n = 13;

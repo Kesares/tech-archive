@@ -1,4 +1,4 @@
-# GUI
+# Java – GUI
 
 <format color="%ComingSoonColor%">Coming soon...</format>
 

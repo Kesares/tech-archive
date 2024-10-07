@@ -1,4 +1,4 @@
-# Java Design Patterns
+# Java – Design Patterns
 
 <format color="%ComingSoonColor%">Coming soon...</format>
 

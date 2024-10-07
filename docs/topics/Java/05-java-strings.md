@@ -371,9 +371,9 @@ public static String getConcatString() {
 
 > `String` – <format color="%NoteHighlight%">unveränderlich (immutable)</format>. Einmal erstellt, kann der Wert eines `String`-Objekts nicht mehr geändert werden. Ein Änderungsversuch erzeugt ein neues `String`-Objekt, was <format color="%NoteHighlight%">ineffizient</format> sein kann, <format color="%NoteHighlight%">wenn viele Änderungen</format> vorgenommen werden.
 > 
-> `StringBuilder` – <format color="%NoteHighlight%">veränderlich (mutable)</format>. Der Inhalt kann nach der Erstellung geändert werden, ohne neue Objekte zu erzeugen. <format color="%NoteHighlight%">[Nicht thread-sicher](java-threads.md)</format>, da keine Synchronisation verwendet wird, was es schneller macht als `StringBuffer`.
+> `StringBuilder` – <format color="%NoteHighlight%">veränderlich (mutable)</format>. Der Inhalt kann nach der Erstellung geändert werden, ohne neue Objekte zu erzeugen. <format color="%NoteHighlight%">[Nicht thread-sicher](java-multithreading.md)</format>, da keine Synchronisation verwendet wird, was es schneller macht als `StringBuffer`.
 > 
-> `StringBuffer` – ähnlich wie `StringBuilder`, auch <format color="%NoteHighlight%">veränderlich (mutable)</format> und effizient bei häufigen Änderungen. <format color="%NoteLinkColor%">[Thread-sicher](java-threads.md)</format>, da alle Methoden synchronisiert sind. Aufgrund der Synchronisation etwas langsamer als `StringBuilder`.
+> `StringBuffer` – ähnlich wie `StringBuilder`, auch <format color="%NoteHighlight%">veränderlich (mutable)</format> und effizient bei häufigen Änderungen. <format color="%NoteLinkColor%">[Thread-sicher](java-multithreading.md)</format>, da alle Methoden synchronisiert sind. Aufgrund der Synchronisation etwas langsamer als `StringBuilder`.
 {style="note" title="String, StringBuilder und StringBuffer"}
 
 Folgendes Beispiel misst die Zeit um die jeweiligen Strings mittels `StringBuilder` und Konkatenation zu bilden.
@@ -538,3 +538,13 @@ System.out.println("\u001B[1;34mThis text is blue and bold!\u001B[0m");
 
 >Nicht alle Terminals unterstützen <format color="%NoteHighlight%">ANSI Escape-Sequenzen</format> und ihre Unterstützung kann auf verschiedenen Betriebssystemen variieren. In Windows-Terminals kann es z.B. erforderlich sein, die Unterstützung für ANSI-Sequenzen explizit zu aktivieren, da ältere Versionen dies standardmäßig nicht unterstützen.
 {style="note" title="Fehlende oder nicht vollständige Unterstützung"}
+
+> IntelliJ IDEA verwendet für bestimmte Ausgaben von Zeichenketten ein eigenes Farbschema, um das Logging auf der Konsole zu vereinfachen.
+
+Steht in der Konsole in einer der Zeilenausgaben eines der folgenden Worte
+
+- `ERROR` (<format color="340909">Dunkelrot</format>)
+- `WARN` oder `WARNING` (<format color="1D0934">Dunkelblau</format>)
+- `DEBUG` (<format color="7F7F6E">Dunkelgrau</format>)
+
+wird diese Zeile in der entsprechenden Farbe gefärbt.

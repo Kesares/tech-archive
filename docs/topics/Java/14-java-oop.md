@@ -22,7 +22,7 @@ Die grundlegenden Prinzipien der OOP umfassen die folgenden 4 Konzepte.
 
 ### <format color="%c1%">Vererbung</format> {id="inheritance"}
 
-Durch Vererbung (engl. inheritance) kann eine <format color="%LinkColor%">[Klasse](10-java-classes.md)</format> die <format color="%LinkColor%">[Objektvariablen](10-java-classes.md#object-variables)</format> und <format color="%LinkColor%">[-methoden](10-java-classes.md#object-methods)</format> einer anderen Klasse übernehmen, was die Wiederverwendbarkeit von Code ermöglicht. Um eine Klasse von einer anderen Klasse erben zu lassen, wird das <format color="%LinkColor%">[Schlüsselwort](01-java-token.md#keywords)</format> `extends` verwendet.
+Durch Vererbung (engl. inheritance) kann eine <format color="%LinkColor%">[Klasse](10-java-classes.md)</format> die <format color="%LinkColor%">[](10-java-classes.md#object-variables)</format>und <format color="%LinkColor%">[-methoden](10-java-classes.md#object-methods)</format> einer anderen Klasse übernehmen, was die Wiederverwendbarkeit von Code ermöglicht. Um eine Klasse von einer anderen Klasse erben zu lassen, wird das <format color="%LinkColor%">[Schlüsselwort](01-java-token.md#keywords)</format> `extends` verwendet.
 
 In <format color="%LinkColor%">[Kapitel 10 – Klassen](10-java-classes.md)</format> haben wir die Klasse `Dog` erstellt. Nun möchten wir jedoch verschiedene Tierarten, wie zum Beispiel Katzen, in einem Spiel darstellen. Sowohl Katzen als auch Hunde haben gemeinsame Eigenschaften, wie einen Namen und ein Alter. Eine Katze hat zusätzlich noch eine Eigenschaft darüber, ob sie ihre Krallen ausgefahren hat.
 
@@ -32,7 +32,7 @@ In den Kindklassen rufen wir dann den Konstruktor der Elternklasse mit dem Schl�
 
 Zudem setzen wir die Objektvariablen `name` und `age` auf `protected`. Dadurch können die Kindklassen direkt auf diese Variablen zugreifen, ohne die <format color="%LinkColor%">[Getter](10-java-classes.md#getter-and-setter)</format> verwenden zu müssen.
 
-> Wenn <format color="%LinkColor%">[Klassen](10-java-classes.md)</format>, die sich im selben <format color="%LinkColor%">[Package](16-java-packages-and-imports.md)</format> wie die Klasse `Animal` befinden, direkt auf die <format color="%LinkColor%">[Objektvariablen](10-java-classes.md#object-variables)</format> `name` und `age` zugreifen möchten, ist dies durch die Verwendung von `protected` möglich. Soll dies nicht geschehen, müssen die Objektvariablen auf `private` gesetzt werden.
+> Wenn <format color="%LinkColor%">[Klassen](10-java-classes.md)</format>, die sich im selben <format color="%LinkColor%">[Package](16-java-packages-and-imports.md)</format> wie die Klasse `Animal` befinden, direkt auf die <format color="%LinkColor%">[](10-java-classes.md#object-variables)</format> `name` und `age` zugreifen möchten, ist dies durch die Verwendung von `protected` möglich. Soll dies nicht geschehen, müssen die Objektvariablen auf `private` gesetzt werden.
 > 
 > Damit geht jedoch auch der direkte Zugriff der Kindklassen verloren und die Kindklassen müssen auf die <format color="%LinkColor%">[Getter und Setter](10-java-classes.md#getter-and-setter)</format> zurückgreifen.
 > {title="Zugriff im selben Package"}
@@ -122,7 +122,7 @@ public class Cat extends Animal {
 }
 ```
 
-Das Keyword `super` funktioniert prinzipiell wie `this` – siehe <format color="%LinkColor%">[Kapitel 10 – Das Keyword this](10-java-classes.md#the-keyword-this)</format>. Allerdings werden damit der <format color="%LinkColor%">[Konstruktor](10-java-classes.md#constructors)</format>, die <format color="%LinkColor%">[Objektvariablen](10-java-classes.md#object-variables)</format> und die <format color="%LinkColor%">[Objektmethoden](10-java-classes.md#object-methods)</format> der jeweiligen Superklasse aufgerufen. 
+Das Keyword `super` funktioniert prinzipiell wie `this` – siehe <format color="%LinkColor%">[Kapitel 10 – Das Keyword this](10-java-classes.md#the-keyword-this)</format>. Allerdings werden damit der <format color="%LinkColor%">[Konstruktor](10-java-classes.md#constructors)</format>, die <format color="%LinkColor%">[](10-java-classes.md#object-variables)</format> und die <format color="%LinkColor%">[](10-java-classes.md#object-methods)</format> der jeweiligen Superklasse aufgerufen. 
 
 Innerhalb des Konstruktors muss als erste Anweisung der Konstruktor der Oberklasse aufgerufen werden, sofern Attribute übergeben werden.
 
@@ -206,11 +206,50 @@ Im Folgenden sind einige Methoden der Klasse `Object` aufgelistet, die überschr
     </tr>
 </table>
 
+#### <format color="%c1%">Das Keyword `instanceof`</format> {id="the-keyword-instanceof"}
+
+Das Keyword `instanceof` wird verwendet, um zu überprüfen, ob ein <format color="%LinkColor%">[Objekt](11-java-objects.md)</format> ein Exemplar einer bestimmten <format color="%LinkColor%">[Klasse](10-java-classes.md)</format> oder eines <format color="%LinkColor%">[Interfaces](#interfaces)</format> ist. Trifft dies zu, kann das entsprechende Objekt in den jeweiligen Typ <format color="%LinkColor%">[gecastet](03-java-variables.md#type-casting)</format> werden, um typspezifische Anweisungen durchzuführen.
+
+```Java
+Object object = new Dog("Killer", 5);
+
+if (object instanceof Dog) {
+    Dog dog = (Dog) object;
+    dog.eat();
+} else {
+    System.out.println("Instance of 'Object' or other class");
+}
+```
+
+##### <format color="%c1%">Pattern Matching bei `instanceof` ab Java 16</format>
+
+Bislang musste nach jeder Typüberprüfung ein separater <format color="%LinkColor%">[Cast](03-java-variables.md#type-casting)</format> in den entsprechenden Typ erfolgen, der in einer Hilfsvariable gespeichert wurde, um typspezifische Anweisungen ausführen zu können. Seit Java 16 ist dies nun mit einer kürzeren und eleganteren Schreibweise möglich.
+
+<compare>
+    <code-block lang="java">
+        Object object = new Dog("Killer", 5);
+        if (object instanceof Dog) {
+            Dog dog = (Dog) object;
+            dog.eat();
+        } else {
+            System.out.println("Instance of 'Object' or other class");
+        }
+    </code-block>
+    <code-block lang="java">
+        Object object = new Dog("Killer", 5);
+        if (object instanceof Dog dog) {
+            dog.eat();
+        } else {
+            System.out.println("Instance of 'Object' or other class");
+        }
+    </code-block>
+</compare>
+
 ### <format color="%c2%">Abstraktion</format> {id="abstraction"}
 
 Abstraktion bedeutet, dass komplexe Systeme auf eine einfachere und klarere Weise dargestellt werden können, indem unnötige Details ausgeblendet werden.
 
-Schaut man sich dazu die Klassen `Animal`, `Dog` und `Cat` an, fällt auf, dass dieses Prinzip bereits teilweise umgesetzt wurde. Denn die gemeinsamen Eigenschaften `name` und `age` wurden in der Oberklasse `Animal` zusammengefasst. Genauso wie deren <format color="%LinkColor%">[Getter und Setter](10-java-classes.md#getter-and-setter)</format>. Somit wurde vermieden, dass die <format color="%LinkColor%">[Objektvariablen](10-java-classes.md#object-variables)</format> und <format color="%LinkColor%">[-methoden](10-java-classes.md#object-methods)</format> sowohl in der Klasse `Dog` als auch in der Klasse `Cat` stehen.
+Schaut man sich dazu die Klassen `Animal`, `Dog` und `Cat` an, fällt auf, dass dieses Prinzip bereits teilweise umgesetzt wurde. Denn die gemeinsamen Eigenschaften `name` und `age` wurden in der Oberklasse `Animal` zusammengefasst. Genauso wie deren <format color="%LinkColor%">[Getter und Setter](10-java-classes.md#getter-and-setter)</format>. Somit wurde vermieden, dass die <format color="%LinkColor%">[](10-java-classes.md#object-variables)</format>und <format color="%LinkColor%">[-methoden](10-java-classes.md#object-methods)</format> sowohl in der Klasse `Dog` als auch in der Klasse `Cat` stehen.
 
 Besitzt eine Katze eine Eigenschaft, die ein Hund nicht besitzt, macht es keinen Sinn diese Eigenschaft in der Oberklasse zu speichern. Es reicht aus, diese Eigenschaft nur für <format color="%LinkColor%">[Objekte](11-java-objects.md)</format> der Klasse `Cat` zu speichern.
 
@@ -218,7 +257,7 @@ Die Klassen können allerdings noch weiter abstrahiert werden. Sowohl Hunde als 
 
 Befindet sich eine Variable in der Oberklasse, kann mit der entsprechenden Berechtigung auch mit `this` aus der Unterklasse auf diese zugegriffen werden. Es kann natürlich auch ganz weggelassen werden, da es keine <format color="%LinkColor%">[gleichnamige lokale Variable](10-java-classes.md#the-keyword-this)</format> innerhalb dieser <format color="%LinkColor%">[Objektmethode](10-java-classes.md#object-methods)</format> gibt.
 
-> Ich selbst bevorzuge die expliziten Angaben mit `this` für Objektvariablen in derselben Klasse und `super` für den Aufruf von Objektvariablen in der Oberklasse. Dadurch wird klarer, in welchen Klassen die Variablen deklariert sind.
+> Ich selbst bevorzuge die expliziten Angaben mit `this` für Objektvariablen und Objektmethoden in <format color="%NoteHighlight%">derselben Klasse</format> und `super` für den Aufruf von Objektvariablen und Objektmethoden in der <format color="%NoteHighlight%">Oberklasse</format>. Dadurch wird klarer, in welchen Klassen die Variablen und Methoden deklariert sind.
 {style="note" title="Best Practice – Angaben von this und super"}
 
 ```Java
@@ -302,7 +341,7 @@ public class Cat extends Animal {
 
 Kapselung bedeutet, dass der interne Zustand eines <format color="%LinkColor%">[Objekts](11-java-objects.md)</format> durch eine öffentliche Schnittstelle verborgen wird, um unerwartete Änderungen und Fehler zu vermeiden bzw. das Lesen oder Ändern von Daten einzuschränken.
 
-Auch dieses Konzept wurde bereits in den Klassen `Animal`, `Dog`, und `Cat` angewendet. Dort wurden die <format color="%LinkColor%">[Objektvariablen](10-java-classes.md#object-variables)</format> auf `private` gesetzt, später auf `protected` gesetzt und <format color="%LinkColor%">[Getter und Setter](10-java-classes.md#getter-and-setter)</format> als Kontrollpunkte für den Zugriff auf diese verwendet.
+Auch dieses Konzept wurde bereits in den Klassen `Animal`, `Dog`, und `Cat` angewendet. Dort wurden die <format color="%LinkColor%">[](10-java-classes.md#object-variables)</format> auf `private`, später auf `protected` gesetzt und <format color="%LinkColor%">[Getter und Setter](10-java-classes.md#getter-and-setter)</format> als Kontrollpunkte für den Zugriff auf diese verwendet.
 
 Etwas zu schreiben wie
 
@@ -440,17 +479,16 @@ public class Main {
             Nala is eating!
             Nala meows!
         </code-block>
+        <p>Wir speichern zwar eine Referenz auf die <format color="%LinkColor%"><a href="11-java-objects.md">Objekte</a></format> in einer <format color="%LinkColor%"><a href="03-java-variables.md">lokalen Variablen</a></format> vom Typ <code>Animal</code>, aber die Objekte agieren wie ein <code>Cat</code>- und <code>Dog</code>-Objekt.</p>
     </tab>
 </tabs>
 
-Wir speichern zwar eine Referenz auf die <format color="%LinkColor%">[Objekte](11-java-objects.md)</format> in einer <format color="%LinkColor%">[lokalen Variablen](03-java-variables.md)</format> vom Typ `Animal`, aber die Objekte agieren wie ein `Cat`- und `Dog`-Objekt.
+Was in diesen <format color="%LinkColor%">[Klassen](10-java-classes.md)</format> nun passiert ist, dass innerhalb der Kindklassen das Verhalten der Klasse `Animal` überschrieben wird, indem die Objektmethode `giveLoad()` mit einer eigenen Implementierung der Kindklasse überschrieben wird. Es werden immer die <format color="%LinkColor%">[](10-java-classes.md#object-methods)</format> der Kindklassen aufgerufen, sofern diese eine eigene Implementierung mitbringen.
 
-Was in diesen <format color="%LinkColor%">[Klassen](10-java-classes.md)</format> nun passiert ist, dass innerhalb der Kindklassen das Verhalten der Klasse `Animal` überschrieben wird, indem die Objektmethode `giveLoad()` mit einer eigenen Implementierung der Kindklasse überschrieben wird. Es werden immer die <format color="%LinkColor%">[Objektmethoden](10-java-classes.md#object-methods)</format> der Kindklassen aufgerufen, sofern diese eine eigene Implementierung mitbringen.
-
-> Der <tooltip term="Compiler"><format color="%GlossaryLinkColor%">Compiler</format></tooltip> meckert zwar nicht herum, allerdings zeugt es von sauberem Arbeiten, wenn oberhalb der überschriebenen Methoden die Annotation `@Override` steht.
+> Der <tooltip term="Compiler"><format color="%GlossaryLinkColor%">Compiler</format></tooltip> meckert zwar nicht herum, allerdings zeugt es von sauberem Arbeiten, wenn oberhalb der überschriebenen Methoden die <format color="%NoteLinkColor%">[Annotation](java-annotations.md)</format> `@Override` steht.
 {style="note" title="Annotation @Override"}
 
-Es können auch die <format color="%LinkColor%">[Objektmethoden](10-java-classes.md#object-methods)</format> der Oberklassen aus den Objektmethoden der Kindklassen aufgerufen werden. Dies macht aber nur Sinn, wenn innerhalb der Methoden der Oberklasse Code geschrieben wurde, der für die jeweilige Kindklasse ebenfalls relevant ist.
+Es können auch die <format color="%LinkColor%">[](10-java-classes.md#object-methods)</format> der Oberklassen aus den Objektmethoden der Kindklassen aufgerufen werden. Dies macht aber nur Sinn, wenn innerhalb der Methoden der Oberklasse Code geschrieben wurde, der für die jeweilige Kindklasse ebenfalls relevant ist.
 
 ```Java
 @Override  
@@ -491,7 +529,7 @@ Angenommen wir hätten dennoch die Möglichkeit ein <format color="%LinkColor%">
 
 Die Instanziierung und den möglichen Aufruf dieser Methode, wird durch die Deklarierung der Klasse mit `abstract` verhindert.
 
-Werden nun die <format color="%LinkColor%">[Objektmethoden](10-java-classes.md#object-methods)</format> aus der Kindklasse entfernt oder werden weitere Klassen erstellt, die von der Klasse `Animal` erben, dann gibt es einen Compiler-Fehler der folgenden oder einer ähnlichen Art, bis die notwendigen Methoden überschrieben wurden.
+Werden nun die <format color="%LinkColor%">[](10-java-classes.md#object-methods)</format> aus der Kindklasse entfernt oder werden weitere Klassen erstellt, die von der Klasse `Animal` erben, dann gibt es einen <tooltip term="Compiler"><format color="%GlossaryLinkColor%">Compiler</format></tooltip>-Fehler der folgenden Art, bis die notwendigen Methoden überschrieben wurden.
 
 <warning>
     <p>Class 'Dog' must either be declared abstract or implement abstract method 'giveLoud()' in 'Animal'</p>
@@ -501,7 +539,7 @@ Dieses Vorgehen ist nützlich, wenn Kindklassen ihre eigenen Implementierungen m
 
 #### <format color="%c4%">Interfaces</format> {id="interfaces"}
 
-Eine Alternative zu <format color="%LinkColor%">[abstrakten Klassen](#abstract-classes)</format> sind Interfaces (Schnittstellen). Interfaces dienen dazu, bestimmte Fähigkeiten oder Verhalten zu definieren, ohne eine konkrete Implementierung vorzugeben. Solche Methodendeklarationen werden häufig auch Signaturen genannt (wie abstrakte Methoden in abstrakten Klassen).
+Eine Alternative zu <format color="%LinkColor%">[abstrakten Klassen](#abstract-classes)</format> sind Interfaces (Schnittstellen). Interfaces dienen dazu, bestimmte Verhalten zu definieren, ohne eine konkrete Implementierung vorzugeben. Solche Methodendeklarationen werden häufig auch Signaturen genannt (wie abstrakte Methoden in abstrakten Klassen).
 
 <format color="%LinkColor%">[Klassen](10-java-classes.md)</format> können diese Interfaces und diese vorgeschriebene Funktionalität dann implementieren, wobei auch die <format color="%LinkColor%">[Keywords](01-java-token.md#keywords)</format> `interface` und `implements` Anwendung finden. Interfaces werden meistens wie <tooltip term="Top-Level-Class"><format color="%GlossaryLinkColor%">Top-Level-Klassen</format></tooltip> in eigenen Dateien geschrieben, können aber auch direkt in einer Klasse definiert werden.
 
@@ -538,7 +576,7 @@ Um einen passenderen Namen für das Interface zu nehmen, könnte man es anstelle
 
 Ohne den Kontext zu kennen, ist es schwer zu verstehen, was dieses Interface und seine Methode tun sollen. Umso mehr, wenn es in zwei solch unterschiedlichen Umgebungen verwendet wird. `Loudable` ist kein geläufiger Begriff und `giveLoud()` klingt eher nach einer Anweisung wie "Ton geben", was nicht intuitiv ist.
 
-Im Gegensatz dazu deutet ein Interface namens `Soundable` mit einer Methode `makeSound()` sofort darauf hin, dass es sich um etwas handelt, das Geräusche erzeugen kann. Der Name ist selbsterklärend und macht den Code leichter lesbar und wartbar.
+Im Gegensatz dazu deutet ein Interface namens `Soundable` mit einer Methode `makeSound()` sofort darauf hin, dass es sich um etwas handelt, das Geräusche erzeugen kann. Der Name ist selbsterklärend und macht den Code verständlicher.
 
 ##### <format color="%c4%">Wichtige Schnittstellen in der Java-Standardbibliothek</format> {id="important-interfaces"}
 
@@ -631,11 +669,11 @@ public interface Soundable {
 
 Dadurch werden die <format color="%LinkColor%">[Klassen](10-java-classes.md)</format>, die dieses Interface implementieren, nicht mehr dazu gezwungen, Methoden zu überschreiben, können dies aber bei Bedarf dennoch tun.
 
-##### Abstrakte Klassen vs. Schnittstellen {id="abstract-classes-vs-interfaces"}
+##### <format color="%c4%">Abstrakte Klassen vs. Schnittstellen</format> {id="abstract-classes-vs-interfaces"}
 
 Die prinzipielle Anwendung zwischen Schnittstellen und <format color="%LinkColor%">[abstrakten Klassen](#abstract-classes)</format> bleibt dieselbe und beide besitzen viele Ähnlichkeiten und können auch auf ähnliche Weise eingesetzt werden. Zudem können Interfaces auch von anderen Interfaces erben. Allerdings haben Schnittstellen einen fundamentalen Unterschied.
 
-Während Klassen nur von einer einzigen Klasse (von `Object` mal abgesehen) erben können, können mehrere Interfaces implementiert werden. Dies ist zwar auch durch mehrstufige Vererbung möglich, allerdings können dadurch tiefe und unübersichtliche Hierarchien entstehen.
+Während Klassen nur von einer einzigen Klasse erben können (ob direkt oder indirekt), können mehrere Interfaces implementiert werden. Dies ist zwar auch durch mehrstufige Vererbung möglich, allerdings können dadurch tiefe und unübersichtliche Hierarchien entstehen.
 
 ## Versiegelte Klassen und Interfaces {id="sealed-classes-and-interfaces"}
 

@@ -1,6 +1,6 @@
 # 10 Java – Klassen
 
-Klassen sind ein wesentlicher Bestandteil der <format color="%LinkColor%">[OOP – Objektorientierten Programmierung](14-java-oop.md)</format>. Sie sind vergleichbar mit Rezepten oder Blueprints und stellen die grundsätzliche Struktur und den Aufbau von konkret instanziierten <format color="%LinkColor%">[Objekten](11-java-objects.md)</format> dar – deren Eigenschaften (<format color="%LinkColor%">[Objektvariablen](#object-variables)</format>) und Funktionalitäten (<format color="%LinkColor%">[Objektmethoden](#object-methods)</format>).
+Klassen sind ein wesentlicher Bestandteil der <format color="%LinkColor%">[OOP – Objektorientierten Programmierung](14-java-oop.md)</format>. Sie sind vergleichbar mit Rezepten oder Blueprints und stellen die grundlegende Struktur und den Aufbau von konkret instanziierten <format color="%LinkColor%">[Objekten](11-java-objects.md)</format> dar – deren Eigenschaften (<format color="%LinkColor%">[Objektvariablen](#object-variables)</format>) und Funktionalitäten (<format color="%LinkColor%">[Objektmethoden](#object-methods)</format>). Jede Klasse, die in Java erstellt wird, <format color="%LinkColor%">[erbt](14-java-oop.md#inheritance)</format> automatisch von der <format color="%LinkColor%">[Klasse `Object`](14-java-oop.md#the-mother-of-all-classes-object)</format>.
 
 Alle <format color="%LinkColor%">[Variablen](03-java-variables.md)</format> und <format color="%LinkColor%">[Methoden](09-java-methods.md)</format>, die in Java deklariert werden, sind von solch einer <format color="%LinkColor%">[Klassendefinition](#class-structure)</format> ummantelt – unabhängig davon, ob sie zu einem <format color="%LinkColor%">[Objekt](11-java-objects.md)</format> gehören oder nicht. Der Name der Datei muss zudem genauso heißen, wie der Name der Klasse, die sich innerhalb der Datei befindet.
 
@@ -8,7 +8,7 @@ Alle <format color="%LinkColor%">[Variablen](03-java-variables.md)</format> und 
 
 Der Aufbau einer Klasse ist nicht in Stein gemeißelt. Er kann sich von Unternehmen zu Unternehmen unterscheiden. Eine weit verbreitete Anordnung sieht folgendermaßen aus.
 
-```Console
+```Java
 public class ClassName {
 
     // Constants and static or class variables
@@ -21,7 +21,7 @@ public class ClassName {
 
     // Instance or object methods
 
-    // Getters and Setters
+    // Getters and setters
 
     // Inner classes
 }
@@ -437,7 +437,7 @@ Statische innere Klassen eignen sich gut für <tooltip term="Utility-Class"><for
 
 Dies wird häufig verwendet, um verschiedene Implementierungen eines <format color="%LinkColor%">[Interfaces](14-java-oop.md#interfaces)</format> oder einer <format color="%LinkColor%">[abstrakten Klasse](14-java-oop.md#abstract-classes)</format> zu kapseln. Sie können aber auch dazu verwendet werden, um die Implementierung von Algorithmen oder Datenstrukturen zu kapseln, die nur innerhalb der äußeren Klasse verwendet werden sollen.
 
-Eine statische innere Klasse wird, wie das obige Beispiel zeigt, auch häufig für ein <format color="%LinkColor%">[Builder-Pattern](java-design-patterns.md#builder-pattern)</format> verwendet. Bei dieser Methode wird eine statische innere Klasse verwendet, um die Konstruktion eines komplexen <format color="%LinkColor%">[Objekts](11-java-objects.md)</format> zu kapseln. Die statische innere Klasse fungiert als `Builder`, der die verschiedenen Teile des Objekts schrittweise konfiguriert und schließlich das fertige Objekt erstellt.
+Eine statische innere Klasse wird, wie das obige Beispiel zeigt, auch häufig für ein <format color="%LinkColor%">[](java-design-patterns.md#builder-pattern)</format>verwendet. Bei dieser Methode wird eine statische innere Klasse verwendet, um die Konstruktion eines komplexen <format color="%LinkColor%">[Objekts](11-java-objects.md)</format> zu kapseln. Die statische innere Klasse fungiert als `Builder`, der die verschiedenen Teile des Objekts schrittweise konfiguriert und schließlich das fertige Objekt erstellt.
 
 ### Lokale innere Klassen {id="local-inner-classes"}
 

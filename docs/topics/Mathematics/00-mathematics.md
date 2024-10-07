@@ -1,8 +1,9 @@
 # Mathematik
+<primary-label ref="mathematics"/>
 <secondary-label ref="wip"/>
 <secondary-label ref="beta"/>
 
-Willkommen im faszinierenden Universum der Mathematik, wo Zahlen, Formeln und Konzepte auf den ersten Blick vielleicht abschreckend wirken, aber letztlich die Grundlage für alles bilden, was wir in der IT und darüber hinaus tun. Ob in der Physik, Informatik oder im Alltag – Mathematik spielt in unserem Leben eine zentrale Rolle.
+Willkommen im faszinierenden Universum der Mathematik, wo Zahlen, Formeln und Konzepte auf den ersten Blick vielleicht abschreckend wirken, aber letztlich die Grundlage für alles bilden, was wir in der IT und darüber hinaus kennen. Ob in der Physik, Informatik oder im Alltag – Mathematik spielt in unserem Leben eine zentrale Rolle.
 
 Mathematik ist weit mehr als nur Zahlen und Formeln. Sie ist ein systematischer Ansatz, um Muster zu erkennen, Beziehungen zu verstehen und logische Schlussfolgerungen zu ziehen. Von der Grundrechenart bis hin zu abstrakten Konzepten wie der Zahlentheorie: Mathematik ist ein mächtiges Werkzeug, das uns hilft, komplexe Sachverhalte zu modellieren und zu analysieren.
 

@@ -214,7 +214,7 @@ Beide Methoden befinden sich in derselben Klasse wie die `main()`-Methode, aus d
 
 ## Methodenüberladung {id="method-overloading"}
 
-Es ist möglich mehr als eine Methode mit demselben Methodennamen zu schreiben. Jedoch müssen sich die Methoden entweder in der Anzahl der übergebenen Parameter oder – bei gleicher Anzahl – im Parametertyp unterscheiden.
+Es ist möglich, mehr als eine Methode mit demselben Methodennamen zu schreiben. Jedoch müssen sich die Methoden entweder in der Anzahl der übergebenen Parameter oder – bei gleicher Anzahl – im Parametertyp unterscheiden.
 
 ```Java
 public void print(int n) {
@@ -285,11 +285,15 @@ public static int calculateChecksum(int n) {
     return n % 10 + calculateChecksum(n / 10);
 }
 ```
+
+> Rekursion ist zwar eine feine Sache, in der Praxis wird diese jedoch oft vermieden und auf iterative Lösungen gesetzt, wenn es darum geht robuste Software zu schreiben.
+{style="note"}
+
 ![Recursion Meme](09_java_methods_1.jpg){width="400"}
 
 ## Die `Math`-Klasse {id="the-math-class"}
 
-Java bringt von Haus aus eine <format color="%LinkColor%">[Klasse](10-java-classes.md)</format> mit, die ausschließlich statische Methoden für verschiedene Berechnungen besitzt. Die `Math`-Klasse enthält Methoden für beispielsweise das Runden von Kommazahlen, das Finden des Max- oder Min-Wertes, Wurzelberechnung, Zufallszahlen, Berechnung von Cosinus, Sinus und sehr viel mehr.
+Java bringt von Haus aus eine <format color="%LinkColor%">[Klasse](10-java-classes.md)</format> mit, die ausschließlich <format color="%LinkColor%">[statische Methoden](10-java-classes.md#class-methods)</format> für verschiedene Berechnungen besitzt. Die `Math`-Klasse enthält Methoden für beispielsweise das Runden von Kommazahlen, das Finden des Max- oder Min-Wertes, Wurzelberechnung, Zufallszahlen, Berechnung von Cosinus, Sinus und sehr viel mehr.
 
 ```Java
 @IntrinsicCandidate

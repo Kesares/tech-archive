@@ -7,6 +7,8 @@
     </primary-label>
 
     <primary-label id="programming-lang" short-name="PL" name="Programming Language" color="red"/>
+    <primary-label id="markup-lang" short-name="ML" name="Markup Language" color="red"/>
+    <primary-label id="mathematics" short-name="M" name="Mathematics" color="blue"/>
 
     <secondary-label id="wip" name="WIP" color="purple"/>
     <secondary-label id="beta" name="Beta" color="tangerine"/>

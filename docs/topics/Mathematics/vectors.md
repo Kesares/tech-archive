@@ -54,6 +54,14 @@ Vektoren können in verschiedenen Dimensionen existieren. Ein Vektor in einer zw
 \end{align}
 ```
 
+## Nullvektor {id="zero-vector"}
+
+```tex
+\begin{align}
+    \vec{v}=\begin{pmatrix}0\\0\\0\end{pmatrix}
+\end{align}
+```
+
 ## Addition und Subtraktion von Vektoren {id="addition-and-subtraction-of-vectors"}
 
 > Vektoren können nur addiert bzw. subtrahiert werden, wenn sie die <format color="%NoteHighlight%">gleiche Zeilenanzahl</format> besitzen.

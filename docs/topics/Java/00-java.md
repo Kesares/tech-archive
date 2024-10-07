@@ -3,16 +3,16 @@
 <secondary-label ref="wip"/>
 <secondary-label ref="beta"/>
 
-> Begriffe, welche <tooltip term="placeholder"><format color="%GlossaryLinkColor%">so</format></tooltip> hervorgehoben werden, besitzen eine Kurzbeschreibung im Glossar.
-
 ## Was ist Java? {id="what-is-java"}
-Java ist wie der berühmte Alleskönner auf einer Party: Du triffst ihn überall und er kann alles – oder zumindest behauptet er das. Es handelt sich um eine objektorientierte Programmiersprache, die 1990 ursprünglich von James Gosling und Sun Microsystems entwickelt und 2010 von <format color="%LinkColor%">[Oracle](https://www.oracle.com)</format> übernommen wurde. Java wurde mit dem Ziel entworfen, eine plattformunabhängige Programmiersprache zu sein, welche Programme auf verschiedenen Systemen ausführen kann – *"Write once, run anywhere"*.
 
-Im Verhältnis zu anderen Programmiersprachen ist Java tatsächlich ziemlich leicht zu lernen. Es gibt Unmengen an Ressourcen und eine riesige Community, die euch auf eurem Lernweg weiterhelfen können. Das bedeutet, dass ihr selten allein dasteht, wenn ihr mal nicht weiter wisst.
+Java ist wie der berühmte Alleskönner auf einer Party: Du triffst ihn überall und er kann alles – oder zumindest behauptet er das. Es handelt sich um eine objektorientierte Programmiersprache, die 1995 ursprünglich von James Gosling und Sun Microsystems entwickelt und 2010 von <format color="%LinkColor%">[Oracle](https://www.oracle.com)</format> übernommen wurde. Java wurde mit dem Ziel entworfen, eine plattformunabhängige Programmiersprache zu sein, welche Programme auf verschiedenen Systemen ausführen kann – *"Write once, run anywhere"*.
+
+Im Verhältnis zu anderen Programmiersprachen ist, meiner Meinung nach, Java tatsächlich ziemlich leicht zu lernen. Es gibt Unmengen an Ressourcen und eine riesige Community, die euch auf eurem Lernweg weiterhelfen können. Das bedeutet, dass ihr selten allein dasteht, wenn ihr mal nicht weiter wisst.
 
 Natürlich könnte es sein, dass die Einstiegshürde bei dieser Sprache höher liegt als bei Sprachen wie Python, die eine größere Abstraktionsebene bieten und dadurch leichter zugänglich sind. Aber im Vergleich zu komplexeren Sprachen wie C++ ist Java eine wohlwollende Einstiegshilfe in die Welt der Programmierung, die später Türen zu vielen anderen Technologien öffnet.
 
 ## JDK, JRE und JVM {id="jdk-jre-jvm"}
+
 Für das Programmieren und Entwickeln von Java-Anwendungen muss Java erst installiert werden. Wer bereits nach der Installation von Java gegoogelt hat, wird wahrscheinlich schon auf die Begriffe <tooltip term="JRE"><format color="%GlossaryLinkColor%">JRE</format></tooltip>, <tooltip term="JDK"><format color="%GlossaryLinkColor%">JDK</format></tooltip> und <tooltip term="JVM"><format color="%GlossaryLinkColor%">JVM</format></tooltip> gestoßen sein.
 
 - Das <tooltip term="JDK"><format color="%GlossaryLinkColor%">JDK</format></tooltip> (Java Development Kit) wird verwendet, um Java-Programme zu entwickeln und liefert eine Sammlung von Werkzeugen, die für die Entwicklung von Java-Anwendungen benötigt werden.
@@ -21,19 +21,16 @@ Für das Programmieren und Entwickeln von Java-Anwendungen muss Java erst instal
 
 - Die <tooltip term="JVM"><format color="%GlossaryLinkColor%">JVM</format></tooltip> (Java Virtual Machine) ist Teil der <tooltip term="JRE"><format color="%GlossaryLinkColor%">JRE</format></tooltip> und für die eigentliche Ausführung von Java-Programmen zuständig. Sie wandelt den Java-Bytecode in ausführbare Anweisungen für die zugrundeliegende Maschine um.
 
-![](https://www.boardinfinity.com/blog/content/images/2022/11/Your-paragraph-text--66-.jpg)
+![JDK JRE & JVM](00_java_started_1.png)
 
 ## Download Java {id="download-java"}
 
-> Für die Entwicklung von Java-Programmen ist die OpenJDK-Distribution <format color="%NoteLinkColor%">[Eclipse Temurin](https://adoptium.net)</format> von Adoptium zu empfehlen.
-{style="note" title="Download"}
+> Für die Entwicklung von Java-Programmen ist die OpenJDK-Distribution <format color="%NoteLinkColor%">[Eclipse Temurin](https://adoptium.net)</format> von Adoptium und davon die Installation eines <format color="%NoteLinkColor%">Long Term Support-OpenJDK</format> zu empfehlen, da dieses über einen längeren Zeitraum weiterentwickelt und gepatcht wird.
+{style="note" title="Download und LTS Empfehlung"}
 
 <format color="%Highlight%">Eclipse Temurin</format> ist eine quelloffene Java Standard Edition-Implementierung und eine Alternative zum kommerziell lizensierten OracleJDK von Oracle.
 
-> Zu empfehlen ist die Installation eines <format color="%NoteLinkColor%">Long Term Support-OpenJDK</format>, da dieses über einen längeren Zeitraum gepatcht und unterstützt wird.
-{style="note" title="LTS Empfehlung"}
-
-Wird IntelliJ als <tooltip term="IDE"><format color="%GlossaryLinkColor%">IDE</format></tooltip> verwendet, besteht die Möglichkeit, das <tooltip term="JDK"><format color="%GlossaryLinkColor%">JDK</format></tooltip> direkt über die <tooltip term="IDE"><format color="%GlossaryLinkColor%">IDE</format></tooltip> herunterzuladen und zu installieren.
+Viele <tooltip term="IDE"><format color="%GlossaryLinkColor%">IDEs</format></tooltip>, wie IntelliJ, bieten die Möglichkeit, das <tooltip term="JDK"><format color="%GlossaryLinkColor%">JDK</format></tooltip> direkt über die <tooltip term="IDE"><format color="%GlossaryLinkColor%">IDE</format></tooltip> herunterzuladen und zu installieren.
 
 ## Installation des JDK {id="installation-jdk"}
 
@@ -48,7 +45,7 @@ Wird IntelliJ als <tooltip term="IDE"><format color="%GlossaryLinkColor%">IDE</f
         <tip>
             Umgebungsvariablen sind spezielle Variablen in einem Betriebssystem, die Einstellungen oder Informationen über die Arbeitsumgebung für Prozesse und Anwendungen bereitstellen.
         </tip>
-        <img src="00_java_started_1.png" alt="Windows Java Installation"/>
+        <img src="00_java_started_2.png" alt="Java Windows Installation"/>
     </tab>
 </tabs>
 
@@ -76,10 +73,10 @@ javac 21.0.4
 
 Java wurde nun richtig installiert. Jetzt kann sich nach einer geeigneten <tooltip term="IDE"><format color="%GlossaryLinkColor%">IDE</format></tooltip> umgeschaut werden.
 
-> Es ist möglich, mehrere <tooltip term="JDK"><format color="%GlossaryLinkColor%">JDK</format></tooltip> Versionen zu installieren. Allerdings wird davon abgeraten, da dies beim Wechsel zwischen den Versionen zu Inkonsistenzen führen kann.
->
->Um Probleme zu vermeiden, sollte immer zuerst die bestehende Version sauber deinstalliert und dann die neue Version installiert werden.
+> Es ist möglich, mehrere <tooltip term="JDK"><format color="%GlossaryLinkColor%">JDK</format></tooltip>-Versionen parallel zu installieren, wenn verschiedene Projekte unterschiedliche Versionen erfordern. Allerdings sollte darauf geachtet werden, dass die Umgebung korrekt konfiguriert wird, um Inkonsistenzen beim Wechsel zwischen den Versionen zu vermeiden.
 {style="warning" title="Installation von mehreren Java Versionen"}
+
+Um Probleme zu vermeiden, sollte die jeweilige Version, die für ein bestimmtes Projekt benötigt wird, explizit in den Umgebungsvariablen und den Pfaden festgelegt werden. Wenn eine alte Version nicht mehr benötigt wird, kann es sinnvoll sein, diese sauber zu deinstallieren, bevor eine neue Version installiert wird.
 
 ## IDE {id="ide"}
 
@@ -138,13 +135,13 @@ Als Alternative zum normalen Texteditor auf Windows, ist <format color="%LinkCol
                         </ul>
                     </li>
                 </ul>
-                <img src="00_java_started_2.png" alt="Windows Java Installation"/>
+                <img src="00_java_started_3.png" alt="Windows Java Installation"/>
             </tab>
         </tabs>
-        <h4 id="itellij-project-setup">IntelliJ IDEA Projekteinrichtung</h4>
+        <h4 id="intellij-project-setup">IntelliJ IDEA Projekteinrichtung</h4>
         <tip>Es ist sinnvoll einen Workspace-Ordner zu erstellen, in dem alle Projekte gespeichert werden.</tip>
         <p>Wird das erste Mal IntelliJ gestartet, erscheint das Fenster <code>Import IntelliJ IDEA Settings</code>. Hier können bestehende Konfigurationen importiert werden. In diesem Fall existieren keine Konfigurationen. Die voreingestellte Auswahl wird also bei <code>Do not import settings</code> belassen und auf <shortcut>OK</shortcut> geklickt.</p>
-        <p>Danach erscheint eine Frage nach dem Teilen von Daten und dem Datenschutz. Dies kann nach eigenem Ermessen entschieden werden. In diesem Guide wird auf <shortcut>Dont't Send</shortcut> geklickt.</p>
+        <p>Danach erscheint eine Frage nach dem Teilen von Daten und dem Datenschutz. Dies kann nach eigenem Ermessen entschieden werden. In diesem Guide wird auf <shortcut>Don't Send</shortcut> geklickt.</p>
         <p>Nun kann ein neues Projekt in IntelliJ angelegt werden. Für ein Projekt muss</p>
         <ul>
             <li>ein Name,</li>

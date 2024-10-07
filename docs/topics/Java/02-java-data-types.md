@@ -10,16 +10,83 @@ Grundsätzlich wird zwischen 2 Arten von Datentypen unterschieden.
 ## <format color="%c1%">Primitive Datentypen</format> {id="primitive-data-types"}
 Primitive Datentypen werden auch einfache oder elementare Datentypen genannt. In Java existieren nur 8 solcher Datentypen. Die folgende Tabelle zeigt eine Übersicht aller primitiven Datentypen.
 
-| Datentyp  | Kategorie           | Wrapper-Klasse        | Größe in Bit                                                                                    | Wertebereich                                                                                             | Beschreibung                                             |
-|-----------|---------------------|-----------------------|-------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------------------------------|
-| `byte`    | Ganzzahlig          | `java.lang.Byte`      | 8                                                                                               | -128 bis +127                                                                                            | Zweierkomplement-Werte                                   |
-| `short`   | Ganzzahlig          | `java.lang.Short`     | 16                                                                                              | -32.768 bis +32.767                                                                                      | Zweierkomplement-Werte                                   |
-| `int`     | Ganzzahlig          | `java.lang.Integer`   | 32                                                                                              | -2.147.483.648 bis +2.147.483.647                                                                        | Zweierkomplement-Werte                                   |
-| `long`    | Ganzzahlig          | `java.lang.Long`      | 64                                                                                              | -9.223.372.036.854.775.808 bis +9.223.372.036.854.775.807                                                | Zweierkomplement-Werte                                   |
-| `float`   | Gleitkommazahl      | `java.lang.Float`     | 32                                                                                              | -3,40282347 * 10<sup>38</sup> bis +3,40282347 * 10<sup>38</sup> (8 Nachkommastellen)                     | 32-Bit IEEE 754-Gleitkommazahl                           |
-| `double`  | Gleitkommazahl      | `java.lang.Double`    | 64                                                                                              | -1,79769313486231570 * 10<up>308</sup> bis +1,79769313486231570 * 10<sup>308</sup> (17 Nachkommastellen) | 64-Bit IEEE 754-Gleitkommazahl mit doppelter Genauigkeit |
-| `char`    | Character-Datentyp  | `java.lang.Character` | 16                                                                                              | 0 bis +65.535                                                                                            | Unicode-Zeichen (UTF-16)                                 |
-| `boolean` | Boolescher Datentyp | `java.lang.Boolean`   | Abhängig von der <tooltip term="JVM"><format color="%GlossaryLinkColor%">JVM</format></tooltip> | `true` oder `false`                                                                                      | Boolescher Wahrheitswert                                 |
+<table>
+    <tr>
+        <td>Datentyp</td>
+        <td>Kategorie</td>
+        <td><tooltip term="Wrapper-Class"><format color="%GlossaryLinkColor%">Wrapper-Klasse</format></tooltip></td>
+        <td>Größe in Bit</td>
+        <td>Wertebereich</td>
+        <td>Beschreibung</td>
+    </tr>
+    <tr>
+        <td><code>byte</code></td>
+        <td>Ganzzahlig</td>
+        <td><code>java.lang.Byte</code></td>
+        <td>8</td>
+        <td>-128 bis +127</td>
+        <td>Zweierkomplement-Werte</td>
+    </tr>
+    <tr>
+        <td><code>short</code></td>
+        <td>Ganzzahlig</td>
+        <td><code>java.lang.Short</code></td>
+        <td>16</td>
+        <td>-32.768 bis +32.767</td>
+        <td>Zweierkomplement-Werte</td>
+    </tr>
+    <tr>
+        <td><code>int</code></td>
+        <td>Ganzzahlig</td>
+        <td><code>java.lang.Integer</code></td>
+        <td>32</td>
+        <td>-2.147.483.648 bis +2.147.483.647</td>
+        <td>Zweierkomplement-Werte</td>
+    </tr>
+    <tr>
+        <td><code>long</code></td>
+        <td>Ganzzahlig</td>
+        <td><code>java.lang.Long</code></td>
+        <td>64</td>
+        <td>-9.223.372.036.854.775.808 bis +9.223.372.036.854.775.807</td>
+        <td>Zweierkomplement-Werte</td>
+    </tr>
+    <tr>
+        <td><code>float</code></td>
+        <td>Fließkommazahl</td>
+        <td><code>java.lang.Float</code></td>
+        <td>32</td>
+        <td><p>-3,40282347 * 10<sup>38</sup> bis +3,40282347 * 10<sup>38</sup> (8 Nachkommastellen)</p></td>
+        <td>32-Bit <tooltip term="IEEE-754"><format color="%GlossaryLinkColor%">IEEE 754</format></tooltip>-Fließkommazahl</td>
+    </tr>
+    <tr>
+        <td><code>double</code></td>
+        <td>Fließkommazahl</td>
+        <td><code>java.lang.Double</code></td>
+        <td>64</td>
+        <td>-1,79769313486231570 * 10<sup>308</sup> bis +1,79769313486231570 * 10<sup>308</sup> (17 Nachkommastellen)</td>
+        <td>64-Bit <tooltip term="IEEE-754"><format color="%GlossaryLinkColor%">IEEE 754</format></tooltip>-Fließkommazahl mit doppelter Genauigkeit</td>
+    </tr>
+    <tr>
+        <td><code>char</code></td>
+        <td>Zeichen-Datentyp</td>
+        <td><code>java.lang.Character</code></td>
+        <td>16</td>
+        <td>0 bis +65.535</td>
+        <td>Unicode-Zeichen (UTF-16)</td>
+    </tr>
+    <tr>
+        <td><code>boolean</code></td>
+        <td>Boolescher Datentyp</td>
+        <td><code>java.lang.Boolean</code></td>
+        <td>
+            <p>Abhängig von der <tooltip term="JVM"><format color="%GlossaryLinkColor%">JVM</format></tooltip>.</p>
+            <p>Aufgrund der Speicherarchitekturen wird 8 Bit allokiert, auch wenn ein Boolean theoretisch nur 1 Bit repräsentiert.</p>
+        </td>
+        <td><code>true</code> oder <code>false</code></td>
+        <td>Boolescher Wahrheitswert</td>
+    </tr>
+</table>
 
 ### Ganzzahlen {id="integers"}
 
@@ -44,7 +111,7 @@ Der <tooltip term="Compiler"><format color="%GlossaryLinkColor%">Compiler</forma
 > `System.out.println()` wird für die Ausgabe auf der Konsole verwendet – siehe <format color="%NoteLinkColor%">[Kapitel 4 – Ein- und Ausgaben](04-java-io.md)</format>.
 {style="note"}
 
-Neben der standardmäßigen Dezimalschreibweise, kann auch die binäre, oktale oder hexadezimale Schreibweise angewendet werden.
+Neben der standardmäßigen Dezimalschreibweise, kann auch die binäre, oktale oder hexadezimale Schreibweise verwendet werden.
 
 | Zahlensystem | Präfix |
 |--------------|--------|
@@ -56,9 +123,9 @@ Folgendes Beispiel zur Veranschaulichung. Die Syntax wird im nachfolgenden <form
 
 ```java
 int decimal = 42;  
-int binary = 0b1101;  
-int octal = 023;  
-int hexadecimal = 0x2B;
+int binary = 0b101010;  
+int octal = 052;  
+int hexadecimal = 0x2A;
 ```
 
 ### Gleitkommazahlen {id="floating-point-numbers"}
@@ -129,17 +196,48 @@ Der <tooltip term="Compiler"><format color="%GlossaryLinkColor%">Compiler</forma
 
 Folgende Tabelle zeigt einige Escape-Sequenzen.
 
-| Escape Sequenz | Beschreibung                    |
-|----------------|---------------------------------|
-| `\t`           | Horizontaler Tabulator          |
-| `\r`           | Carriage Return (Wagenrücklauf) |
-| `\n`           | Zeilenumbruch                   |
-| `\uXXXX`       | Unicode XXXX (hexadezimal)      |
-| `\b`           | Backspace (Rückschritt)         |
-| `\f`           | Form Feed (Seitenumbruch)       |
-| `\'`           | Hochkommata                     |
-| `\"`           | Anführungszeichen               |
-| `\\`           | Backslash                       |
+<table>
+    <tr>
+        <td>Escape Sequenz</td>
+        <td>Beschreibung</td>
+    </tr>
+    <tr>
+        <td><code>\t</code></td>
+        <td>Horizontaler Tabulator</td>
+    </tr>
+    <tr>
+        <td><code>\r</code></td>
+        <td>Carriage Return (Wagenrücklauf)</td>
+    </tr>
+    <tr>
+        <td><code>\n</code></td>
+        <td>Zeilenumbruch</td>
+    </tr>
+    <tr>
+        <td><code>\uXXXX</code></td>
+        <td>Unicode XXXX (hexadezimal)</td>
+    </tr>
+    <tr>
+        <td><code>\b</code></td>
+        <td>Backspace (Rückschritt)</td>
+    </tr>
+    <tr>
+        <td><code>\f</code></td>
+        <td>Form Feed (Seitenumbruch)</td>
+    </tr>
+    <tr>
+        <td><code>\'</code></td>
+        <td>Hochkommata</td>
+    </tr>
+    <tr>
+        <td><code>\"</code></td>
+        <td>Anführungszeichen</td>
+    </tr>
+    <tr>
+        <td><code>\\</code></td>
+        <td>Backslash</td>
+    </tr>
+</table>
 
 ### Datentyp `boolean` {id="data-type-boolean"}
 
@@ -152,9 +250,9 @@ Vergleiche werden mit dem Typ `boolean` realisiert. Beispielsweise um zu prüfen
 
 ## <format color="%c2%">Referenzdatentypen</format> {id="reference-data-types"}
 
-Referenzdatentypen werden im Verlauf der späteren Kapitel genauer beschrieben. Referenztypen werden häufig auch als Instanzen oder Objekte, seltener auch als komplexe Datentypen bezeichnet. Objekte repräsentieren konkrete Exemplare von Bauplänen (<format color="%LinkColor%">[Klassen](10-java-classes.md)</format>). Zur Vereinfachung wird in den folgenden Kapiteln der Begriff „Objekt“ bzw. „Objekte“ verwendet.
+Referenzdatentypen werden im Verlauf der späteren Kapitel genauer beschrieben. Referenztypen werden häufig auch als Instanzen oder Objekte, seltener auch als komplexe Datentypen bezeichnet. Objekte repräsentieren konkrete Exemplare von Bauplänen (<format color="%LinkColor%">[Klassen](10-java-classes.md)</format>). Zur Vereinfachung wird in den folgenden Kapiteln der Begriff „Objekt“ oder „Instanz“ verwendet.
 
-Ein Objekt kann im Grunde alles sein, was einem in den Sinn kommt. Beispielsweise ein Ball, ein Mensch, eine Aktivität oder sogar eine Dimension. Solche Objekte werden durch Eigenschaften (Objektvariablen) und Funktionalitäten (Objektmethoden) beschrieben.
+Ein Objekt kann im Grunde alles sein, was einem in den Sinn kommt. Beispielsweise ein Ball, ein Mensch, eine Aktivität oder sogar eine Dimension. Solche Objekte werden durch Eigenschaften und Funktionalitäten beschrieben.
 
 - Objektmethoden stellen dabei die Funktionen eines Objekts dar. Ein Mensch kann z.B. gehen (vgl. <format color="%LinkColor%">[Kapitel 9 – Methoden](09-java-methods.md)</format> & <format color="%LinkColor%">[Kapitel 10 – Klassen: Objektmethoden](10-java-classes.md#object-methods)</format>).
 - Objektvariablen speichern zu jedem Objekt spezifische Eigenschaften. Ein Mensch hat z.B. ein Alter und einen Namen (vgl. <format color="%LinkColor%">[Kapitel 3 – Variablen](03-java-variables.md)</format> & <format color="%LinkColor%">[Kapitel 10 – Klassen: Objektvariablen](10-java-classes.md#object-variables)</format>).

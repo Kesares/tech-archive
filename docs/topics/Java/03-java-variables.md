@@ -213,6 +213,8 @@ Die Variable `k` ist nur im 3. Block sichtbar.
 
 Bei den letzten beiden Zuweisungen, kann nicht auf die Variable `j` und `k` zugegriffen werden, da sie nur innerhalb des 2. bzw. 3. Blocks existieren. Dasselbe gilt für den Variablenzugriff `k` im 2. Anweisungsblock.
 
+![03_java_variables_1.jpg](03_java_variables_1.jpg){width="400"}
+
 ## Typisierung {id="typing"}
 ### Starke vs. schwache Typisierung {id="strong-vs-weak-typing"}
 
@@ -240,7 +242,7 @@ Bei der <format color="%Highlight%">dynamischen Typisierung</format> findet dies
 
 > Statisch typisierte Sprachen sind z.B. Java, C, C++, Haskell und Pascal.
 > 
-> Dynamische typisierte Sprachen sind z.B. Python, Smalltalk, PHP, JavaScript und Perl.
+> Dynamisch typisierte Sprachen sind z.B. Python, Smalltalk, PHP, JavaScript und Perl.
 
 ## Coding Conventions {id="coding-conventions"}
 

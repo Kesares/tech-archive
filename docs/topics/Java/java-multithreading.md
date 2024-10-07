@@ -1,3 +1,3 @@
-# 17 Java – Lambda-Ausdrücke
+# Java – Multithreading
 
 <format color="%ComingSoonColor%">Coming soon...</format>

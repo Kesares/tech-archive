@@ -6,7 +6,15 @@
                  name="Tech Archive"
                  start-page="tech-archive.md">
 
-    <toc-element topic="tech-archive.md"/>
+    <toc-element topic="tech-archive.md">
+        <toc-element topic="changelog.md"/>
+        <toc-element topic="digital-toolbox.md"/>
+    </toc-element>
+    <toc-element topic="00-html.md">
+        <toc-element topic="01-html-tags-and-elements.md"/>
+        <toc-element topic="02-html-attributes-and-values.md"/>
+        <toc-element topic="03-html-basic-structure.md"/>
+    </toc-element>
     <toc-element topic="00-java.md">
         <toc-element topic="01-java-token.md"/>
         <toc-element topic="02-java-data-types.md"/>
@@ -27,15 +35,15 @@
         <toc-element topic="17-java-lambda-expressions.md"/>
         <toc-element topic="18-java-generics.md"/>
         <toc-element topic="19-java-collections.md"/>
-        <toc-element topic="java-threads.md"/>
-        <toc-element topic="java-gui.md"/>
         <toc-element topic="java-annotations.md"/>
+        <toc-element topic="java-build-tools.md"/>
+        <toc-element topic="java-files-apis.md"/>
+        <toc-element topic="java-date-time.md"/>
         <toc-element topic="java-design-patterns.md"/>
-    </toc-element>
-
-    <toc-element topic="00-html.md">
-        <toc-element topic="01-html-tags-and-elements.md"/>
-        <toc-element topic="02-html-attributes-and-values.md"/>
+        <toc-element topic="java-gui.md"/>
+        <toc-element topic="java-regex.md"/>
+        <toc-element topic="java-streams.md"/>
+        <toc-element topic="java-multithreading.md"/>
     </toc-element>
 
     <toc-element topic="00-mathematics.md">

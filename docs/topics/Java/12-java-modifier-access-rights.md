@@ -224,7 +224,7 @@ Folgende Tabelle wurde bereits in <format color="%LinkColor%">[Kapitel 1 – Tok
         </td>
         <td>
             <list>
-                <li>Auf Methoden kann immer nur von einem <format color="%LinkColor%"><a href="java-threads.md">Thread</a></format> zugegriffen werden.</li>
+                <li>Auf Methoden kann immer nur von einem <format color="%LinkColor%"><a href="java-multithreading.md">Thread</a></format> zugegriffen werden.</li>
             </list>
         </td>
     </tr>
@@ -249,7 +249,7 @@ Folgende Tabelle wurde bereits in <format color="%LinkColor%">[Kapitel 1 – Tok
         </td>
         <td>
             <list>
-                <li>Alle <format color="%LinkColor%"><a href="java-threads.md">Threads</a></format> lesen und schreiben den Wert der Variablen direkt aus dem Hauptspeicher, anstatt eine Kopie im <tooltip term="Cache"><format color="%GlossaryLinkColor%">Cache</format></tooltip> zu verwenden. Damit wird sichergestellt, dass die Threads den aktuellen Wert sehen und inkonsistente oder falsche Ergebnisse verhindert werden.</li>
+                <li>Alle <format color="%LinkColor%"><a href="java-multithreading.md">Threads</a></format> lesen und schreiben den Wert der Variablen direkt aus dem Hauptspeicher, anstatt eine Kopie im <tooltip term="Cache"><format color="%GlossaryLinkColor%">Cache</format></tooltip> zu verwenden. Damit wird sichergestellt, dass die Threads den aktuellen Wert sehen und inkonsistente oder falsche Ergebnisse verhindert werden.</li>
             </list>
         </td>
     </tr>
