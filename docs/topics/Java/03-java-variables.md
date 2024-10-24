@@ -151,7 +151,7 @@ short ab = (short) (a + b);
 >Da zum Beispiel ein `byte` weniger Speicherplatz bietet als ein `short` und ein `short` im Vergleich zu `double` nur ganze Zahlen verarbeitet, kann es zu fehlerhaften Berechnungen kommen - mit anderen Worten: <format color="%WarningLinkColor%">Datenverlust</format>!
 > {style="warning" title="Achtung: Datenverlust!"}
 
-> Auch die Konvertierung zwischen Referenztypen ist möglich. Dazu mehr in <format color="%LinkColor%">[Kapitel 14 – OOP](14-java-oop.md)</format>.
+> Auch die Konvertierung zwischen Referenztypen ist möglich. Dazu mehr in <format color="%LinkColor%">[Kapitel 14 – OOP: Das Keyword `instanceof`](14-java-oop.md#the-keyword-instanceof)</format>.
 
 ## Reservierter Typname – `var` {id="reserved-type-name-var"}
 
@@ -229,7 +229,7 @@ Eine Ausnahme bildet hier die in Java 10 hinzugefügte Möglichkeit Variablen mi
 
 > Stark typisierte Sprachen sind z.B. Java, C++, Python, Smalltalk, Haskell und Pascal.
 > 
-> Schwach typisierte Sprachen sind z.B. C, JavaScript, PHP und Perl.
+> Schwach typisierte Sprachen sind z.B. C, JavaScript, Lua, PHP und Perl.
 
 ### Statische vs. dynamische Typisierung {id="static-vs-dynamic-typing"}
 
@@ -242,11 +242,11 @@ Bei der <format color="%Highlight%">dynamischen Typisierung</format> findet dies
 
 > Statisch typisierte Sprachen sind z.B. Java, C, C++, Haskell und Pascal.
 > 
-> Dynamisch typisierte Sprachen sind z.B. Python, Smalltalk, PHP, JavaScript und Perl.
+> Dynamisch typisierte Sprachen sind z.B. Python, Smalltalk, Lua, PHP, JavaScript und Perl.
 
 ## Coding Conventions {id="coding-conventions"}
 
 - Variablen sollten nach der <tooltip term="CamelCase-Notation"><format color="%GlossaryLinkColor%">CamelCase-Notation</format></tooltip> geschrieben werden.
-- Bei einer <format color="%LinkColor%">[Schleifenvariable](07-java-loops.md)</format> ist auch ein Buchstabe ausreichend.
+- Bei einer <format color="%LinkColor%">[Schleifenvariable](07-java-loops.md)</format> ist auch ein einziger Buchstabe ausreichend.
 - Variablen vom Typ `boolean`, sollten nach Möglichkeit mit `is` beginnen. Alternativ kann auch auf `has` zurückgegriffen werden.
 - <format color="%c5%"><a href="10-java-classes.md#constants">Konstanten</a></format> sollten nach der <tooltip term="Constants-Notation"><format color="%GlossaryLinkColor%">SCREAMING_SNAKE_CASE-Notation</format></tooltip> geschrieben werden.

@@ -10,9 +10,9 @@ Hier sollt ihr eine ständig wachsende Sammlung an Informationen, Notizen, Guide
 
 ## Was erwartet euch hier? 🤔
 
-Derzeit findet ihr hier zwei handverlesene Themen: <format color="%LinkColor%">[](00-java.md)</format> und <format color="%LinkColor%">[](00-mathematics.md)</format>. Java bietet euch einen soliden Einstieg in die Welt der Programmierung.
+Derzeit findet ihr hier drei verschiedene Themen: <format color="%LinkColor%">[](00-html.md)</format>, <format color="%LinkColor%">[](00-java.md)</format> und <format color="%LinkColor%">[](00-math.md)</format>. Java bietet euch einen soliden Einstieg in die Welt der Programmierung.
 
-Und Mathematik? Hier fange ich gerade erst an, ein wenig Licht in die manchmal doch recht abstrakte Welt der Zahlen und Formeln zu bringen. Also keine Sorge, wenn ihr hier noch nicht viel findet.
+Im Bereich HTML gibt es bisher noch nicht viel zu entdecken und auch zum Thema Mathematik fange ich gerade erst an, ein wenig Licht in die manchmal doch recht abstrakte Welt der Zahlen und Formeln zu bringen. Also keine Sorge, wenn ihr hier noch nicht viel findet.
 
 Neben den spezifischen Themeninhalten gibt es auch einen <format color="%LinkColor%">[digitalen Werkzeugkasten](digital-toolbox.md)</format> mit nützlichen Links und Ressourcen, die euch bei eurer IT-Reise weiterhelfen können. Von hilfreichen Artikeln bis hin zu praktischen Tools – schaut gerne vorbei, um eure digitale Toolbox zu erweitern!
 
@@ -42,13 +42,13 @@ Schaut also gerne regelmäßig vorbei. Bis dahin viel Spaß mit dem, was bereits
   - Reguläre Ausdrücke (Regex)
   - Streams
   - Multithreading
-- <format color="%LinkColor%">[Mathematik](00-mathematics.md)</format>
+- <format color="%LinkColor%">[Mathematik](00-math.md)</format>
   - Aussagenlogik
   - Mengenlehre
   - Gleichungen und Ungleichungen
 - <format color="%LinkColor%">[Markup-Sprache – HTML](00-html.md)</format>
   - Kapitel 1 – Tags und Elemente 🛠️
-  - Kapitel 2 – Attribute und Werte
+  - Kapitel 2 – Attribute und Werte 🛠️
   - Kapitel 3 – Grundstruktur
   - Listen
   - Tabellen

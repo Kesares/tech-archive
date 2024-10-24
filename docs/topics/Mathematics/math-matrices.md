@@ -121,7 +121,7 @@ Zwei quadratische Matrizen derselben Ordnung können jedoch immer multipliziert 
 > Matrizen können nur mit einem Vektor multipliziert werden, wenn die <format color="%NoteHighlight%">Spaltenanzahl der Matrix</format> mit der <format color="%NoteHighlight%">Zeilenanzahl des Vektors</format> übereinstimmen.
 {style="note"}
 
-Die Spaltenanzahl eines Vektors ist immer `1` und das Ergebnis einer Multiplikation ist immer ein neuer <format color="%LinkColor%">[Vektor](vectors.md)</format>.
+Die Spaltenanzahl eines Vektors ist immer `1` und das Ergebnis einer Multiplikation ist immer ein neuer <format color="%LinkColor%">[Vektor](math-vectors.md)</format>.
 
 ```tex
 \begin{align}

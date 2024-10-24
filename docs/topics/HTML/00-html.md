@@ -19,10 +19,24 @@ Auf Basis von SGML sind in HTML bestimmte <format color="%LinkColor%">[Elemente]
 
 - <format color="%Highlight%">XHTML (Extensible Hypertext Markup Language)</format> ist eine Sprache, die eine strengere und standardisierte Form von HTML darstellt. Sie wurde entwickelt, um die Prinzipien von HTML mit den Regeln von XML zu kombinieren.
  
-## Was ist die DTD? {id="what-is-the-tdt"}
+## Was ist die DTD? {id="what-is-the-dtd"}
 
 Eine DTD (Document Type Definition) spielt für das Bilden des grundlegenden Sprachumfangs von HTML eine wichtige Rolle, da sie genau festlegt, welche <format color="%LinkColor%">[Elemente](01-html-tags-and-elements.md)</format> es in HTML gibt, welche <format color="%LinkColor%">[Attribute](02-html-attributes-and-values.md)</format> diesen zugeordnet sind und welche <format color="%LinkColor%">[Werte](02-html-attributes-and-values.md)</format> sie annehmen dürfen. Darüber hinaus beschreibt eine DTD präzise, welche Elemente an welchen Positionen innerhalb eines HTML-Dokuments verwendet werden können und welche nicht.
 
-> DTDs sind jedoch für das grundlegende Verständnis von HTML nicht unmittelbar erforderlich. Möglicherweise wird es zu einem späteren Zeitpunkt einen separaten Abschnitt dazu geben.
+DTDs sind jedoch für das grundlegende Verständnis von HTML nicht unmittelbar erforderlich. Möglicherweise wird es zu einem späteren Zeitpunkt einen separaten Abschnitt dazu geben.
+
+<note>
+    <p>Während es für HTML 4 noch ein DTD-Schema gab, wird für HTML 5 keins mehr benötigt. HTML 5 hat stattdessen eine einfache Doctype-Deklaration, die sicherstellt, dass der Browser das Dokument im Standard-Modus rendert, ohne die Komplexität von DTDs.</p>
+    <compare first-title="HTML 4.01" second-title="HTML 5">
+        <code-block>
+            <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+        </code-block>
+        <code-block>
+            <!DOCTYPE html>
+        </code-block>
+    </compare>
+</note>
 
 ## Was ist das DOM? {id="what-is-the-dom"}
+
+Das DOM (Document Object Model) ist eine Programmierschnittstelle, die die Struktur eines HTML- oder XML-Dokuments in einer baumartigen Form darstellt. Es ermöglicht Programmen auf das Dokument zuzugreifen, dessen Struktur und Inhalt auszulesen und zu manipulieren.

@@ -81,7 +81,7 @@ Primitive Datentypen werden auch einfache oder elementare Datentypen genannt. In
         <td><code>java.lang.Boolean</code></td>
         <td>
             <p>Abhängig von der <tooltip term="JVM"><format color="%GlossaryLinkColor%">JVM</format></tooltip>.</p>
-            <p>Aufgrund der Speicherarchitekturen wird 8 Bit allokiert, auch wenn ein Boolean theoretisch nur 1 Bit repräsentiert.</p>
+            <p>Aufgrund der Speicherarchitekturen wird 8 Bit allokiert, auch wenn ein Boolean praktisch nur 1 Bit repräsentiert.</p>
         </td>
         <td><code>true</code> oder <code>false</code></td>
         <td>Boolescher Wahrheitswert</td>

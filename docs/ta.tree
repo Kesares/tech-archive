@@ -46,8 +46,8 @@
         <toc-element topic="java-multithreading.md"/>
     </toc-element>
 
-    <toc-element topic="00-mathematics.md">
-        <toc-element topic="vectors.md"/>
-        <toc-element topic="matrices.md"/>
+    <toc-element topic="00-math.md">
+        <toc-element topic="math-vectors.md"/>
+        <toc-element topic="math-matrices.md"/>
     </toc-element>
 </instance-profile>

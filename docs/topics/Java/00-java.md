@@ -90,7 +90,7 @@ Als Alternative zum normalen Texteditor auf Windows, ist <format color="%LinkCol
         <p>IntelliJ ist für Windows, Linux und MacOS verfügbar. Seit Version 9.0 gibt es zwei verschiedene Editionen.</p>
         <ul>
             <li>
-                <format color="%Highlight%">IntelliJ IDEA Ultimate</format> ist kostenpflichtig. Es ist jedoch möglich eine kostenlose Bildungslizenz für Schüler/Studenten und Lehrende/Professoren zu erhalten. Des Weiteren gibt es auch einen 30-tägigen-Trail.
+                <format color="%Highlight%">IntelliJ IDEA Ultimate</format> ist kostenpflichtig. Es ist jedoch möglich eine <format color="%LinkColor%"><a href="https://www.jetbrains.com/community/education">kostenlose Bildungslizenz</a></format> für Schüler/Studenten und Lehrende/Professoren zu erhalten. Des Weiteren gibt es auch einen 30-tägigen-Trail.
             </li>
             <li>
                 <format color="%Highlight%">IntelliJ IDEA Community Edition</format> ist kostenlos. Sie bietet zwar weniger Features, ist aber dennoch eine sehr empfehlenswerte Alternative.
