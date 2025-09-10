@@ -1,33 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE terms SYSTEM "https://resources.jetbrains.com/writerside/1.0/glossary.dtd">
 <terms>
-    <term name="API">Eine API (Application Programming Interface) ist eine Schnittstelle, die es Softwareanwendungen ermöglicht, miteinander zu kommunizieren. APIs legen fest, wie verschiedene Softwarekomponenten miteinander interagieren sollen, indem sie eine Reihe von Funktionen, Methoden oder Endpunkten bereitstellen, die von einer Anwendung genutzt werden können, um auf bestimmte Funktionen einer anderen Anwendung zuzugreifen.</term>
-    <term name="Bit">Ein Bit (engl. Abkürzung für binary digit) ist die Bezeichnung für eine Binärziffer, welche als Maßeinheit für eine Datenmenge dient. Dabei ist ein Bit die kleinste darstellbare Datenmenge. Ein Bit kann nur den Zuständen 0 oder 1 entsprechen.</term>
-    <term name="Boilerplate-Code">Boilerplate-Code bezeichnet den sich wiederholenden, standardisierten Code, der oft notwendig ist, um eine bestimmte Funktionalität zu implementieren, aber keinen unmittelbaren Mehrwert für die spezifische Logik der Anwendung bietet. Dieser Code ist oft repetitiv und kann die Lesbarkeit und Wartbarkeit des Programms beeinträchtigen.</term>
-    <term name="Bytecode">Ein Bytecode ist eine Art Programmcode, der von einer höheren Programmiersprache in einen maschinenlesbaren Code kompiliert wurde. Dieser wird nicht von der zugrundeliegenden Hardware, sondern durch eine VM (virtuelle Maschine) ausgeführt.</term>
-    <term name="Cache">Ein Cache ist ein spezieller Speicherbereich, der dazu dient, häufig verwendete Daten oder Berechnungen zu speichern, um schnelleren Zugriff darauf zu ermöglichen.</term>
-    <term name="CamelCase-Notation">Die CamelCase-Notation bezeichnet eine Schreibweise, wobei der Anfangsbuchstabe mit einem Kleinbuchstaben und jedes weitere Wort mit einem Großbuchstaben geschrieben wird.</term>
-    <term name="CLI">Ein Command-Line Interface (CLI) ist eine Benutzerschnittstelle, bei der der Nutzer durch direkte Eingaben von Textbefehlen mit einer Konsole oder einem Terminal interagiert.</term>
-    <term name="Compiler">Ein Compiler ist ein spezielles Programm, welches den Quellcode einer Programmiersprache in Maschinencode, Bytecode oder eine andere Programmiersprache übersetzt.</term>
-    <term name="Constants-Notation">Die Konstanten-Notation oder auch SCREAMING_SNAKE_CASE-Notation bezeichnet eine Schreibweise, wobei nur Großbuchstaben und Unterstriche verwendet werden, um die Bedeutung als "unveränderlichen Wert" hervorzuheben.</term>
-    <term name="GC">Ein Garbage Collector (GC) ist eine automatische Speicherverwaltung, die in vielen Programmiersprachen und Laufzeitumgebungen implementiert ist. Der Hauptzweck eines Garbage Collectors besteht darin, nicht mehr benötigte Objekte oder Datenstrukturen, die von einem Programm erstellt wurden, aus dem Speicher zu entfernen, um Speicherplatz freizugeben und Speicherlecks zu vermeiden.</term>
-    <term name="IDE">Eine Integrated Development Environment (IDE) stellt eine Reihe von Programmierwerkzeugen wie einen Compiler oder Debugger zur Verfügung. Diese erleichtern deutlich das Schreiben und Entwickeln von Software.</term>
-    <term name="IEEE-754">Die Norm IEEE 754 definiert Standarddarstellungen für binäre und dezimale Fließkommazahlen in Computern und legt genaue Verfahren für die Durchführung mathematischer Operationen, insbesondere für Rundungen, fest.</term>
-    <term name="Java-Heap">Der Java-Heap ist ein Speicherbereich der für die dynamische Allokation von Speicherplatz während der Laufzeit reserviert ist. Der Heap wird verwendet, um Daten zuzuweisen, die während der Programmausführung dynamisch erstellt werden.</term>
-    <term name="Java-Stack">Der Java-Stack ist ein Speicherbereich, der von der JVM verwendet wird, um die Ausführung von Java-Methoden zu verwalten. Jeder Thread, der in einer Java-Anwendung erstellt wird, hat seinen eigenen Java-Stack.</term>
-    <term name="JIT">Just-In-Time (JIT) bezieht sich auf eine Art von Compiler, der verwendet wird, um Programmcode während der Laufzeit eines Programms zu kompilieren. In Programmiersprachen, wie Java oder .NET-Sprachen die Bytecode verwenden, wird JIT-Kompilierung verwendet, um Bytecode in nativen Maschinencode zu übersetzen, der direkt von der zugrunde liegenden Hardware ausgeführt werden kann.</term>
-    <term name="JDK">Das Java Development Kit (JDK) ist ein Softwarepaket, welches eine Vielzahl von Werkzeugen und Dienstprogrammen enthält, die das Entwickeln, das Paketieren, das Überwachen und das Bereitstellen von Anwendungen ermöglicht. Die JRE ist Bestandteil des JDK.</term>
-    <term name="JNI">Das Java Native Interface (JNI) ist eine Schnittstelle, die es dem Java-Code ermöglicht, nativen Code zu verwenden und mit ihm zu interagieren. Es fungiert als Bindeglied zwischen dem Java-Code, der in der JVM läuft und nativem Code, der in Sprachen wie C oder C++ geschrieben wurde.</term>
-    <term name="JRE">Die Java Runtime Environment (JRE) ist eine Softwareschicht, die auf der Betriebssystemsoftware eines Computers ausgeführt wird und die Klassenbibliotheken, sowieso andere Ressourcen bereitstellt, die ein Java-Programm zur Ausführung benötigt. Die JVM ist Bestandteil der JRE.</term>
-    <term name="JVM">Die Java Virtual Machine (JVM) ist eine virtuelle Maschine, die verwendet wird, um Java-Bytecode auszuführen. Sie interpretiert oder kompiliert den Java-Bytecode in Maschinenbefehle, die von der zugrunde liegenden Hardware ausgeführt werden können.</term>
-    <term name="Memoization">Memoization bezeichnet eine Technik zur Optimierung, bei der Ergebnisse von teuren Funktionsaufrufen (meist rekursive oder häufig aufgerufene Funktionen) gespeichert werden, um wiederholte Berechnungen zu vermeiden. Die gespeicherten Ergebnisse werden in einer Datenstruktur abgelegt, sodass bei erneutem Auftreten derselben Eingabewerte bereits berechnete Ergebnisse direkt zurückgegeben werden können.</term>
-    <term name="Orthogonality">Orthogonalität ist ein Begriff, der ursprünglich aus der Geometrie stammt und „Rechtwinkligkeit“ bedeutet. Zwei Vektoren sind orthogonal zueinander, wenn sie einen Winkel von 90° bilden. Orthogonalität wird aber auch in anderen Bereichen verwendet, wie z. B. in der Statistik, Informatik und Signalverarbeitung. Hier beschreibt Orthogonalität im Allgemeinen Unabhängigkeit oder Nicht-Korrelation.</term>
-    <term name="PascalCase-Notation">Die PascalCase-Notation bezeichnet eine Schreibweise, wobei der Anfangsbuchstabe mit einem Großbuchstaben und jedes weitere Wort ebenfalls mit einem Großbuchstaben geschrieben wird.</term>
-    <term name="Serialization">Unter Serialisierung wird das Konvertieren des Zustands eines Objekts in eine Form verstanden, die erhalten oder transportiert werden kann. Das Gegenstück zur Serialisierung ist die Deserialisierung, die einen Stream in ein Objekt konvertiert.</term>
-    <term name="SOLID">Das SOLID-Prinzip bezieht sich auf eine Reihe von (5) Designprinzipien, bestehend aus dem Single Responsibility Principle (SRP), Open/Closed Principle (OCP), Liskov Substitution Principle (LSP), Interface Segregation Principle (ISP) und dem Dependency Inversion Principle (DIP). Sie werden in der objektorientierten Programmierung angewendet.</term>
-    <term name="String-Pool">Der String-Pool stellt sicher, dass identische Zeichenketten im Speicher nur einmal existieren.</term>
-    <term name="Top-Level-Class">Top-Level-Klassen sind Klassen, die direkt innerhalb einer Datei definiert werden und nicht innerhalb einer anderen Klasse verschachtelt sind.</term>
-    <term name="Utility-Class">Eine Utility-Klasse ist eine Hilfsklasse, die eine Sammlung von statischen Methoden und/oder Konstanten bietet, die allgemein nützliche Funktionen bereitstellt.</term>
-    <term name="Wrapper-Class">In Java kapselt eine Wrapper-Klasse primitive Datentypen in eine objektorientierte Hülle und stellt eine Reihe von Hilfsmethoden und -konstanten für diese zur Verfügung.</term>
-    <term name="placeholder">Ein Wort, das den Eindruck erweckt, als würde es etwas Wichtiges einleiten, nur um dann alle Erwartungen charmant zu enttäuschen.</term>
+    <term name="API">Eine API (Application Programming Interface) ist eine Schnittstelle, die es Softwareanwendungen
+        ermöglicht, miteinander zu kommunizieren. APIs legen fest, wie verschiedene Softwarekomponenten miteinander
+        interagieren sollen, indem sie eine Reihe von Funktionen, Methoden oder Endpunkten bereitstellen, die von einer
+        Anwendung genutzt werden können, um auf bestimmte Funktionen einer anderen Anwendung zuzugreifen.</term>
+    <term name="Bit">Ein Bit (eng. Abkürzung für binary digit) ist die Bezeichnung für eine Binärziffer, welche als
+        Maßeinheit für eine Datenmenge dient. Dabei ist ein Bit die kleinste darstellbare Datenmenge. Ein Bit kann nur
+        den Zuständen 0 oder 1 entsprechen.</term>
+    <term name="Boilerplate-Code">Boilerplate-Code bezeichnet den sich wiederholenden, standardisierten Code, der oft
+        notwendig ist, um eine bestimmte Funktionalität zu implementieren, aber keinen unmittelbaren Mehrwert für die
+        spezifische Logik der Anwendung bietet. Dieser Code ist oft repetitiv und kann die Lesbarkeit und Wartbarkeit
+        des Programms beeinträchtigen.</term>
+    <term name="Bytecode">Ein Bytecode ist eine Art Programmcode, der von einer höheren Programmiersprache in einen
+        maschinenlesbaren Code kompiliert wurde. Dieser wird nicht von der zugrundeliegenden Hardware, sondern durch
+        eine VM (virtuelle Maschine) ausgeführt.</term>
+    <term name="Cache">Ein Cache ist ein spezieller Speicherbereich, der dazu dient, häufig verwendete Daten oder
+        Berechnungen zu speichern, um schnelleren Zugriff darauf zu ermöglichen.</term>
+    <term name="CamelCase-Notation">Die CamelCase-Notation bezeichnet eine Schreibweise, wobei der Anfangsbuchstabe mit
+        einem Kleinbuchstaben und jedes weitere Wort mit einem Großbuchstaben geschrieben wird.</term>
+    <term name="CLI">Ein Command-Line Interface (CLI) ist eine Benutzerschnittstelle, bei der der Nutzer durch direkte
+        Eingaben von Textbefehlen mit einer Konsole oder einem Terminal interagiert.</term>
+    <term name="Compiler">Ein Compiler ist ein spezielles Programm, welches den Quellcode einer Programmiersprache in
+        Maschinencode, Bytecode oder eine andere Programmiersprache übersetzt.</term>
+    <term name="Constants-Notation">Die Konstanten-Notation oder auch SCREAMING_SNAKE_CASE-Notation bezeichnet eine
+        Schreibweise, wobei nur Großbuchstaben und Unterstriche verwendet werden, um die Bedeutung als "unveränderlichen
+        Wert" hervorzuheben.</term>
+    <term name="GC">Ein Garbage Collector (GC) ist eine automatische Speicherverwaltung, die in vielen
+        Programmiersprachen und Laufzeitumgebungen implementiert ist. Der Hauptzweck eines Garbage Collectors besteht
+        darin, nicht mehr benötigte Objekte oder Datenstrukturen, die von einem Programm erstellt wurden, aus dem
+        Speicher zu entfernen, um Speicherplatz freizugeben und Speicherlecks zu vermeiden.</term>
+    <term name="IDE">Eine Integrated Development Environment (IDE) stellt eine Reihe von Programmierwerkzeugen wie einen
+        Compiler oder Debugger zur Verfügung. Diese erleichtern deutlich das Schreiben und Entwickeln von Software.</term>
+    <term name="IEEE-754">Die Norm IEEE 754 definiert Standarddarstellungen für binäre und dezimale Fließkommazahlen in
+        Computern und legt genaue Verfahren für die Durchführung mathematischer Operationen, insbesondere für Rundungen,
+        fest.</term>
+    <term name="Java-Heap">Der Java-Heap ist ein Speicherbereich, der für die dynamische Allokation von Speicherplatz
+        während der Laufzeit reserviert ist. Der Heap wird verwendet, um Daten zuzuweisen, die während der
+        Programmausführung dynamisch erstellt werden.</term>
+    <term name="Java-Stack">Der Java-Stack ist ein Speicherbereich, der von der JVM verwendet wird, um die Ausführung
+        von Java-Methoden zu verwalten. Jeder Thread, der in einer Java-Anwendung erstellt wird, hat seinen eigenen
+        Java-Stack.</term>
+    <term name="JIT">Just-In-Time (JIT) bezieht sich auf eine Art von Compiler, der verwendet wird, um Programmcode
+        während der Laufzeit eines Programms zu kompilieren. In Programmiersprachen, wie Java oder .NET-Sprachen die
+        Bytecode verwenden, wird JIT-Kompilierung verwendet, um Bytecode in nativen Maschinencode zu übersetzen, der
+        direkt von der zugrunde liegenden Hardware ausgeführt werden kann.</term>
+    <term name="JDK">Das Java Development Kit (JDK) ist ein Softwarepaket, welches eine Vielzahl von Werkzeugen und
+        Dienstprogrammen enthält, die das Entwickeln, das Paketieren, das Überwachen und das Bereitstellen von
+        Anwendungen ermöglicht. Die JRE ist Bestandteil des JDK.</term>
+    <term name="JNI">Das Java Native Interface (JNI) ist eine Schnittstelle, die es dem Java-Code ermöglicht, nativen
+        Code zu verwenden und mit ihm zu interagieren. Es fungiert als Bindeglied zwischen dem Java-Code, der in der JVM
+        läuft und nativem Code, der in Sprachen wie C oder C++ geschrieben wurde.</term>
+    <term name="JRE">Die Java Runtime Environment (JRE) ist eine Softwareschicht, die auf der Betriebssystemsoftware
+        eines Computers ausgeführt wird und die Klassenbibliotheken, sowieso andere Ressourcen bereitstellt, die ein
+        Java-Programm zur Ausführung benötigt. Die JVM ist Bestandteil der JRE.</term>
+    <term name="JVM">Die Java Virtual Machine (JVM) ist eine virtuelle Maschine, die verwendet wird, um Java-Bytecode
+        auszuführen. Sie interpretiert oder kompiliert den Java-Bytecode in Maschinenbefehle, die von der zugrunde
+        liegenden Hardware ausgeführt werden können.</term>
+    <term name="Memoization">Memoization bezeichnet eine Technik zur Optimierung, bei der Ergebnisse von teuren
+        Funktionsaufrufen (meist rekursive oder häufig aufgerufene Funktionen) gespeichert werden, um wiederholte
+        Berechnungen zu vermeiden. Die gespeicherten Ergebnisse werden in einer Datenstruktur abgelegt, sodass bei
+        erneutem Auftreten derselben Eingabewerte bereits berechnete Ergebnisse direkt zurückgegeben werden können.</term>
+    <term name="Orthogonality">Orthogonalität ist ein Begriff, der ursprünglich aus der Geometrie stammt und
+        „Rechtwinkligkeit“ bedeutet. Zwei Vektoren sind orthogonal zueinander, wenn sie einen Winkel von 90° bilden.
+        Orthogonalität wird aber auch in anderen Bereichen verwendet, wie z. B. in der Statistik, Informatik und
+        Signalverarbeitung. Hier beschreibt Orthogonalität im Allgemeinen Unabhängigkeit oder Nicht-Korrelation.</term>
+    <term name="PascalCase-Notation">Die PascalCase-Notation bezeichnet eine Schreibweise, wobei der Anfangsbuchstabe
+        mit einem Großbuchstaben und jedes weitere Wort ebenfalls mit einem Großbuchstaben geschrieben wird.</term>
+    <term name="Serialization">Unter Serialisierung wird das Konvertieren des Zustands eines Objekts in eine Form
+        verstanden, die erhalten oder transportiert werden kann. Das Gegenstück zur Serialisierung ist die
+        Deserialisierung, die einen Stream in ein Objekt konvertiert.</term>
+    <term name="SOLID">Das SOLID-Prinzip bezieht sich auf eine Reihe von (5) Designprinzipien, bestehend aus dem Single
+        Responsibility Principle (SRP), Open/Closed Principle (OCP), Liskov Substitution Principle (LSP), Interface
+        Segregation Principle (ISP) und dem Dependency Inversion Principle (DIP). Sie werden in der objektorientierten
+        Programmierung angewendet.</term>
+    <term name="String-Pool">Der String-Pool stellt sicher, dass identische Zeichenketten im Speicher nur einmal
+        existieren.</term>
+    <term name="Top-Level-Class">Top-Level-Klassen sind Klassen, die direkt innerhalb einer Datei definiert werden und
+        nicht innerhalb einer anderen Klasse verschachtelt existieren.</term>
+    <term name="Utility-Class">Eine Utility-Klasse ist eine Hilfsklasse, die eine Sammlung von statischen Methoden
+        und/oder Konstanten bietet, die allgemein nützliche Funktionen bereitstellt.</term>
+    <term name="Wrapper-Class">In Java kapselt eine Wrapper-Klasse primitive Datentypen in eine objektorientierte Hülle
+        und stellt eine Reihe von Hilfsmethoden und -konstanten für diese zur Verfügung.</term>
+    <term name="placeholder">Ein Wort, das den Eindruck erweckt, als würde es etwas Wichtiges einleiten, nur um dann
+        alle Erwartungen charmant zu enttäuschen.</term>
 </terms>

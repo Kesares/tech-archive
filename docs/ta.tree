@@ -32,21 +32,28 @@
         <toc-element topic="14-java-oop.md"/>
         <toc-element topic="15-java-exceptions.md"/>
         <toc-element topic="16-java-packages-and-imports.md"/>
-        <toc-element topic="17-java-lambda-expressions.md"/>
-        <toc-element topic="18-java-generics.md"/>
+        <toc-element topic="17-java-generics.md"/>
+        <toc-element topic="18-java-lambda-expressions.md"/>
         <toc-element topic="19-java-collections.md"/>
-        <toc-element topic="java-annotations.md"/>
-        <toc-element topic="java-build-tools.md"/>
-        <toc-element topic="java-files-apis.md"/>
-        <toc-element topic="java-date-time.md"/>
-        <toc-element topic="java-design-patterns.md"/>
-        <toc-element topic="java-gui.md"/>
-        <toc-element topic="java-regex.md"/>
-        <toc-element topic="java-streams.md"/>
-        <toc-element topic="java-multithreading.md"/>
+        <toc-element topic="20-java-streams.md"/>
+        <toc-element topic="21-java-date-time.md"/>
+        <toc-element topic="24-java-file-processing.md"/>
+        <toc-element topic="22-java-classpath-and-project-structure.md"/>
+        <toc-element topic="23-java-build-process-and-manifest-files.md"/>
+        <toc-element topic="25-java-regex.md"/>
+        <toc-element topic="27-java-multithreading.md"/>
+        <toc-element topic="28-java-design-patterns.md"/>
+        <toc-element topic="26-java-annotations.md"/>
+        <toc-element topic="30-java-build-tools.md"/>
+        <toc-element topic="31-java-dependencies.md"/>
+        <toc-element topic="29-java-gui.md"/>
+        <toc-element topic="32-java-logging.md"/>
+        <toc-element topic="33-java-persistence.md"/>
+        <toc-element topic="34-java-jpms.md"/>
     </toc-element>
 
     <toc-element topic="00-math.md">
+        <toc-element topic="math-numeral-systems.md"/>
         <toc-element topic="math-vectors.md"/>
         <toc-element topic="math-matrices.md"/>
     </toc-element>

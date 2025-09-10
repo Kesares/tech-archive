@@ -1,3 +1,3 @@
-# 17 Java – Lambda-Ausdrücke
+# 30 Java – Build Tools
 
 <format color="%ComingSoonColor%">Coming soon...</format>

@@ -2,7 +2,7 @@
 <!DOCTYPE vars SYSTEM "https://resources.jetbrains.com/writerside/1.0/vars.dtd">
 <vars>
     <var name="product" value="Writerside"/>
-    <var name="version" value="1.0.1"/>
+    <var name="version" value="1.1.0"/>
 
     <var name="GlossaryLinkColor" value="Orange"/>
     <var name="LinkColor" value="LightSkyBlue"/>
@@ -22,5 +22,5 @@
     <var name="c5" value="Crimson"/>
     <var name="c6" value="LightSeaGreen"/>
 
-    <var name="KBlue" value="#579dff"/>
+    <var name="KBlue" value="#579DFF"/>
 </vars>

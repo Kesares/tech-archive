@@ -1,52 +1,87 @@
 # 05 Java – Zeichenketten
 
-Zeichenketten (auch Strings genannt) sind eine der häufigsten angewendeten Datentypen. Sie repräsentieren eine Folge von Zeichen, gehören zu den <format color="%LinkColor%">[Referenzdatentypen](02-java-data-types.md#reference-data-types)</format> (Objekte) und sind daher keine <format color="%LinkColor%">[primitiven Datentypen](02-java-data-types.md#primitive-data-types)</format>. Wird eine Variable vom Typ `String` angelegt, enthält diese nicht die Zeichenkette selbst, sondern eine Referenz (Verweis) auf das eigentliche Objekt der Klasse `String`. Ein `char` ist ein primitiver Datentyp und kann nur ein einziges Zeichen darstellen. Sollen mehr dargestellt werden muss auf einen `String` zurückgegriffen werden.
+<p>Zeichenketten (auch Strings genannt) sind eine der häufigsten angewendeten Datentypen. Sie repräsentieren eine Folge
+von Zeichen, gehören zu den
+<format color="%LinkColor%"><a href="02-java-data-types.md#reference-data-types-outlook">Referenzdatentypen</a></format>
+ (Objekte) und sind daher keine
+<format color="%LinkColor%"><a href="02-java-data-types.md#primitive-data-types">primitiven Datentypen</a></format>.
+Wird eine Variable vom Typ <code>String</code> angelegt, enthält diese nicht die Zeichenkette selbst, sondern eine
+Referenz (Verweis) auf das eigentliche Objekt der Klasse <code>String</code>. Ein <code>char</code> ist ein primitiver
+Datentyp und kann nur ein einziges Zeichen darstellen. Sollen mehr dargestellt werden, muss auf einen
+<code>String</code> zurückgegriffen werden.</p>
 
 ## Konkatenation {id="concatenation"}
 
-Im vorherigen <format color="%LinkColor%">[Kapitel 4 – Ein- und Ausgaben](04-java-io.md)</format> gab es bereits einen kleinen Einblick zu Strings. Wenn zwei Strings mit einem `+` verbunden werden, wird das eine Konkatenation (Verkettung, engl. concatenation) genannt. Dies ist auch zwischen Strings und <format color="%LinkColor%">[primitiven Datentypen](02-java-data-types.md#primitive-data-types)</format> möglich.
+<p>Im vorherigen <format color="%LinkColor%"><a href="04-java-io.md">Kapitel 4 – Ein- und Ausgaben</a></format> gab es
+bereits einen kleinen Einblick zu Strings. Wenn zwei Strings mit einem <code>+</code> verbunden werden, wird das eine
+Konkatenation (Verkettung, eng. concatenation) genannt. Dies ist auch zwischen Strings und
+<format color="%LinkColor%"><a href="02-java-data-types.md#primitive-data-types">primitiven Datentypen</a></format>
+ möglich.</p>
 
-```Java
-String name = "Kesares";
-System.out.println(name); // Kesares
-```
+<code-block lang="java">
+    String name = "Kesares";
+    System.out.println(name); // Kesares
+</code-block>
 
-```Java
-System.out.println("42" + 5); // 425
-```
+<code-block lang="java">
+    System.out.println("42" + 5); // 425
+</code-block>
 
-```Java
-int x = 2;
-int y = 40;
-String s = x + " + " + y + " = " + (x + y);
-System.out.println(s); // 2 + 40 = 42
-```
+<code-block lang="java">
+    int x = 2;
+    int y = 40;
+    String s = x + " + " + y + " = " + (x + y);
+    System.out.println(s); // 2 + 40 = 42
+</code-block>
 
 ## String-Pool und Java-Heap {id="string-pool-and-java-heap"}
 
-Ein `String` ist ein spezielles <format color="%LinkColor%">[Objekt](11-java-objects.md)</format>, das für die Arbeit mit Texten verwendet wird. Obwohl Strings in Java Objekte sind, unterscheiden sich ihre Erzeugung und Verwaltung von der vieler anderer Objekte.
+<p>Ein <code>String</code> ist ein spezielles
+<format color="%LinkColor%"><a href="11-java-objects.md">Objekt</a></format>, das für die Arbeit mit Texten verwendet
+wird. Obwohl Strings in Java Objekte sind, unterscheiden sich ihre Erzeugung und Verwaltung von der vieler anderer
+Objekte.</p>
 
-Normalerweise werden <format color="%LinkColor%">[Objekte](11-java-objects.md)</format> mit dem `new`-Keyword erstellt, was zu einem neuen Objekt auf dem <tooltip term="Java-Heap"><format color="%GlossaryLinkColor%">Java-Heap</format></tooltip> führt. 
+<p>Normalerweise werden <format color="%LinkColor%"><a href="11-java-objects.md">Objekte</a></format> mit dem
+<code>new</code>-Keyword erstellt, was zu einem neuen Objekt auf dem
+<tooltip term="Java-Heap"><format color="%GlossaryLinkColor%">Java-Heap</format></tooltip> führt.</p> 
 
-```Java
-String name = new String("Kesares");
-```
+<code-block lang="java">
+    String name = new String("Kesares");
+</code-block>
 
-In diesem Fall werden zwei `String`-Objekte erstellt: eines auf dem <tooltip term="Java-Heap"><format color="%GlossaryLinkColor%">Java-Heap</format></tooltip>, das durch den `new`-Operator erzeugt wird und ein weiteres im sogenannten <tooltip term="String-Pool"><format color="%GlossaryLinkColor%">String-Pool</format></tooltip>. Der String-Pool ist ein spezieller Speicherbereich, der von der <tooltip term="JVM"><format color="%GlossaryLinkColor%">JVM</format></tooltip> verwaltet wird und zur Optimierung von Speicherverbrauch und Leistung dient.
+<p>In diesem Fall werden zwei <code>String</code>-Objekte erstellt: eines auf dem
+<tooltip term="Java-Heap"><format color="%GlossaryLinkColor%">Java-Heap</format></tooltip>, das durch den
+<code>new</code>-Operator erzeugt wird und ein weiteres im sogenannten
+<tooltip term="String-Pool"><format color="%GlossaryLinkColor%">String-Pool</format></tooltip>. Der String-Pool ist ein
+spezieller Speicherbereich, der von der <tooltip term="JVM"><format color="%GlossaryLinkColor%">JVM</format></tooltip>
+ verwaltet wird und zur Optimierung von Speicherverbrauch und Leistung dient.</p>
 
-Der <tooltip term="String-Pool"><format color="%GlossaryLinkColor%">String-Pool</format></tooltip> speichert einmal erstellte `String`-Literale und stellt sicher, dass alle identischen Literale auf denselben Speicherort im Pool verweisen. Dies bedeutet, dass bei der Nutzung von <format color="%LinkColor%">[Literalen](01-java-token.md#literals)</format> wie `"Kesares"` die JVM nicht jedes Mal ein neues `String`-Objekt erstellen muss, sondern auf das bereits im Pool vorhandene <format color="%LinkColor%">[Objekt](11-java-objects.md)</format> verweist.
+<p>Der <tooltip term="String-Pool"><format color="%GlossaryLinkColor%">String-Pool</format></tooltip> speichert einmal
+erstellte <code>String</code>-Literale und stellt sicher, dass alle identischen Literale auf denselben Speicherort im
+Pool verweisen. Dies bedeutet, dass bei der Nutzung von
+<format color="%LinkColor%"><a href="01-java-token.md#literals">Literalen</a></format> wie <code>"Kesares"</code> die
+JVM nicht jedes Mal ein neues <code>String</code>-Objekt erstellen muss, sondern auf das bereits im Pool vorhandene
+<format color="%LinkColor%"><a href="11-java-objects.md">Objekt</a></format> verweist.</p>
 
-Die bevorzugte und performantere Schreibweise zur Erstellung eines `String`-Objekts ist daher:
+<p>Die bevorzugte und performantere Schreibweise zur Erstellung eines <code>String</code>-Objekts ist daher:</p>
 
-```Java
-String s = "Kesares";
-```
+<code-block lang="java">
+    String name = "Kesares";
+</code-block>
 
-In diesem Fall wird, sofern bereits eine Zeichenkette mit dieser Zeichenfolge existiert, kein weiteres `String`-Objekt angelegt und alle Verweise auf das Literal `"Kesares"` zeigen auf das gleiche <format color="%LinkColor%">[Objekt](11-java-objects.md)</format> im Pool. Diese Methode reduziert den Speicherverbrauch und verbessert die Leistung, da die <tooltip term="JVM"><format color="%GlossaryLinkColor%">JVM</format></tooltip> unnötige Duplikate von `String`-Objekten vermeidet und die Verwaltung von Speicher effizienter gestaltet wird.
+<p>Sofern bereits eine Zeichenkette mit der Zeichenfolge <code>Kesares</code> existiert, wird kein weiteres
+<code>String</code>-Objekt angelegt und alle Verweise auf das Literal <code>"Kesares"</code> zeigen auf das gleiche
+<format color="%LinkColor%"><a href="11-java-objects.md">Objekt</a></format> im Pool. Diese Methode reduziert den
+Speicherverbrauch und verbessert die Leistung, da die
+<tooltip term="JVM"><format color="%GlossaryLinkColor%">JVM</format></tooltip> unnötige Duplikate von
+<code>String</code>-Objekten vermeidet und die Verwaltung von Speicher effizienter gestaltet wird.</p>
 
 ## String-Methoden {id="string-methods"}
 
-In der Java-Programmierung gibt es zahlreiche Operationen, die auf einem `String`-Objekt durchgeführt werden können. Diese <format color="%LinkColor%">[Methoden](09-java-methods.md)</format> werden direkt über die jeweiligen `String`-Objekte aufgerufen, um verschiedene Bearbeitungen oder Abfragen durchzuführen. Im Folgenden sind einige der wichtigsten Methoden beschrieben, die für die Arbeit mit Strings von Bedeutung sind.
+<p>In der Java-Programmierung gibt es zahlreiche Operationen, die auf einem <code>String</code>-Objekt durchgeführt
+werden können. Diese <format color="%LinkColor%"><a href="09-java-methods.md">Methoden</a></format> werden direkt über
+die jeweiligen <code>String</code>-Objekte aufgerufen, um verschiedene Bearbeitungen oder Abfragen durchzuführen. Im
+Folgenden sind einige der wichtigsten Methoden beschrieben, die für die Arbeit mit Strings von Bedeutung sind.</p>
 
 <table>
     <tr>
@@ -59,11 +94,15 @@ In der Java-Programmierung gibt es zahlreiche Operationen, die auf einem `String
     </tr>
     <tr>
         <td><code>equals(otherString)</code></td>
-        <td>Vergleicht den aktuellen <code>String</code> mit einem übergebenen <code>String</code>, um festzustellen, ob sie inhaltlich identisch sind. Gibt <code>true</code> zurück, wenn die beiden Strings gleich sind, andernfalls <code>false</code>.</td>
+        <td>Vergleicht den aktuellen <code>String</code> mit einem übergebenen <code>String</code>, um festzustellen, ob
+        sie inhaltlich identisch sind. Gibt <code>true</code> zurück, wenn die beiden Strings gleich sind,
+        andernfalls <code>false</code>.</td>
     </tr>
     <tr>
         <td><code>equalsIgnoreCase(otherString)</code></td>
-        <td>Vergleicht den aktuellen <code>String</code> mit einem übergebenen <code>String</code>, um festzustellen, ob sie inhaltlich identisch sind, wobei die Groß- und Kleinschreibung ignoriert wird. Gibt <code>true</code> zurück, wenn die beiden Strings inhaltlich gleich sind, andernfalls <code>false</code>.</td>
+        <td>Vergleicht den aktuellen <code>String</code> mit einem übergebenen <code>String</code>, um festzustellen, ob
+        sie inhaltlich identisch sind, wobei die Groß- und Kleinschreibung ignoriert wird. Gibt <code>true</code>
+        zurück, wenn die beiden Strings inhaltlich gleich sind, andernfalls <code>false</code>.</td>
     </tr>
     <tr>
         <td><code>charAt(index)</code></td>
@@ -71,7 +110,8 @@ In der Java-Programmierung gibt es zahlreiche Operationen, die auf einem `String
     </tr>
     <tr>
         <td><code>substring(start, end)</code></td>
-        <td>Extrahiert einen Teilstring aus dem Originalstring. Die Methode nimmt einen Start- und einen Endindex entgegen und gibt den entsprechenden Teilstring zurück.</td>
+        <td>Extrahiert einen Teilstring aus dem Originalstring. Die Methode nimmt einen Start- und einen Endindex
+        entgegen und gibt den entsprechenden Teilstring zurück.</td>
     </tr>
     <tr>
         <td><code>toLowerCase()</code></td>
@@ -83,19 +123,24 @@ In der Java-Programmierung gibt es zahlreiche Operationen, die auf einem `String
     </tr>
     <tr>
         <td><code>startsWith(prefix)</code></td>
-        <td>Prüft, ob der <code>String</code> mit einer bestimmten Zeichenfolge (Präfix) beginnt. Gibt <code>true</code> zurück, wenn dies der Fall ist, andernfalls <code>false</code>.</td>
+        <td>Prüft, ob der <code>String</code> mit einer bestimmten Zeichenfolge (Präfix) beginnt. Gibt <code>true</code>
+        zurück, wenn dies der Fall ist, andernfalls <code>false</code>.</td>
     </tr>
     <tr>
         <td><code>endsWith(suffix)</code></td>
-        <td>Prüft, ob der <code>String</code> mit einer bestimmten Zeichenfolge (Suffix) endet. Gibt <code>true</code> zurück, wenn dies der Fall ist, andernfalls <code>false</code>.</td>
+        <td>Prüft, ob der <code>String</code> mit einer bestimmten Zeichenfolge (Suffix) endet. Gibt <code>true</code>
+        zurück, wenn dies der Fall ist, andernfalls <code>false</code>.</td>
     </tr>
     <tr>
         <td><code>indexOf(substring)</code></td>
-        <td>Sucht nach der ersten Position einer übergebenen Zeichenfolge im <code>String</code> und gibt den Index dieser Position zurück. Falls die Zeichenfolge nicht gefunden wird, wird <code>-1</code> zurückgegeben.</td>
+        <td>Sucht nach der ersten Position einer übergebenen Zeichenfolge im <code>String</code> und gibt den Index
+        dieser Position zurück. Falls die Zeichenfolge nicht gefunden wird, wird <code>-1</code> zurückgegeben.</td>
     </tr>
     <tr>
         <td><code>lastIndexOf(substring)</code></td>
-        <td>Im Gegensatz zu <code>indexOf(substring)</code> sucht diese Methode nach der letzten Position einer übergebenen Zeichenfolge im <code>String</code> und gibt deren Index zurück. Auch hier wird <code>-1</code> zurückgegeben, wenn die Zeichenfolge nicht gefunden wird.</td>
+        <td>Im Gegensatz zu <code>indexOf(substring)</code> sucht diese Methode nach der letzten Position einer
+        übergebenen Zeichenfolge im <code>String</code> und gibt deren Index zurück. Auch hier wird <code>-1</code>
+        zurückgegeben, wenn die Zeichenfolge nicht gefunden wird.</td>
     </tr>
     <tr>
         <td><code>trim()</code></td>
@@ -107,55 +152,67 @@ In der Java-Programmierung gibt es zahlreiche Operationen, die auf einem `String
     </tr>
     <tr>
         <td><code>split(delimiter)</code></td>
-        <td>Zerlegt den <code>String</code> anhand eines angegebenen Trennzeichens und gibt ein <format color="%LinkColor%"><a href="08-java-arrays.md">Array</a></format> von Strings zurück.</td>
+        <td>Zerlegt den <code>String</code> anhand eines angegebenen Trennzeichens und gibt ein
+        <format color="%LinkColor%"><a href="08-java-arrays.md">Array</a></format> von Strings zurück.</td>
     </tr>
     <tr>
         <td><code>contains(substring)</code></td>
-        <td>Überprüft, ob der <code>String</code> eine bestimmte Zeichenfolge enthält. Gibt <code>true</code> zurück, wenn die Zeichenfolge vorhanden ist, andernfalls <code>false</code>.</td>
+        <td>Überprüft, ob der <code>String</code> eine bestimmte Zeichenfolge enthält. Gibt <code>true</code> zurück,
+        wenn die Zeichenfolge vorhanden ist, andernfalls <code>false</code>.</td>
     </tr>
     <tr>
         <td><code>valueOf(value)</code></td>
-        <td>Wandelt einen anderen Datentyp in einen <code>String</code> um. Das Ergebnis ist eine <code>String</code>-Darstellung des übergebenen Wertes.</td>
+        <td>Wandelt einen anderen Datentyp in einen <code>String</code> um. Das Ergebnis ist eine
+        <code>String</code>-Darstellung des übergebenen Wertes.</td>
     </tr>
     <tr>
         <td><code>isEmpty()</code></td>
-        <td>Überprüft, ob der <code>String</code> leer ist (d.h., keine (Leer-)Zeichen enthält). Sie gibt <code>true</code> zurück, wenn der <code>String</code> leer ist, andernfalls <code>false</code>.</td>
+        <td>Überprüft, ob der <code>String</code> leer ist (d. h., keine (Leer-)Zeichen enthält). Sie gibt
+        <code>true</code> zurück, wenn der <code>String</code> leer ist, andernfalls <code>false</code>.</td>
     </tr>
     <tr>
         <td><code>isBlank()</code></td>
-        <td>Überprüft, ob der <code>String</code> leer oder nur aus Leerzeichen besteht. Im Gegensatz zur Methode <code>isEmpty()</code>, berücksichtigt <code>isBlank()</code> auch Strings, die nur Leerzeichen, Tabs oder andere Whitespace-Zeichen enthalten. Gibt <code>true</code> zurück, wenn der <code>String</code> leer ist oder nur aus Whitespace-Zeichen besteht, andernfalls <code>false</code>.</td>
+        <td>Überprüft, ob der <code>String</code> leer oder nur aus Leerzeichen besteht. Im Gegensatz zur Methode
+        <code>isEmpty()</code>, berücksichtigt <code>isBlank()</code> auch Strings, die nur Leerzeichen, Tabs oder
+        andere Whitespace-Zeichen enthalten. Gibt <code>true</code> zurück, wenn der <code>String</code> leer ist oder
+        nur aus Whitespace-Zeichen besteht, andernfalls <code>false</code>.</td>
     </tr>
 </table>
 
-> Strings sind <format color="%NoteHighlight%">immutable</format> (unveränderlich). Sie können also nicht verändert werden. Wird ein `String` verändert, wird intern ein neuer `String` mit dem geänderten Inhalt angelegt.
-{style="note"}
+<note>
+    <p>Strings sind <format color="%NoteHighlight%">immutable</format> (unveränderlich). Sie können also nicht verändert
+    werden. Wird ein <code>String</code> verändert, wird intern ein neuer <code>String</code> mit dem geänderten Inhalt
+    angelegt.</p>
+</note>
 
-```Java
-String name = "Kesares";
-
-name.length();           // 7
-name.equals("Kesares");  // true
-name.charAt(3);          // 'a'
-name.startsWith("s");    // false
-name.endsWith("res");    // true
-name.substring(3);       // "ares"
-name.substring(3, 6);    // "are"
-name.indexOf("e");       // 1
-name.lastIndexOf("e");   // 5
-name.toLowerCase();      // "kesares"
-name.toUpperCase();      // "KESARES"
-name.replace('e', 'i');  // "Kisaris"
-"   Kesares   ".trim();  // "Kesares"
-name.split("a");         // ["Kes", "res"]
-name.contains("sar");    // true
-name.valueOf(42);        // "42"
-name.isEmpty();          // false
-name.isBlank();          // false
-```
+<code-block lang="java">
+    String name = "Kesares";
+    
+    name.length();           // 7
+    name.equals("Kesares");  // true
+    name.charAt(3);          // 'a'
+    name.startsWith("s");    // false
+    name.endsWith("res");    // true
+    name.substring(3);       // "ares"
+    name.substring(3, 6);    // "are"
+    name.indexOf("e");       // 1
+    name.lastIndexOf("e");   // 5
+    name.toLowerCase();      // "kesares"
+    name.toUpperCase();      // "KESARES"
+    name.replace('e', 'i');  // "Kisaris"
+    "   Kesares   ".trim();  // "Kesares"
+    name.split("a");         // ["Kes", "res"]
+    name.contains("sar");    // true
+    name.valueOf(42);        // "42"
+    name.isEmpty();          // false
+    name.isBlank();          // false
+</code-block>
 
 ## Escape Sequenzen {id="escape-sequences"}
 
-Folgende Liste wurde bereits in <format color="%LinkColor%">[Kapitel 2 – Datentypen](02-java-data-types.md)</format> präsentiert. Auch in Strings können diese verwendet werden.
+<p>Folgende Liste wurde bereits in
+<format color="%LinkColor%"><a href="02-java-data-types.md">Kapitel 2 – Datentypen</a></format> präsentiert. Auch in
+Strings können diese verwendet werden.</p>
 
 | Escape Sequenz | Beschreibung                    |
 |----------------|---------------------------------|
@@ -171,65 +228,91 @@ Folgende Liste wurde bereits in <format color="%LinkColor%">[Kapitel 2 – Daten
 
 ## Konvertierung {id="conversion"}
 
-An einigen Stellen muss im Programm möglicherweise ein `String` in einen anderen Datentyp konvertiert werden. Java stellt für diese Anwendungsfälle die `parse`-Methoden zur Verfügung. Einen kleinen Einblick in diese <format color="%LinkColor%">[Methoden](09-java-methods.md)</format> gab es bereits in <format color="%LinkColor%">[Kapitel 4 – Ein- und Ausgaben](04-java-io.md)</format>.
+<p>An einigen Stellen muss im Programm möglicherweise ein <code>String</code> in einen anderen Datentyp konvertiert
+werden. Java stellt für diese Anwendungsfälle die <code>parse</code>-Methoden zur Verfügung. Einen kleinen Einblick in
+diese <format color="%LinkColor%"><a href="09-java-methods.md">Methoden</a></format> gab es bereits in
+<format color="%LinkColor%"><a href="04-java-io.md">Kapitel 4 – Ein- und Ausgaben</a></format>.</p>
 
-Die `parse`-Methoden sind statisch und werden daher über die <tooltip term="Wrapper-Class"><format color="%GlossaryLinkColor%">Wrapper-Klassen</format></tooltip> der jeweiligen <format color="%LinkColor%">[primitiven Datentypen](02-java-data-types.md#primitive-data-types)</format> angesprochen. Der <format color="%LinkColor%">[Rückgabewert](09-java-methods.md#return-type)</format> der Methoden entspricht dem jeweiligen Datentyp.
+<p>Die <code>parse</code>-Methoden sind statisch und werden daher über die
+<tooltip term="Wrapper-Class"><format color="%GlossaryLinkColor%">Wrapper-Klassen</format></tooltip> der jeweiligen
+<format color="%LinkColor%"><a href="02-java-data-types.md#primitive-data-types">primitiven Datentypen</a></format>
+ angesprochen. Der <format color="%LinkColor%"><a href="09-java-methods.md#return-type">Rückgabewert</a></format> der
+Methoden entspricht dem jeweiligen Datentyp.</p>
 
-```Java
-byte b = Byte.parseByte("127");
-short s = Short.parseShort("32767");
-int i = Integer.parseInt("2147483647");
-long l = Long.parseLong("9223372036854775807");
-float f = Float.parseFloat("3.4028235e38");
-double d = Double.parseDouble("1.7976931348623157e308");
-boolean bool = Boolean.parseBoolean("true");
-```
+<code-block lang="java">
+    byte b = Byte.parseByte("127");
+    short s = Short.parseShort("32767");
+    int i = Integer.parseInt("2147483647");
+    long l = Long.parseLong("9223372036854775807");
+    float f = Float.parseFloat("3.4028235e38");
+    double d = Double.parseDouble("1.7976931348623157e308");
+    boolean bool = Boolean.parseBoolean("true");
+</code-block>
 
->Sämtliche `parse`-Methoden der <tooltip term="Wrapper-Class"><format color="%GlossaryLinkColor%">Wrapper-Klassen</format></tooltip> erwarten einen `String` als Parameter, den sie umwandeln können. Beinhaltet ein `String` beispielsweise keine echte Zahl, wenn dieser in ein `int` umgewandelt wird, wirft der <tooltip term="Compiler"><format color="%GlossaryLinkColor%">Compiler</format></tooltip> eine <format color="%WarningLinkColor%">[Exception](15-java-exceptions.md)</format>.
-> ```Java
->Integer.parseInt("42b");
-> ```
-> ```Console
->Exception in thread "main" java.lang.NumberFormatException: For input string: "42b"
->at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
->at java.base/java.lang.Integer.parseInt(Integer.java:662)
->at java.base/java.lang.Integer.parseInt(Integer.java:778)
->at kesares.techarchive.Main.main(Main.java:6)
->```
-{style="warning" title="NumberFormatException"}
+<warning title="NumberFormatException">
+    <p>Sämtliche <code>parse</code>-Methoden der
+    <tooltip term="Wrapper-Class"><format color="%GlossaryLinkColor%">Wrapper-Klassen</format></tooltip> erwarten einen
+    <code>String</code> als Parameter, den sie umwandeln können. Beinhaltet ein <code>String</code> beispielsweise keine
+    echte Zahl, wenn dieser in ein <code>int</code> umgewandelt wird, wirft der
+    <tooltip term="Compiler"><format color="%GlossaryLinkColor%">Compiler</format></tooltip> eine
+    <format color="%WarningLinkColor%"><a href="15-java-exceptions.md">Exception</a></format>.</p>
+    <code-block lang="java">
+        int i = Integer.parseInt("42b");
+    </code-block>
+    <code-block lang="console">
+        Exception in thread "main" java.lang.NumberFormatException: For input string: "42b"
+        at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+        at java.base/java.lang.Integer.parseInt(Integer.java:662)
+        at java.base/java.lang.Integer.parseInt(Integer.java:778)
+        at kesares.techarchive.kesares.techarchive.Main.main(kesares.techarchive.Main.java:6)
+    </code-block>
+</warning>
 
->Es existiert keine vergleichbare `parse`-Methode für die Konvertierung von `char`.
-Soll ein `String` in ein `char` umgewandelt werden, wird die `charAt()-`Methode verwendet.
-{style="note"}
+<note>
+    <p>Es existiert keine vergleichbare <code>parse</code>-Methode für die Konvertierung von <code>char</code>. Soll ein
+    <code>String</code> in ein <code>char</code> umgewandelt werden, wird die <code>charAt()</code>-Methode verwendet.
+    </p>
+</note>
 
-```Java
-String name = "Kesares";
-char c = name.charAt(2);
-System.out.println(c); // s
-```
+<code-block lang="java">
+    String name = "Kesares";
+    char c = name.charAt(2);
+    System.out.println(c); // s
+</code-block>
 
 ## Formatierung {id="formatting"}
 
-Um Strings zu formatieren, gibt es mehrere Möglichkeiten und Varianten. Hier wird sich auf die folgenden beiden Vorgehensweisen konzentriert. Beide Varianten sind vom Prinzip identisch.
+<p>Um Strings zu formatieren, gibt es mehrere Möglichkeiten und Varianten. Hier wird sich auf die folgenden beiden
+Vorgehensweisen konzentriert. Beide Varianten sind vom Prinzip identisch.</p>
 
-```Java
-String s = String.format(format, args...)
-System.out.println(s);
+<code-block lang="java">
+    String s = String.format(format, args...);
+    System.out.println(s);
+</code-block>
 
-System.out.printf(format, args...)
-```
+<code-block lang="java">
+    System.out.printf(format, args...);
+</code-block>
 
-Die `format()`-Methode ist eine <format color="%LinkColor%">[statische Methode](10-java-classes.md#class-methods)</format> der Klasse `String`. Sie formatiert Strings nach einer bestimmten Vorgabe und gibt einen `String` mit den eingebetteten Argumenten zurück.
+<p>Die <code>format()</code>-Methode ist eine
+<format color="%LinkColor%"><a href="10-java-classes.md#class-methods">statische Methode</a></format> der Klasse
+<code>String</code>. Sie formatiert Strings nach einer bestimmten Vorgabe und gibt einen <code>String</code> mit den
+eingebetteten Argumenten zurück.</p>
 
-Der erste Parameter der Methode ist der eigentliche `String`, der am Ende beispielsweise auf der Konsole ausgegeben wird. Dieser kann zudem bestimmte <format color="%LinkColor%">[Spezifizierer und Flags](#specifier-and-flags)</format> enthalten, die der Methode mitteilen, wie sie die Argumente formatieren soll. Der zweite Parameter ist ein `Vararg` (siehe <format color="%LinkColor%">[Variable Parameteranzahl](09-java-methods.md#varargs)</format>), mit den Werten, die für die jeweiligen Spezifizierer eingesetzt werden sollen.
+<p>Der erste Parameter der Methode ist der eigentliche <code>String</code>, der am Ende beispielsweise auf der Konsole
+ausgegeben wird. Dieser kann zudem bestimmte
+<format color="%LinkColor%"><a href="#specifier-and-flags">Spezifizierer und Flags</a></format> enthalten, die der
+Methode mitteilen, wie sie die Argumente formatieren soll. Der zweite Parameter ist ein <code>Vararg</code> (siehe
+<format color="%LinkColor%"><a href="09-java-methods.md#varargs">Variable Parameteranzahl</a></format>), mit den Werten,
+die für die jeweiligen Spezifizierer eingesetzt werden sollen.</p>
 
-Die Formatierungen des `format`-Strings werden nach folgendem Schema geschrieben.
+<p>Die Formatierungen des <code>format</code>-Strings werden nach folgendem Schema geschrieben.</p>
 
-```Console
-%[flags][width][.precision]conversion
-```
+<code-block lang="console">
+    %[flags][width][.precision]conversion
+</code-block>
 
-Die Anzahl an Spezifizierer muss der Anzahl an Argumenten gleichen.
+<p>Die Anzahl an Spezifizierer muss der Anzahl an Argumenten gleichen.</p>
 
 ### Spezifizierer und Flags {id="specifier-and-flags"}
 
@@ -303,7 +386,8 @@ Die Anzahl an Spezifizierer muss der Anzahl an Argumenten gleichen.
     </tr>
     <tr>
         <td><code>,</code></td>
-        <td>Tausendertrennzeichen verwenden (z.B. <code>1.000</code>). Zeichen ist abhängig von der Spracheinstellung des Systems.</td>
+        <td>Tausendertrennzeichen verwenden (z.B. <code>1.000</code>). Zeichen ist abhängig von der Spracheinstellung
+        des Systems.</td>
     </tr>
     <tr>
         <td><code>(</code></td>
@@ -311,116 +395,162 @@ Die Anzahl an Spezifizierer muss der Anzahl an Argumenten gleichen.
     </tr>
 </table>
 
-Die `conversion` ist der eigentliche Spezifizierer. Optional kann noch eine Breite und die Präzision angegeben werden.
-- `conversion` – der eigentliche Spezifizierer wie `%d`, `%s`, `%f` usw.
-- `width` – bestimmt die minimale Anzahl an Zeichen, die ausgegeben werden sollen. Wenn der Wert kürzer ist, wird er mit Leerzeichen aufgefüllt.
-- `.precision` – gibt die Anzahl der Nachkommastellen für Fließkommazahlen oder die maximale Anzahl an Zeichen für Strings an.
-- `%n$` – gibt das n-te Argument an, dass an die `format()`-Methode übergeben wird. Dadurch ist es möglich die Reihenfolge der Argumente zu vertauschen oder die Argumente mehrmals verwenden zu können.
+<p>Die <code>conversion</code> ist der eigentliche Spezifizierer. Optional können noch Breite und Präzision angegeben
+werden.</p>
 
-```Java
-System.out.println(String.format("Hello %s!", "World"));
-System.out.println(String.format("The number is %d.", 42));
-System.out.println(String.format("The price is %.2f euro.", 12.3456));
-System.out.println(String.format("The number in hexadecimal: %x", 255));
-System.out.println(String.format("The number in octal: %o", 8));
-System.out.println(String.format("The character is %c.", 'A'));
-System.out.println(String.format("The value is %b.", true));
-System.out.println(String.format("First line%nSecond line"));
-System.out.println(String.format("Wert: %8.2f", 123.4567));
-System.out.println(String.format("Name: %-10s", "Java"));
-System.out.println(String.format("The amount is %,d.", 1000000));
-System.out.println(String.format("%2$d + %1$d = %3$d", 5, 3, 8));
-```
+<list>
+  <li>
+    <p><code>conversion</code> – Der eigentliche Spezifizierer wie <code>%d</code>, <code>%s</code>, <code>%f</code>
+    usw.</p>
+  </li>
+  <li>
+    <p><code>width</code> – Bestimmt die minimale Anzahl an Zeichen, die ausgegeben werden sollen. Wenn der Wert kürzer
+    ist, wird er mit Leerzeichen aufgefüllt.</p>
+  </li>
+  <li>
+    <p><code>.precision</code> – Gibt die Anzahl der Nachkommastellen für Fließkommazahlen oder die maximale Anzahl an
+    Zeichen für Strings an.</p>
+  </li>
+  <li>
+    <p><code>%n$</code> – gibt das <code>n</code>-te Argument an, dass an die <code>format()</code>-Methode übergeben
+    wird. Dadurch ist es möglich, die Reihenfolge der Argumente zu vertauschen oder die Argumente mehrmals verwenden zu
+    können.</p>
+  </li>
+</list>
+
+<code-block lang="java">
+    System.out.println(String.format("Hello %s!", "World"));
+    System.out.println(String.format("The number is %d.", 42));
+    System.out.println(String.format("The price is %.2f euro.", 12.3456));
+    System.out.println(String.format("The number in hexadecimal: %x", 255));
+    System.out.println(String.format("The number in octal: %o", 8));
+    System.out.println(String.format("The character is %c.", 'A'));
+    System.out.println(String.format("The value is %b.", true));
+    System.out.println(String.format("First line%nSecond line"));
+    System.out.println(String.format("Wert: %8.2f", 123.4567));
+    System.out.println(String.format("Name: %-10s", "Java"));
+    System.out.println(String.format("The amount is %,d.", 1000000));
+    System.out.println(String.format("%2$d + %1$d = %3$d", 5, 3, 8));
+</code-block>
 
 ## Textblock {id="text-block"}
 
-Zeilenumbrüche kommen immer wieder vor. Gerade wenn es um Bildschirmausgaben oder eingebetteten Code wie HTML, JSON, SQL, etc. geht. In Java 15 wurden Textblöcke eingeführt, mit denen sich mehrzeilige Strings leichter bilden lassen, als über Konkatenationen. Eingeleitet wird ein Textblock mit drei doppelten Anführungsstrichen `"""`.
+<p>Zeilenumbrüche kommen immer wieder vor. Gerade wenn es um Bildschirmausgaben oder eingebetteten Code wie HTML, JSON,
+SQL, etc. geht. In Java 15 wurden Textblöcke eingeführt, mit denen sich mehrzeilige Strings leichter bilden lassen, als
+über Konkatenationen. Eingeleitet wird ein Textblock mit drei doppelten Anführungsstrichen <code>"""</code>.</p>
 
-```Java
-String text = """
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Title</title>
-    </head>
-    <body>
-    
-    </body>
-    </html>
-""";
-```
+<code-block lang="java">
+    String text = """
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang="en"&gt;
+        &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;title&gt;Title&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+
+        &lt;/body&gt;
+        &lt;/html&gt;
+    """;
+</code-block>
 
 ## Die Klassen `StringBuilder` und `StringBuffer` (Advanced) {id="string-builder-and-string-buffer-classes"}
 
-Strings sind <format color="%Highlight%">immutable</format> und Konkatenationen sind teuer. Die Klassen `StringBuilder` und `StringBuffer` existieren zum Zweck der Veränderung von Strings. Werden mehrere Verkettungen durchgeführt (z.B. in Schleifen ab einer bestimmten Anzahl an Iterationen), ist ein `StringBuilder`-Objekt sinnvoller.
+<p>Strings sind <format color="%Highlight%">immutable</format> und Konkatenationen sind teuer. Die Klassen
+<code>StringBuilder</code> und <code>StringBuffer</code> existieren zum Zweck der Veränderung von Strings. Werden
+mehrere Verkettungen durchgeführt (z. B. in
+<format color="%LinkColor%"><a href="07-java-loops.md">Schleifen</a></format> ab einer bestimmten Anzahl an
+Iterationen), ist ein <code>StringBuilder</code>-Objekt sinnvoller.</p>
 
-Soll eine <format color="%LinkColor%">[Methode](09-java-methods.md)</format> am Ende die Verkettung des `StringBuilder`-Objekts als `String` liefern, muss noch die `toString()`-Methode über den `StringBuilder` aufgerufen werden.
+<p>Soll eine <format color="%LinkColor%"><a href="09-java-methods.md">Methode</a></format> am Ende die Verkettung des
+<code>StringBuilder</code>-Objekts als <code>String</code> liefern, muss noch die <code>toString()</code>-Methode über
+den <code>StringBuilder</code> aufgerufen werden.</p>
 
-```Java
-public static String getConcatString() {
-    StringBuilder builder = new StringBuilder();
-
-    for (int i = 0; i < 10; i++) {
-        builder.append(i);
-        builder.append("-");
+<code-block lang="java">
+    public static String getConcatString() {
+        StringBuilder builder = new StringBuilder();
+    
+        for (int i = 0; i &lt; 10; i++) {
+            builder.append(i);
+            builder.append("-");
+        }
+        return builder.toString();
     }
-    return builder.toString();
-}
-```
+</code-block>
 
-> `String` – <format color="%NoteHighlight%">unveränderlich (immutable)</format>. Einmal erstellt, kann der Wert eines `String`-Objekts nicht mehr geändert werden. Ein Änderungsversuch erzeugt ein neues `String`-Objekt, was <format color="%NoteHighlight%">ineffizient</format> sein kann, <format color="%NoteHighlight%">wenn viele Änderungen</format> vorgenommen werden.
-> 
-> `StringBuilder` – <format color="%NoteHighlight%">veränderlich (mutable)</format>. Der Inhalt kann nach der Erstellung geändert werden, ohne neue Objekte zu erzeugen. <format color="%NoteHighlight%">[Nicht thread-sicher](java-multithreading.md)</format>, da keine Synchronisation verwendet wird, was es schneller macht als `StringBuffer`.
-> 
-> `StringBuffer` – ähnlich wie `StringBuilder`, auch <format color="%NoteHighlight%">veränderlich (mutable)</format> und effizient bei häufigen Änderungen. <format color="%NoteLinkColor%">[Thread-sicher](java-multithreading.md)</format>, da alle Methoden synchronisiert sind. Aufgrund der Synchronisation etwas langsamer als `StringBuilder`.
-{style="note" title="String, StringBuilder und StringBuffer"}
+<note title="String, StringBuilder und StringBuffer">
+    <p><code>String</code> – <format color="%NoteHighlight%">Unveränderlich (immutable)</format>. Einmal erstellt, kann
+    der Wert eines <code>String</code>-Objekts nicht mehr geändert werden. Ein Änderungsversuch erzeugt ein neues
+    <code>String</code>-Objekt, was <format color="%NoteHighlight%">ineffizient</format> sein kann,
+    <format color="%NoteHighlight%">wenn viele Änderungen</format> vorgenommen werden.</p>
+    <p><code>StringBuilder</code> – <format color="%NoteHighlight%">Veränderlich (mutable)</format>. Der Inhalt kann
+    nach der Erstellung geändert werden, ohne neue Objekte zu erzeugen.
+    <format color="%NoteHighlight%"><a href="27-java-multithreading.md">Nicht thread-sicher</a></format>, da keine
+    Synchronisation verwendet wird, was es schneller macht als <code>StringBuffer</code>.</p>
+    <p><code>StringBuffer</code> – Ähnlich wie <code>StringBuilder</code>, auch
+    <format color="%NoteHighlight%">veränderlich (mutable)</format> und effizient bei häufigen Änderungen.
+    <format color="%NoteLinkColor%"><a href="27-java-multithreading.md">Thread-sicher</a></format>, da alle Methoden
+    synchronisiert sind. Aufgrund der Synchronisation etwas langsamer als <code>StringBuilder</code>.</p>
+</note>
 
-Folgendes Beispiel misst die Zeit um die jeweiligen Strings mittels `StringBuilder` und Konkatenation zu bilden.
+<p>Folgendes Beispiel misst die Zeit, um die jeweiligen Strings mittels <code>StringBuilder</code> und Konkatenation zu
+bilden.</p>
 
-```Java
-long now = 0;  
-long timeTaken = 0;  
-  
-now = System.nanoTime();  
-  
-StringBuilder builder = new StringBuilder();  
-for (int i = 0; i < 1000; i++) {  
-    builder.append("-");  
-}
-  
-timeTaken = System.nanoTime() - now;  
-System.out.printf("1st time: %d ns%n", timeTaken);
+<code-block lang="java">
+    long now = 0;  
+    long timeTaken = 0;  
+    
+    now = System.nanoTime();
+    
+    StringBuilder builder = new StringBuilder();  
+    for (int i = 0; i &lt; 1000; i++) {  
+        builder.append("-");  
+    }
+    
+    timeTaken = System.nanoTime() - now;  
+    System.out.printf("1st time: %d ns%n", timeTaken);
+    
+    
+    
+    now = System.nanoTime();
+    
+    String text = "";  
+    for (int i = 0; i &lt; 1000; i++) {  
+        text += "-";  
+    }
+    
+    timeTaken = System.nanoTime() - now;  
+    System.out.printf("2nd time: %d ns%n", timeTaken);
+</code-block>
 
-
-
-now = System.nanoTime();  
-  
-String text = "";  
-for (int i = 0; i < 1000; i++) {  
-    text += "-";  
-}
-  
-timeTaken = System.nanoTime() - now;  
-System.out.printf("2nd time: %d ns%n", timeTaken);
-```
-
-> Die Zeiten können sich je nach System unterscheiden. Je nachdem wie stark der Prozessor ist.
+<tip>
+    <p>Die Zeiten können sich je nach System unterscheiden. Je nachdem wie stark der Prozessor ist.</p>
+</tip>
 
 ## ANSI Escape-Sequenzen {id="ansi-escape-sequences"}
 
-ANSI Escape-Sequenzen sind eine Reihe von Zeichenfolgen, die verwendet werden können, um Text in der Konsole zu formatieren, um z.B. die Farbe oder den Stil des Textes zu ändern. Diese Sequenzen werden typischerweise in terminalbasierten Anwendungen verwendet, die ANSI-Farbcodes unterstützen, können aber auch innerhalb von <tooltip term="IDE"><format color="%GlossaryLinkColor%">IDEs</format></tooltip> verwendet werden.
+<p>ANSI Escape-Sequenzen sind eine Reihe von Zeichenfolgen, die verwendet werden können, um Text in der Konsole zu
+formatieren, um z. B. die Farbe oder den Stil des Textes zu ändern. Diese Sequenzen werden typischerweise in
+terminalbasierten Anwendungen verwendet, die ANSI-Farbcodes unterstützen, können aber auch innerhalb von
+<tooltip term="IDE"><format color="%GlossaryLinkColor%">IDEs</format></tooltip> verwendet werden.</p>
 
-> Mehr und genauere Informationen können <format color="%NoteLinkColor%">[hier](https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797)</format> gefunden werden.
-{style="note"}
+<note>
+    <p>Mehr und genauere Informationen können
+    <format color="%NoteLinkColor%"><a href="https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797">hier</a>
+    </format> gefunden werden.</p>
+</note>
 
-Eine ANSI Escape-Sequenz beginnt immer mit einem Escape-Zeichen wie `\033` oder `\u001B` (beides wird in Java unterstützt, letzteres ist typischer in der Java-Umgebung) gefolgt von einem `[` und einer Reihe von Codes, die durch Semikolons getrennt sind und endet mit einem `m`.
+<p>Eine ANSI Escape-Sequenz beginnt immer mit einem Escape-Zeichen wie <code>\033</code> oder <code>\u001B</code>.
+Beides wird in Java unterstützt. Letzteres ist in der Java-Umgebung typischer. Anschließend folgt ein <code>[</code>,
+gefolgt von einer Reihe von Codes, die durch Semikolons getrennt sind. Abschließend endet die Sequenz mit einem
+<code>m</code>.</p>
 
-Um die Formatierung nach einer ANSI-Sequenz zurückzusetzen und zur Standardkonfiguration zurückzukehren, wird `\u001B[0m` verwendet.
+<p>Um die Formatierung nach einer ANSI-Sequenz zurückzusetzen und zur Standardkonfiguration zurückzukehren, wird
+<code>\u001B[0m</code> verwendet.</p>
 
-```Java
-System.out.println("\u001B[31mThis text is red!\u001B[0m");
-```
+<code-block lang="java">
+    System.out.println("\u001B[31mThis text is red!\u001B[0m");
+</code-block>
 
 ### Farbcodes {id="color-codes"}
 
@@ -528,23 +658,37 @@ System.out.println("\u001B[31mThis text is red!\u001B[0m");
     </tr>
 </table>
 
-Mehrere Codes können kombiniert werden, indem sie durch Semikolons getrennt werden.
+<p>Mehrere Codes können kombiniert werden, indem sie durch Semikolons getrennt werden.</p>
 
-```Java
-System.out.println("\u001B[31mThis text is red!\u001B[0m");
-System.out.println("\u001B[32mThis text is green!\u001B[0m");
-System.out.println("\u001B[1;34mThis text is blue and bold!\u001B[0m");
-```
+<code-block lang="java">
+    System.out.println("\u001B[31mThis text is red!\u001B[0m");
+    System.out.println("\u001B[32mThis text is green!\u001B[0m");
+    System.out.println("\u001B[1;34mThis text is blue and bold!\u001B[0m");
+</code-block>
 
->Nicht alle Terminals unterstützen <format color="%NoteHighlight%">ANSI Escape-Sequenzen</format> und ihre Unterstützung kann auf verschiedenen Betriebssystemen variieren. In Windows-Terminals kann es z.B. erforderlich sein, die Unterstützung für ANSI-Sequenzen explizit zu aktivieren, da ältere Versionen dies standardmäßig nicht unterstützen.
-{style="note" title="Fehlende oder nicht vollständige Unterstützung"}
+<note title="Fehlende oder nicht vollständige Unterstützung">
+    <p>Nicht alle Terminals unterstützen <format color="%NoteHighlight%">ANSI Escape-Sequenzen</format> und ihre
+    Unterstützung kann auf verschiedenen Betriebssystemen variieren. In Windows-Terminals kann es z. B. erforderlich
+    sein, die Unterstützung für ANSI-Sequenzen explizit zu aktivieren, da ältere Versionen dies standardmäßig nicht
+    unterstützen.</p>
+</note>
 
-> IntelliJ IDEA verwendet für bestimmte Ausgaben von Zeichenketten ein eigenes Farbschema, um das Logging auf der Konsole zu vereinfachen.
+<tip>
+    <p>IntelliJ IDEA verwendet für bestimmte Ausgaben von Zeichenketten ein eigenes Farbschema, um das Logging auf der
+    Konsole zu vereinfachen.</p>
+</tip>
 
-Steht in der Konsole in einer der Zeilenausgaben eines der folgenden Worte
+<p>Steht in der Konsole in einer der Zeilenausgaben eines der folgenden Worte, wird diese Zeile in der entsprechenden
+Farbe gefärbt.</p>
 
-- `ERROR` (<format color="340909">Dunkelrot</format>)
-- `WARN` oder `WARNING` (<format color="1D0934">Dunkelblau</format>)
-- `DEBUG` (<format color="7F7F6E">Dunkelgrau</format>)
-
-wird diese Zeile in der entsprechenden Farbe gefärbt.
+<list>
+  <li>
+    <p><code>ERROR</code> (<format color="340909">Dunkelrot</format>)</p>
+  </li>
+  <li>
+    <p><code>WARN</code> oder <code>WARNING</code> (<format color="1D0934">Dunkelblau</format>)</p>
+  </li>
+  <li>
+    <p><code>DEBUG</code> (<format color="7F7F6E">Dunkelgrau</format>)</p>
+  </li>
+</list>

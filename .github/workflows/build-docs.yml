@@ -6,13 +6,14 @@ on:
   workflow_dispatch:
 
 permissions:
+  contents: read
   id-token: write
   pages: write
 
 env:
   INSTANCE: 'docs/ta'
   ARTIFACT: 'webHelpTA2-all.zip'
-  DOCKER_VERSION: '241.18775'
+  DOCKER_VERSION: '2025.04.8412'
 
 jobs:
   build:
@@ -63,9 +64,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: docs
+          path: artifacts
 
       - name: Unzip artifact
-        run: unzip -O UTF-8 -qq '${{ env.ARTIFACT }}' -d dir
+        run: unzip -O UTF-8 -qq "artifacts/${{ env.ARTIFACT }}" -d dir
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

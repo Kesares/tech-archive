@@ -1,116 +1,153 @@
 # 10 Java – Klassen
 
-Klassen sind ein wesentlicher Bestandteil der <format color="%LinkColor%">[OOP – Objektorientierten Programmierung](14-java-oop.md)</format>. Sie sind vergleichbar mit Rezepten oder Blueprints und stellen die grundlegende Struktur und den Aufbau von konkret instanziierten <format color="%LinkColor%">[Objekten](11-java-objects.md)</format> dar – deren Eigenschaften (<format color="%LinkColor%">[Objektvariablen](#object-variables)</format>) und Funktionalitäten (<format color="%LinkColor%">[Objektmethoden](#object-methods)</format>). Jede Klasse, die in Java erstellt wird, <format color="%LinkColor%">[erbt](14-java-oop.md#inheritance)</format> automatisch von der <format color="%LinkColor%">[Klasse `Object`](14-java-oop.md#the-mother-of-all-classes-object)</format>.
+<p>Klassen sind ein wesentlicher Bestandteil der
+<format color="%LinkColor%"><a href="14-java-oop.md">OOP – Objektorientierten Programmierung</a></format>. Sie sind
+vergleichbar mit Rezepten oder Blueprints und stellen die grundlegende Struktur und den Aufbau von konkret
+instanziierten <format color="%LinkColor%"><a href="11-java-objects.md">Objekten</a></format> dar – deren Eigenschaften
+(<format color="%LinkColor%"><a href="#object-variables">Objektvariablen</a></format>) und Funktionalitäten
+(<format color="%LinkColor%"><a href="#object-methods">Objektmethoden</a></format>). Jede Klasse, die in Java erstellt
+wird, <format color="%LinkColor%"><a href="14-java-oop.md#inheritance">erbt</a></format> automatisch von der
+<format color="%LinkColor%"><a href="14-java-oop.md#the-mother-of-all-classes-object">Klasse <code>Object</code></a>
+</format>.</p>
 
-Alle <format color="%LinkColor%">[Variablen](03-java-variables.md)</format> und <format color="%LinkColor%">[Methoden](09-java-methods.md)</format>, die in Java deklariert werden, sind von solch einer <format color="%LinkColor%">[Klassendefinition](#class-structure)</format> ummantelt – unabhängig davon, ob sie zu einem <format color="%LinkColor%">[Objekt](11-java-objects.md)</format> gehören oder nicht. Der Name der Datei muss zudem genauso heißen, wie der Name der Klasse, die sich innerhalb der Datei befindet.
+<p>Alle <format color="%LinkColor%"><a href="03-java-variables.md">Variablen</a></format> und
+<format color="%LinkColor%"><a href="09-java-methods.md">Methoden</a></format>, die in Java deklariert werden, sind von
+solch einer <format color="%LinkColor%"><a href="#class-structure">Klassendefinition</a></format> ummantelt – unabhängig
+davon, ob sie zu einem <format color="%LinkColor%"><a href="11-java-objects.md">Objekt</a></format> gehören oder nicht.
+Der Name der Datei muss zudem genauso heißen, wie der Name der Klasse, die sich innerhalb der Datei befindet.</p>
 
 ## Klassenaufbau {id="class-structure"}
 
-Der Aufbau einer Klasse ist nicht in Stein gemeißelt. Er kann sich von Unternehmen zu Unternehmen unterscheiden. Eine weit verbreitete Anordnung sieht folgendermaßen aus.
+<p>Der Aufbau einer Klasse ist nicht in Stein gemeißelt. Er kann sich von Unternehmen zu Unternehmen unterscheiden. Eine
+weit verbreitete Anordnung sieht folgendermaßen aus.</p>
 
-```Java
-public class ClassName {
+<code-block lang="java">
+    public class ClassName {
+    
+        // Constants and static or class variables
+    
+        // Instance or object variables
+    
+        // Constructors
+    
+        // Static or class methods
+    
+        // Instance or object methods
+    
+        // Getters and setters
+    
+        // Inner classes
+    }
+</code-block>
 
-    // Constants and static or class variables
-
-    // Instance or object variables
-
-    // Constructors
-
-    // Static or class methods
-
-    // Instance or object methods
-
-    // Getters and setters
-
-    // Inner classes
-}
-```
-
-> Zudem sollten alle öffentlichen (mit `public` deklariert), geschützten (mit `protected` deklariert) und privaten (mit `private` deklariert) Methoden jeweils nahe beieinander stehen.
+<tip>
+    <p>Zudem sollten alle öffentlichen (mit <code>public</code> deklarierten), geschützten (mit <code>protected</code>
+    deklarierten) und privaten (mit <code>private</code> deklarierten) Methoden jeweils nahe beieinander stehen.</p>
+</tip>
 
 ## Klassenvariablen {id="class-variables"}
 
-Klassenvariablen oder auch statische Variablen werden mit dem <format color="%LinkColor%">[Keyword](12-java-modifier-access-rights.md)</format> `static` gebildet und sollten ganz oben innerhalb einer Klassendefinition deklariert werden. Sie existieren unabhängig von einem Objekt und werden meist mit dem Keyword `final` deklariert. Variablen mit dem Keyword `final` werden <format color="%LinkColor%">[Konstanten](#constants)</format> genannt, da sich deren Wert nach Initialisierung nicht mehr ändern kann.
+<p>Klassenvariablen oder auch statische Variablen werden mit dem
+<format color="%LinkColor%"><a href="12-java-modifier-access-rights.md">Keyword</a></format> <code>static</code>
+ gebildet und sollten ganz oben innerhalb einer Klassendefinition deklariert werden. Sie existieren unabhängig von einem
+Objekt und werden meist mit dem Keyword <code>final</code> deklariert. Variablen mit dem Keyword <code>final</code>
+ werden <format color="%LinkColor%"><a href="#constants">Konstanten</a></format> genannt, da sich deren Wert nach
+Initialisierung nicht mehr ändern kann.</p>
 
 ### Konstanten {id="constants"}
 
 <note>
-    Alle Konstanten sind Klassenvariablen – aber nicht alle Klassenvariablen sind Konstanten.
+    <p>Alle Konstanten sind Klassenvariablen – aber nicht alle Klassenvariablen sind Konstanten.</p>
 </note>
 
-Zwei Beispiel-Konstanten aus der `Math`-Klasse:
+<p>Zwei Beispiel-Konstanten aus der <code>Math</code>-Klasse:</p>
 
-![](10_java_classes_1.png){border-effect="line"}
+<img src="10_java_classes_1.png" alt="Konstanten aus der Math-Klasse" border-effect="line"/>
 
 ## Objektvariablen {id="object-variables"}
 
-Objekt- oder Instanzvariablen werden unterhalb der <format color="%LinkColor%">[Klassenvariablen](#class-variables)</format> aber oberhalb von <format color="%LinkColor%">[Konstruktoren](#constructors)</format> deklariert. Diese Variablen gehören immer zu einem konkreten <format color="%LinkColor%">[Objekt](11-java-objects.md)</format> und dienen als Eigenschaften des Objekts wie beispielsweise der Name oder die Farbe eines Tiers. Objektvariablen können nur über ein bestehendes Objekt angesprochen werden.
+<p>Objekt- oder Instanzvariablen werden unterhalb der
+<format color="%LinkColor%"><a href="#class-variables">Klassenvariablen</a></format> aber oberhalb von
+<format color="%LinkColor%"><a href="#constructors">Konstruktoren</a></format> deklariert. Diese Variablen gehören immer
+zu einem konkreten <format color="%LinkColor%"><a href="11-java-objects.md">Objekt</a></format> und dienen als
+igenschaften des Objekts wie beispielsweise der Name oder die Farbe eines Tiers. Objektvariablen können nur über ein
+bestehendes Objekt angesprochen werden.</p>
 
-Instanzvariablen können sowohl aus <format color="%LinkColor%">[primitiven Datentypen](02-java-data-types.md#primitive-data-types)</format> als auch aus <format color="%LinkColor%">[Referenzdatentypen](02-java-data-types.md#reference-data-types)</format> wie z.B. Strings bestehen.
+<p>Instanzvariablen können sowohl aus
+<format color="%LinkColor%"><a href="02-java-data-types.md#primitive-data-types">primitiven Datentypen</a></format> als
+auch aus <format color="%LinkColor%"><a href="02-java-data-types.md#reference-data-types-outlook">Referenzdatentypen</a>
+</format> wie z. B. <format color="%LinkColor%"><a href="05-java-strings.md">Strings</a></format> bestehen.</p>
 
-```Java
-public class Dog {
+<code-block lang="java">
+    public class Dog {
+    
+        public String name;
+        public int age;
+    }
+</code-block>
 
-    public String name;
-    public int age;
-}
-```
-
-Die Initialisierung dieser Variablen übernimmt in den meisten Fällen der <format color="%LinkColor%">[Konstruktor](#constructors)</format>.
+<p>Die Initialisierung dieser Variablen übernimmt in den meisten Fällen der
+<format color="%LinkColor%"><a href="#constructors">Konstruktor</a></format>.</p>
 
 ## Konstruktoren {id="constructors"}
 
-Eine spezielle Art der Methode ist der Konstruktor. Er besitzt keinen <format color="%LinkColor%">[Rückgabewert](09-java-methods.md#return-type)</format> – nicht mal das <format color="%LinkColor%">[Keyword](01-java-token.md#keywords)</format> `void`. Zudem muss der Konstruktor denselben Namen wie die Klasse besitzen. Er ist für das eigentliche Initialisieren der <format color="%LinkColor%">[Objekte](11-java-objects.md)</format> verantwortlich.
+<p>Eine spezielle Art der Methode ist der Konstruktor. Er besitzt keinen
+<format color="%LinkColor%"><a href="09-java-methods.md#return-type">Rückgabewert</a></format> – nicht mal das
+<format color="%LinkColor%"><a href="01-java-token.md#keywords">Keyword</a></format> <code>void</code>. Zudem muss der
+Konstruktor denselben Namen wie die Klasse besitzen. Er ist für das eigentliche Initialisieren der
+<format color="%LinkColor%"><a href="11-java-objects.md">Objekte</a></format> verantwortlich.</p>
 
-Beim Erstellen eines Objekts wird der Konstruktor aufgerufen. Dabei können ihm Werte mit übergeben werden, mit denen die <format color="%LinkColor%">[Objektvariablen](#object-variables)</format> des jeweiligen Objekts initialisiert werden.
+<p>Beim Erstellen eines Objekts wird der Konstruktor aufgerufen. Dabei können ihm Werte mit übergeben werden, mit denen
+die <format color="%LinkColor%"><a href="#object-variables">Objektvariablen</a></format> des jeweiligen Objekts
+initialisiert werden.</p>
 
-```Java
-public class Dog {
-
-    public String name;
-    public int age;
-
-    public Dog(String name, int age) {
-        name = name;
-        age = age;
+<code-block lang="java">
+    public class Dog {
+    
+        public String name;
+        public int age;
+    
+        public Dog(String name, int age) {
+            name = name;
+            age = age;
+        }
     }
-}
-```
+</code-block>
 
-Wurde kein Konstruktor programmiert, wird automatisch der Default-Konstruktor aufgerufen, welcher keine Parameter erwartet. Dieser kann auch optional selber geschrieben werden.
+<p>Wurde kein Konstruktor programmiert, wird automatisch der Default-Konstruktor aufgerufen, welcher keine Parameter
+erwartet. Dieser kann auch optional selber geschrieben werden.</p>
 
-```Java
-public class Dog {
-
-    public String name;
-    public int age;
-
-    public Dog() {
-
-	}
-}
-```
+<code-block lang="java">
+    public class Dog {
+    
+        public String name;
+        public int age;
+    
+        public Dog() {
+    
+        }
+    }
+</code-block>
 
 Auch mehrere Konstruktoren sind möglich.
 
-```Java
-public class Dog {
-
-    public String name;
-    public int age;
-
-    public Dog(String name, int age) {
-        name = name;
-        age = age;
+<code-block lang="java">
+    public class Dog {
+    
+        public String name;
+        public int age;
+    
+        public Dog(String name, int age) {
+            name = name;
+            age = age;
+        }
+    
+        public Dog(String name) {
+            name = name;
+            age = 0;
+        }
     }
-
-    public Dog(String name) {
-        name = name;
-        age = 0;
-    }
-}
-```
+</code-block>
 
 <warning>
     In beiden Konstruktoren gibt es jedoch ein Problem.
@@ -118,437 +155,558 @@ public class Dog {
 
 ## Verdeckte Variablen {id="shadowed-variables"}
 
-Werden in Codeblöcken neue Variablennamen eingeführt, können diese nicht noch einmal angelegt werden. Heißt die lokale Variable einer Methode genauso wie eine <format color="%LinkColor%">[Objektvariable](#object-variables)</format>, spricht man auch von einer verdeckten oder <format color="%Highlight%">shadowed Variablen</format>.
+<p>Werden in Codeblöcken neue Variablennamen eingeführt, können diese nicht noch einmal angelegt werden. Heißt die
+lokale Variable einer Methode genauso wie eine
+<format color="%LinkColor%"><a href="#object-variables">Objektvariable</a></format>, spricht man auch von einer
+verdeckten oder <format color="%Highlight%">shadowed Variablen</format>.</p>
 
-An sich besteht in solchen Fällen kein Problem. Der <tooltip term="Compiler"><format color="%GlossaryLinkColor%">Compiler</format></tooltip> wird dann standardmäßig die lokale Variable nutzen. Durch dieses Vorgehen können später neu hinzugefügte Objektvariablen keinen schon bestehenden Code zerstören.
+<p>An sich besteht in solchen Fällen kein Problem. Der
+<tooltip term="Compiler"><format color="%GlossaryLinkColor%">Compiler</format></tooltip> wird dann standardmäßig die
+lokale Variable nutzen. Durch dieses Vorgehen können später neu hinzugefügte Objektvariablen keinen schon bestehenden
+Code zerstören.</p>
 
-Eine kleine Komplikation besteht nur, wenn die <format color="%LinkColor%">[Objektvariable](#object-variables)</format> mit einer lokalen Variable genutzt werden soll. In diesem Fall wird der Wert der lokalen Variable verwendet und erneut der lokalen Variable zugewiesen.
+<p>Eine kleine Komplikation besteht nur, wenn die
+<format color="%LinkColor%"><a href="#object-variables">Objektvariable</a></format> mit einer lokalen Variablen genutzt
+werden soll. In diesem Fall wird der Wert der lokalen Variablen verwendet und erneut der lokalen Variablen zugewiesen.
+</p>
 
-```Java
-public class Dog {
-
-    public String name;
-    public int age;
-
-    public Dog(String name, int age) {
-        name = name; // <-- here
-        age = age;   // <-- here
+<code-block lang="java">
+    public class Dog {
+    
+        public String name;
+        public int age;
+    
+        public Dog(String name, int age) {
+            name = name; // &lt;-- here
+            age = age;   // &lt;-- here
+        }
+    
+        public Dog(String name) {
+            name = name; // &lt;-- here
+            age = 0;
+        }
     }
+</code-block>
 
-    public Dog(String name) {
-        name = name; // <-- here
-        age = 0;
-    }
-}
-```
-
-Dafür gibt es jedoch eine Lösung.
+<p> Dafür gibt es jedoch eine Lösung.</p>
 
 ## Das Keyword `this` {id="the-keyword-this"}
 
-Natürlich können bei solchen Problemen die lokalen oder <format color="%LinkColor%">[Objektvariablen](#object-variables)</format> umbenannt werden. Müssen diese an mehreren Stellen geändert werden, kann der Aufwand jedoch etwas größer werden. Möchte man die beiden <format color="%LinkColor%">[Variablen](03-java-variables.md)</format> also gerne gleich benennen, kann das Keyword `this` Abhilfe schaffen.
+<p>Natürlich können bei solchen Problemen die lokalen oder
+<format color="%LinkColor%"><a href="#object-variables">Objektvariablen</a></format> umbenannt werden. Müssen diese an
+mehreren Stellen geändert werden, kann der Aufwand jedoch etwas größer werden. Möchte man die beiden
+<format color="%LinkColor%"><a href="03-java-variables.md">Variablen</a></format> also gerne gleich benennen, kann das
+Keyword <code>this</code> Abhilfe schaffen.</p>
 
-Das Schlüsselwort `this` funktioniert ähnlich wie eine Referenzvariable, indem es auf ein bestimmtes <format color="%LinkColor%">[Objekt](09-java-methods.md)</format> verweist – allerdings in einem spezifischen Kontext. Anders ausgedrückt: Ein Objekt verweist mit `this` auf sich selbst. `this` bezieht sich auf genau das Objekt, das gerade verwendet wird bzw. in dessen Kontext (<format color="%Highlight%">Klasse</format>) man sich aktuell befindet.
+<p>Das Schlüsselwort <code>this</code> funktioniert ähnlich wie eine Referenzvariable, indem es auf ein bestimmtes
+<format color="%LinkColor%"><a href="11-java-objects.md">Objekt</a></format> verweist – allerdings in einem spezifischen
+Kontext. Anders ausgedrückt: Ein Objekt verweist mit <code>this</code> auf sich selbst. <code>this</code> bezieht sich
+auf genau das Objekt, das gerade verwendet wird, bzw. in dessen Kontext (<format color="%Highlight%">Klasse</format>) man
+sich aktuell befindet.</p>
 
-```Java
-public class Dog {
-
-    public String name;
-    public int age;
-
-    public Dog(String name, int age) {
-        this.name = name;
-        this.age = age;
+<code-block lang="java">
+    public class Dog {
+    
+        public String name;
+        public int age;
+    
+        public Dog(String name, int age) {
+            this.name = name;
+            this.age = age;
+        }
+    
+        public Dog(String name) {
+            this.name = name;
+            this.age = 0;
+        }
     }
+</code-block>
 
-    public Dog(String name) {
-        this.name = name;
-        this.age = 0;
+<p>Ein weiterer Vorteil von <code>this</code> ist, dass die folgenden beiden
+<format color="%LinkColor%"><a href="#constructors">Konstruktoren</a></format> miteinander verknüpft werden können.
+Dadurch wird redundanter Code vermieden.</p>
+
+<code-block lang="java">
+    public class Dog {
+    
+        public String name;
+        public int age;
+    
+        public Dog(String name, int age) {
+            this.name = name;
+            this.age = age;
+        }
+    
+        public Dog(String name) {
+            this(name, 0);
+        }
     }
-}
-```
+</code-block>
 
-Ein weiterer Vorteil von `this` ist, dass die folgenden beiden <format color="%LinkColor%">[Konstruktoren](#constructors)</format> miteinander verknüpft werden können. Dadurch wird redundanter Code vermieden.
-
-```Java
-public class Dog {
-
-    public String name;
-    public int age;
-
-    public Dog(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    public Dog(String name) {
-        this(name, 0);
-    }
-}
-```
-
-Der untere <format color="%LinkColor%">[Konstruktor](#constructors)</format> ruft nun den oberen Konstruktor mit dem ergänzenden Wert auf.
+<p>Der untere <format color="%LinkColor%"><a href="#constructors">Konstruktor</a></format> ruft nun den oberen
+Konstruktor mit dem ergänzenden Wert auf.</p>
 
 ## Klassenmethoden {id="class-methods"}
 
-Im vorherigen <format color="%LinkColor%">[Kapitel 9 – Methoden](09-java-methods.md)</format> gab es bereits viele Beispiele zu Klassenmethoden. Klassenmethoden brauchen wie <format color="%LinkColor%">[Klassenvariablen](#class-variables)</format> kein bestimmtes <format color="%LinkColor%">[Objekt](09-java-methods.md)</format> um auf diese zugreifen zu können. Sie werden mit dem Keyword `static` gebildet und werden über den Klassennamen angesprochen.
+<p>Im vorherigen <format color="%LinkColor%"><a href="09-java-methods.md">Kapitel 9 – Methoden</a></format> gab es
+bereits viele Beispiele zu Klassenmethoden. Klassenmethoden brauchen wie
+<format color="%LinkColor%"><a href="#class-variables">Klassenvariablen</a></format> kein bestimmtes
+<format color="%LinkColor%"><a href="11-java-objects.md">Objekt</a></format> um auf diese zugreifen zu können. Sie
+werden mit dem Keyword <code>static</code> gebildet und werden über den Klassennamen angesprochen.</p>
 
-```Java
-public static void print(String text) {
-    System.out.println(text);
-}
-
-public static void main(String[] args) {
-    print("Hello World!");
-}
-```
+<code-block lang="java">
+    public static void print(String text) {
+        System.out.println(text);
+    }
+    
+    public static void main(String[] args) {
+        print("Hello World!");
+    }
+</code-block>
 
 ## Objektmethoden {id="object-methods"}
 
-Alle weiteren Objektmethoden sollten nach den <format color="%LinkColor%">[Klassenmethoden](#class-methods)</format> stehen und können nur über ein bestehendes <format color="%LinkColor%">[Objekt](09-java-methods.md)</format> aufgerufen werden.
+<p>Alle weiteren Objektmethoden sollten nach den <format color="%LinkColor%"><a href="#class-methods">Klassenmethoden
+</a></format> stehen und können nur über ein bestehendes <format color="%LinkColor%"><a href="11-java-objects.md">Objekt
+</a></format> aufgerufen werden.</p>
 
-```Java
-public class Dog {
-
-    public String name;
-    public int age;
-
-    public Dog(String name, int age) {
-        this.name = name;
-        this.age = age;
+<code-block lang="java">
+    public class Dog {
+    
+        public String name;
+        public int age;
+    
+        public Dog(String name, int age) {
+            this.name = name;
+            this.age = age;
+        }
+    
+        public Dog(String name) {
+            this(name, 0);
+        }
+    
+        // Object methods
+        public void eat() {
+            System.out.println(this.name + " is eating!");
+        }
+    
+        public void bark() {
+            System.out.println(this.name + " barks!");
+        }
     }
-
-    public Dog(String name) {
-        this(name, 0);
-    }
-
-    // Object methods
-    public void eat() {
-        System.out.println(this.name + " is eating!");
-    }
-
-    public void bark() {
-        System.out.println(this.name + " barks!");
-    }
-}
-```
+</code-block>
 
 ## Getter- & Setter-Methoden {id="getter-and-setter"}
 
-Getter und Getter dienen dazu, <format color="%LinkColor%">[Objektvariablen](#object-variables)</format> abzugreifen (<format color="%Highlight%">get-Methoden</format>) oder deren Werte zu überschreiben bzw. sie zu initialisieren (<format color="%Highlight%">set-Methoden</format>). Sie können für jede Objektvariable angelegt werden. Durch diese Methoden kann somit festgelegt werden, ob überhaupt auf die Variablen zugegriffen werden kann, wenn diese beispielsweise als `private` deklariert wurden (siehe <format color="%LinkColor%">[Kapitel 12 – Modifizierer und Zugriffsrechte](12-java-modifier-access-rights.md)</format>).
+<p>Getter und Getter dienen dazu, <format color="%LinkColor%"><a href="#object-variables">Objektvariablen</a></format>
+ abzugreifen (<format color="%Highlight%">get-Methoden</format>) oder deren Werte zu überschreiben bzw. sie zu
+initialisieren (<format color="%Highlight%">set-Methoden</format>). Sie können für jede Objektvariable angelegt werden.
+Durch diese Methoden kann somit festgelegt werden, ob überhaupt auf die Variablen zugegriffen werden kann, wenn diese
+beispielsweise als <code>private</code> deklariert wurden (siehe <format color="%LinkColor%">
+<a href="12-java-modifier-access-rights.md">Kapitel 12 – Modifizierer und Zugriffsrechte</a></format>).</p>
 
-```Java
-public class Dog {
-
-    private String name; // Not visible outside the class
-    private int age;     // Not visible outside the class
-
-    public Dog(String name, int age) {
-        this.name = name;
-        this.age = age;
+<code-block lang="java">
+    public class Dog {
+    
+        private String name; // Not visible outside the class
+        private int age;     // Not visible outside the class
+    
+        public Dog(String name, int age) {
+            this.name = name;
+            this.age = age;
+        }
+    
+        public Dog(String name) {
+            this(name, 0);
+        }
+    
+        public void eat() {
+            System.out.println(this.name + " is eating!");
+        }
+    
+        public void bark() {
+            System.out.println(this.name + " barks!");
+        }
+    
+        public String getName() {
+            return name;
+        }
+    
+        public void setName(String name) {
+            this.name = name;
+        }
+    
+        public int getAge() {
+            return age;
+        }
     }
-
-    public Dog(String name) {
-        this(name, 0);
-    }
-
-    public void eat() {
-        System.out.println(this.name + " is eating!");
-    }
-
-    public void bark() {
-        System.out.println(this.name + " barks!");
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-}
-```
+</code-block>
 
 ## Klasseninitialisierer {id="class-initializer"}
 
-Wird eine Klasse vom `ClassLoader` in die <format color="%Highlight%">Runtime Environment</format> geladen, werden zunächst die statischen Blöcke von oben nach unten ausgeführt. Dies tritt auf, sobald eine <format color="%LinkColor%">[Klassenvariable](#class-variables)</format> oder <format color="%LinkColor%">[Klassenmethode](#class-methods)</format> zum ersten Mal aufgerufen oder eine <format color="%LinkColor%">[Instanz](11-java-objects.md)</format> der Klasse erstellt wird.
+<p>Wird eine Klasse vom <code>ClassLoader</code> in die <format color="%Highlight%">Runtime Environment</format> geladen, werden
+zunächst die statischen Blöcke von oben nach unten ausgeführt. Dies tritt auf, sobald eine
+<format color="%LinkColor%"><a href="#class-variables">Klassenvariable</a></format> oder
+<format color="%LinkColor%"><a href="#class-methods">Klassenmethode</a></format> zum ersten Mal aufgerufen oder eine
+<format color="%LinkColor%"><a href="11-java-objects.md">Instanz</a></format> der Klasse erstellt wird.</p>
 
-```Java
-public class Main {
-
-    static {
-        System.out.println("Class initialization block 1");
+<code-block lang="java">
+    public class Main {
+    
+        static {
+            System.out.println("Class initialization block 1");
+        }
+    
+        public static void main(String[] args) {
+            System.out.println("Main-Program started...");
+        }
+    
+        static {
+            System.out.println("Class initialization block 2");
+        }
     }
+</code-block>
 
-    public static void main(String[] args) {
-        System.out.println("Main-Program started...");
-    }
+<code-block>
+    Class initialization block 1
+    Class initialization block 2
+    Main-Program started...
+</code-block>
 
-    static {
-        System.out.println("Class initialization block 2");
-    }
-}
-```
+<p>Da die Initialisierung einer Klasse nur ein einziges Mal pro Programmausführung stattfindet, können dadurch auch
+<format color="%LinkColor%"><a href="#class-variables">Klassenvariablen</a></format> initialisiert werden.</p>
 
-```Console
-Class initialization block 1
-Class initialization block 2
-Main-Program started...
-```
-
-Da die Initialisierung einer Klasse nur ein einziges Mal pro Programmausführung stattfindet, können dadurch auch <format color="%LinkColor%">[Klassenvariablen](#class-variables)</format> initialisiert werden.
-
-Zudem ermöglichen Klasseninitialisierer die Ausführung von komplexer Initialisierungslogik, die über einfache Zuweisungen hinausgeht, z. B. das Einlesen von Konfigurationsdateien oder das Einrichten von sonstigen statischen Ressourcen.
+<p>Zudem ermöglichen Klasseninitialisierer die Ausführung von komplexer Initialisierungslogik, die über einfache
+Zuweisungen hinausgeht, z. B. das Einlesen von Konfigurationsdateien oder das Einrichten von sonstigen statischen
+Ressourcen.</p>
 
 ## Innere Klassen {id="inner-classes"}
 
-Innere Klassen werden innerhalb einer anderen Klasse definiert. Diese inneren Klassen haben Zugriff auf die Mitglieder der äußeren Klasse, einschließlich mit `private` deklarierten Methoden und Variablen und bieten eine Möglichkeit, logische Beziehungen zwischen Klassen zu modellieren. Es gibt verschiedene Arten von inneren Klassen und jede hat ihren eigenen Anwendungsfall.
+<p>Innere Klassen werden innerhalb einer anderen Klasse definiert. Diese inneren Klassen haben Zugriff auf die
+Mitglieder der äußeren Klasse, einschließlich mit <code>private</code> deklarierten Methoden und Variablen und bieten eine
+Möglichkeit, logische Beziehungen zwischen Klassen zu modellieren. Es gibt verschiedene Arten von inneren Klassen und
+jede hat ihren eigenen Anwendungsfall.</p>
 
 ### Nicht-statische innere Klassen {id="non-static-inner-classes"}
 
-Wenn eine innere Klasse keine `static`-Deklaration hat, handelt es sich um eine nicht-statische innere Klasse. Sie werden innerhalb von einer anderen Klasse definiert, aber außerhalb von <format color="%LinkColor%">[Methoden](09-java-methods.md)</format>, <format color="%LinkColor%">[Konstruktoren](#constructors)</format> und Anweisungsblöcken (z.B. <format color="%LinkColor%">[Klasseninitialisierer](#class-initializer)</format>).
+<p>Wenn eine innere Klasse keine <code>static</code>-Deklaration hat, handelt es sich um eine nicht-statische innere
+Klasse. Sie werden innerhalb von einer anderen Klasse definiert, aber außerhalb von
+<format color="%LinkColor%"><a href="09-java-methods.md">Methoden</a></format>,
+<format color="%LinkColor%"><a href="#constructors">Konstruktoren</a></format> und Anweisungsblöcken (z. B.
+<format color="%LinkColor%"><a href="#class-initializer">Klasseninitialisierer</a></format>).</p>
 
-Nicht-statische innere Klasse haben Zugriff auf alle Mitglieder (statische und nicht-statische Variablen und Methoden) der äußeren Klasse. Ein <format color="%LinkColor%">[Objekt](09-java-methods.md)</format> der inneren Klasse ist an ein Objekt der äußeren Klasse gebunden
+<p>Nicht-statische innere Klassen haben Zugriff auf alle Mitglieder (statische und nicht-statische Variablen und
+Methoden) der äußeren Klasse. Ein <format color="%LinkColor%"><a href="11-java-objects.md">Objekt</a></format> der
+inneren Klasse ist an ein Objekt der äußeren Klasse gebunden</p>
 
-```Java
-public class Player {
-
-    private String name;
-    private Properties properties;
-
-    public Player(String name) {
-        this.name = name;
-        this.properties = new Properties(1, new String[] {"jump", "run", "swim"});
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Properties getProperties() {
-        return properties;
-    }
-
-    // Inner non-static class
-    public class Properties {
+<code-block lang="java">
+    public class Player {
     
-        private int level;
-        private String[] abilities;
-
-        public Properties(int level, String[] abilities) {
-            this.level = level;
-            this.abilities = abilities;
+        private String name;
+        private Properties properties;
+    
+        public Player(String name) {
+            this.name = name;
+            this.properties = new Properties(1, new String[] {"jump", "run", "swim"});
         }
-
-        public int getLevel() {
-            return level;
+    
+        public String getName() {
+            return name;
         }
-
-        public void setLevel(int level) {
-            this.level = level;
+    
+        public Properties getProperties() {
+            return properties;
         }
-
-        public String[] getAbilities() {
-            return abilities;
-        }
-
-        public void setAbilities(String[] abilities) {
-            this.abilities = abilities;
+    
+        // Inner non-static class
+        public class Properties {
+        
+            private int level;
+            private String[] abilities;
+    
+            public Properties(int level, String[] abilities) {
+                this.level = level;
+                this.abilities = abilities;
+            }
+    
+            public int getLevel() {
+                return level;
+            }
+    
+            public void setLevel(int level) {
+                this.level = level;
+            }
+    
+            public String[] getAbilities() {
+                return abilities;
+            }
+    
+            public void setAbilities(String[] abilities) {
+                this.abilities = abilities;
+            }
         }
     }
-}
-```
+</code-block>
 
-Nicht-statische innere Klassen sind nützlich, wenn die innere Klasse stark von der äußeren Klasse abhängt und auf deren <format color="%LinkColor%">[Objektvariablen](#object-variables)</format> und <format color="%LinkColor%">[-methoden](#object-methods)</format> zugreifen muss. Ein klassisches Beispiel ist ein `Iterator`, der als innere Klasse in einer <format color="%LinkColor%">[Collection](19-java-collections.md)</format> wie `List` oder `Set` implementiert ist.
+<p>Nicht-statische innere Klassen sind nützlich, wenn die innere Klasse stark von der äußeren Klasse abhängt und auf
+deren <format color="%LinkColor%"><a href="#object-variables">Objektvariablen</a></format> und
+<format color="%LinkColor%"><a href="#object-methods">-methoden</a></format> zugreifen muss. Ein klassisches Beispiel
+ist ein <code>Iterator</code>, der als innere Klasse in einer
+<format color="%LinkColor%"><a href="19-java-collections.md">Collection</a> </format> wie <code>List</code> oder
+<code>Set</code> implementiert ist.</p>
 
-Sie können verwendet werden, um <tooltip term="Utility-Class"><format color="%GlossaryLinkColor%">Utility-Klassen</format></tooltip> zu erstellen, die nur von der äußeren Klasse verwendet werden. Diese Hilfsklassen müssen keine eigenständigen Klassen sein und haben typischerweise außerhalb der äußeren Klasse keinen Sinn (z.B. `Player`-Klasse ↔ `Properties`-Klasse).
+<p>Sie können verwendet werden, um
+<tooltip term="Utility-Class"><format color="%GlossaryLinkColor%">Utility-Klassen</format></tooltip> zu erstellen, die
+nur von der äußeren Klasse verwendet werden. Diese Hilfsklassen müssen keine eigenständigen Klassen sein und haben
+typischerweise außerhalb der äußeren Klasse keinen Sinn (z. B. <code>Player</code>-Klasse ↔
+<code>Properties</code>-Klasse).</p>
 
-Wenn eine Klasse sehr groß ist, können nicht-statische innere Klassen verwendet werden, um zusammenhängende Logik in einer abgeschlossenen Einheit zu kapseln, ohne die äußere Klasse zu überladen.
+<p>Wenn eine Klasse riesengroß ist, können nicht-statische innere Klassen verwendet werden, um zusammenhängende Logik in
+einer abgeschlossenen Einheit zu kapseln, ohne die äußere Klasse zu überladen.</p>
 
 ### Statische innere Klassen {id="static-inner-classes"}
 
-Wenn eine innere Klasse mit dem <format color="%LinkColor%">[Schlüsselwort](02-java-data-types.md)</format> `static` deklariert ist, handelt es sich um eine statische innere Klasse. Auch sie werden innerhalb von einer anderen Klasse definiert, aber außerhalb von <format color="%LinkColor%">[Methoden](09-java-methods.md)</format>, <format color="%LinkColor%">[Konstruktoren](#constructors)</format> und Anweisungsblöcken (z.B. <format color="%LinkColor%">[Klasseninitialisierer](#class-initializer)</format>).
+<p>Wenn eine innere Klasse mit dem <format color="%LinkColor%"><a href="01-java-token.md#keywords">Schlüsselwort</a>
+</format> <code>static</code> deklariert ist, handelt es sich um eine statische innere Klasse. Auch sie werden innerhalb
+von einer anderen Klasse definiert, aber außerhalb von
+<format color="%LinkColor%"><a href="09-java-methods.md">Methoden</a></format>,
+<format color="%LinkColor%"><a href="#constructors">Konstruktoren</a></format> und Anweisungsblöcken (z. B.
+<format color="%LinkColor%"><a href="#class-initializer">Klasseninitialisierer</a></format>).</p>
 
-Eine statische innere Klasse hat Zugriff auf <format color="%LinkColor%">[Klassenvariablen](#class-variables)</format> und <format color="%LinkColor%">[-methoden](#class-methods)</format>, aber nicht auf die <format color="%LinkColor%">[Objektvariablen](#object-variables)</format> und <format color="%LinkColor%">[-methoden](#object-methods)</format> der äußeren Klasse. Ein <format color="%LinkColor%">[Objekt](09-java-methods.md)</format> der inneren Klasse ist nicht an ein Objekt der äußeren Klasse gebunden
+<p>Eine statische innere Klasse hat Zugriff auf
+<format color="%LinkColor%"><a href="#class-variables">Klassenvariablen</a></format> und
+<format color="%LinkColor%"><a href="#class-methods">-methoden</a></format>, aber nicht auf die
+<format color="%LinkColor%"><a href="#object-variables">Objektvariablen</a></format> und
+<format color="%LinkColor%"><a href="#object-methods">-methoden</a></format> der äußeren Klasse. Ein
+<format color="%LinkColor%"><a href="11-java-objects.md">Objekt</a></format> der inneren Klasse ist nicht an ein Objekt
+der äußeren Klasse gebunden</p>
 
-```Java
-public class Product {
-
-    private String name;
-    private int quantity;
-    private double price;
-
-    private Product(Builder builder) {
-        this.name = builder.name;
-        this.quantity = builder.quantity;
-        this.price = builder.price;
-    }
-
-    // Inner static class
-    public static class Builder {
+<code-block lang="java">
+    public class Product {
+    
         private String name;
         private int quantity;
         private double price;
-
-        public Builder setName(String name) {
-            this.name = name;
-            return this;
+    
+        private Product(Builder builder) {
+            this.name = builder.name;
+            this.quantity = builder.quantity;
+            this.price = builder.price;
         }
-
-        public Builder setQuantity(int quantity) {
-            this.quantity = quantity;
-            return this;
+    
+        // Inner static class
+        public static class Builder {
+            private String name;
+            private int quantity;
+            private double price;
+    
+            public Builder setName(String name) {
+                this.name = name;
+                return this;
+            }
+    
+            public Builder setQuantity(int quantity) {
+                this.quantity = quantity;
+                return this;
+            }
+    
+            public Builder setPrice(double price) {
+                this.price = price;
+                return this;
+            }
+    
+            public Product build() {
+                return new Product(this);
+            }
         }
-
-        public Builder setPrice(double price) {
-            this.price = price;
-            return this;
+    
+        @Override
+        public String toString() {
+            return "Product [name=" + name + ", quantity=" + quantity + ", price=" + price + "]";
         }
-
-        public Product build() {
-            return new Product(this);
+    
+        public static void main(String[] args) {
+            Product product = new Product.Builder()
+                .setName("Widget")
+                .setQuantity(10)
+                .setPrice(19.99)
+                .build();
+                
+            System.out.println(product);
         }
     }
+</code-block>
 
-    @Override
-    public String toString() {
-        return "Product [name=" + name + ", quantity=" + quantity + ", price=" + price + "]";
-    }
+<p>Statische innere Klassen eignen sich gut für
+<tooltip term="Utility-Class"><format color="%GlossaryLinkColor%">Utility-Klassen</format></tooltip>, die
+<format color="%LinkColor%"><a href="#class-methods">Klassenmethoden</a></format> oder
+<format color="%LinkColor%"><a href="#constants">Konstanten</a></format> enthalten und keine Verbindung zum
+<format color="%LinkColor%"><a href="11-java-objects.md">Objekt</a></format> der äußeren Klasse benötigen.</p>
 
-    public static void main(String[] args) {
-        Product product = new Product.Builder()
-            .setName("Widget")
-            .setQuantity(10)
-            .setPrice(19.99)
-            .build();
-            
-        System.out.println(product);
-    }
-}
+<p>Dies wird häufig verwendet, um verschiedene Implementierungen eines
+<format color="%LinkColor%"><a href="14-java-oop.md#interfaces">Interfaces</a></format> oder einer
+<format color="%LinkColor%"><a href="14-java-oop.md#abstract-classes">abstrakten Klasse</a></format> zu kapseln. Sie
+können aber auch dazu verwendet werden, um die Implementierung von Algorithmen oder Datenstrukturen zu kapseln, die nur
+innerhalb der äußeren Klasse verwendet werden sollen.</p>
 
-```
-
-Statische innere Klassen eignen sich gut für <tooltip term="Utility-Class"><format color="%GlossaryLinkColor%">Utility-Klassen</format></tooltip>, die <format color="%LinkColor%">[Klassenmethoden](#class-methods)</format> oder <format color="%LinkColor%">[Konstanten](#constants)</format> enthalten und keine Verbindung zum <format color="%LinkColor%">[Objekt](11-java-objects.md)</format> der äußeren Klasse benötigen.
-
-Dies wird häufig verwendet, um verschiedene Implementierungen eines <format color="%LinkColor%">[Interfaces](14-java-oop.md#interfaces)</format> oder einer <format color="%LinkColor%">[abstrakten Klasse](14-java-oop.md#abstract-classes)</format> zu kapseln. Sie können aber auch dazu verwendet werden, um die Implementierung von Algorithmen oder Datenstrukturen zu kapseln, die nur innerhalb der äußeren Klasse verwendet werden sollen.
-
-Eine statische innere Klasse wird, wie das obige Beispiel zeigt, auch häufig für ein <format color="%LinkColor%">[](java-design-patterns.md#builder-pattern)</format>verwendet. Bei dieser Methode wird eine statische innere Klasse verwendet, um die Konstruktion eines komplexen <format color="%LinkColor%">[Objekts](11-java-objects.md)</format> zu kapseln. Die statische innere Klasse fungiert als `Builder`, der die verschiedenen Teile des Objekts schrittweise konfiguriert und schließlich das fertige Objekt erstellt.
+<p>Eine statische innere Klasse wird, wie das obige Beispiel zeigt, auch häufig für ein
+<format color="%LinkColor%"><a href="28-java-design-patterns.md#builder-pattern">Builder-Pattern</a></format> verwendet.
+Bei dieser Methode wird eine statische innere Klasse verwendet, um die Konstruktion eines komplexen
+<format color="%LinkColor%"><a href="11-java-objects.md">Objekts</a></format> zu kapseln. Die statische innere Klasse
+fungiert als <code>Builder</code>, der die verschiedenen Teile des Objekts schrittweise konfiguriert und schließlich das
+fertige Objekt erstellt.</p>
 
 ### Lokale innere Klassen {id="local-inner-classes"}
 
-Lokale innere Klassen werden innerhalb einer Methode order eines Anweisungsblocks definiert. Sie können auf <format color="%LinkColor%">[lokale Variablen](03-java-variables.md)</format> der Methode zugreifen, sofern diese `final` oder effektiv `final` sind und sind nur innerhalb des Bereichs sichtbar, in dem sie definiert sind.
+<p>Lokale innere Klassen werden innerhalb einer Methode oder eines Anweisungsblocks definiert. Sie können auf
+<format color="%LinkColor%"><a href="03-java-variables.md">lokale Variablen</a></format> der Methode zugreifen, sofern
+diese <code>final</code> oder effektiv <code>final</code> sind und sind nur innerhalb des Bereichs sichtbar, in dem sie
+definiert sind.</p>
 
-```Java
-public class EmailSender {
-
-    public void sendEmail(String recipient, String message) {
-
-        // Inner local class
-        class EmailConnection {
-        
-            public void connect() {
-                System.out.println("Connection to email server established");
+<code-block lang="java">
+    public class EmailSender {
+    
+        public void sendEmail(String recipient, String message) {
+    
+            // Inner local class
+            class EmailConnection {
+            
+                public void connect() {
+                    System.out.println("Connection to email server established");
+                }
+    
+                public void disconnect() {
+                    System.out.println("Connection to email server disconnected");
+                }
             }
-
-            public void disconnect() {
-                System.out.println("Connection to email server disconnected");
-            }
+    
+            EmailConnection connection = new EmailConnection();
+            connection.connect();
+            
+            System.out.println("E-Mail sent to " + recipient + " with message: " + message);
+            
+            connection.disconnect();
         }
-
-        EmailConnection connection = new EmailConnection();
-        connection.connect();
-        
-        System.out.println("E-Mail sent to " + recipient + " with message: " + message);
-        
-        connection.disconnect();
+    
+        public static void main(String[] args) {
+            EmailSender sender = new EmailSender();
+            sender.sendEmail("example@domain.com", "Hello, this is a test email.");
+        }
     }
+</code-block>
 
-    public static void main(String[] args) {
-        EmailSender sender = new EmailSender();
-        sender.sendEmail("example@domain.com", "Hello, this is a test email.");
-    }
-}
-```
+<p>Lokale innere Klassen sind ideal, wenn eine Klasse nur innerhalb einer
+<format color="%LinkColor%"><a href="09-java-methods.md">Methode</a></format> oder eines Anweisungsblocks verwendet
+werden soll. Besonders, wenn diese Klasse auf die
+<format color="%LinkColor%"><a href="03-java-variables.md">lokalen Variablen</a></format> der Methode zugreifen muss.
+</p>
 
-Lokale innere Klassen sind ideal, wenn eine Klasse nur innerhalb einer <format color="%LinkColor%">[Methode](09-java-methods.md)</format> oder eines Anweisungsblocks verwendet werden soll. Besonders, wenn diese Klasse auf die <format color="%LinkColor%">[lokalen Variablen](03-java-variables.md)</format> der Methode zugreifen muss.
+<p>In ereignisgesteuerten Programmiermodellen (Event-driven Programming), wie in
+<format color="%LinkColor%"><a href="29-java-gui.md">GUI-Anwendungen</a></format>, können lokale innere Klassen verwendet
+werden, um die Ereignisbehandlungslogik in einer Methode zu kapseln.</p>
 
-In ereignisgesteuerten Programmiermodellen (Event-driven Programming), wie in <format color="%LinkColor%">[GUI-Anwendungen](java-gui.md)</format>, können lokale innere Klassen verwendet werden, um die Ereignisbehandlungslogik in einer Methode zu kapseln.
-
-Sie eignen sich auch zur Implementierung von vorübergehenden Datenstrukturen oder Logiken, die nur in einem kleinen Kontext benötigt werden und außerhalb der Methode keine Bedeutung haben.
+<p>Sie eignen sich auch zur Implementierung von vorübergehenden Datenstrukturen oder Logiken, die nur in einem kleinen
+Kontext benötigt werden und außerhalb der Methode keine Bedeutung haben.</p>
 
 ### Anonyme Klassen {id="anonymous-inner-classes"}
 
-Diese Klassen haben keinen Namen und werden gleichzeitig deklariert und initialisiert. Sie werden häufig verwendet, um <format color="%LinkColor%">[Schnittstellen](14-java-oop.md#interfaces)</format> oder <format color="%LinkColor%">[abstrakte Klassen](14-java-oop.md#abstract-classes)</format> zu implementieren, wenn nur eine einzelne <format color="%LinkColor%">[Instanz](11-java-objects.md)</format> benötigt wird.
+<p>Diese Klassen haben keinen Namen und werden gleichzeitig deklariert und initialisiert. Sie werden häufig verwendet,
+um <format color="%LinkColor%"><a href="14-java-oop.md#interfaces">Schnittstellen</a></format> oder
+<format color="%LinkColor%"><a href="14-java-oop.md#abstract-classes">abstrakte Klassen</a></format> zu implementieren,
+wenn nur eine einzelne <format color="%LinkColor%"><a href="11-java-objects.md">Instanz</a></format> benötigt wird.</p>
 
-```Java
-public class Main {
-
-    public static void main(String[] args) {
-           // Inner anonymous class
-        new Runnable() {
-            @Override
-            public void run() {
-                // Code...
-            }
-        };
+<code-block lang="java">
+    public class Main {
+    
+        public static void main(String[] args) {
+               // Inner anonymous class
+            new Runnable() {
+                @Override
+                public void run() {
+                    // Code...
+                }
+            };
+        }
     }
-}
-```
+</code-block>
 
-Zudem finden sie häufig in GUI-Umgebungen Anwendung, um Event-Listener zu erstellen, ohne dafür eine benannte Klasse zu definieren und eignen sich für Aufgaben, die nur einmal ausgeführt werden und für die keine Wiederverwendbarkeit notwendig ist.
+<p>Zudem finden sie häufig in GUI-Umgebungen Anwendung, um Event-Listener zu erstellen, ohne dafür eine benannte Klasse
+zu definieren und eignen sich für Aufgaben, die nur einmal ausgeführt werden und für die keine Wiederverwendbarkeit
+notwendig ist.</p>
 
 ## Records {id="records"}
 
-Records wurden mit Java 14 vorläufig eingeführt und mit dem Feedback der Community in Java 15 und 16 weiterentwickelt und verbessert, bis sie in Java 16 offiziell als Standfunktion etabliert wurden.
+<p>Records wurden mit Java 14 vorläufig eingeführt und mit dem Feedback der Community in Java 15 und 16 weiterentwickelt
+und verbessert, bis sie in Java 16 offiziell als Standfunktion etabliert wurden.</p>
 
-Sie bieten eine kompakte Möglichkeit, unveränderliche Datenklassen zu definieren. Records sind im Wesentlichen eine Abkürzung für die Erstellung von Klassen, die hauptsächlich zur Speicherung von Daten verwendet werden. Im Gegensatz zu herkömmlichen Klassen nehmen sie dem Entwickler viel <tooltip term="Boilerplate-Code"><format color="%GlossaryLinkColor%">Boilerplate-Code</format></tooltip> ab, da sie automatisch <format color="%LinkColor%">[Konstruktoren](#constructors)</format>, <format color="%LinkColor%">[Getter-Methoden](#getter-and-setter)</format>, `equals()`, `hashCode()` und `toString()`-Methoden generieren.
+<p>Sie bieten eine kompakte Möglichkeit, unveränderliche Datenklassen zu definieren. Records sind im Wesentlichen eine
+Abkürzung für die Erstellung von Klassen, die hauptsächlich zur Speicherung von Daten verwendet werden. Im Gegensatz zu
+herkömmlichen Klassen nehmen sie dem Entwickler viel
+<tooltip term="Boilerplate-Code"><format color="%GlossaryLinkColor%">Boilerplate-Code</format></tooltip> ab, da sie
+automatisch <format color="%LinkColor%"><a href="#constructors">Konstruktoren</a></format>,
+<format color="%LinkColor%"><a href="#getter-and-setter">Getter-Methoden</a></format>, <code>equals()</code>,
+<code>hashCode()</code> und <code>toString()</code>-Methoden generieren.</p>
 
-Records sind unveränderlich, was in vielen Fällen von Vorteil ist, aber es schränkt auch ihre Verwendung ein, wenn veränderbare Daten benötigt werden.
+<p>Records sind unveränderlich, was in vielen Fällen von Vorteil ist, aber es schränkt auch ihre Verwendung ein, wenn
+veränderbare Daten benötigt werden.</p>
 
-```Java
-public record Point(double x, double y) {
+<code-block lang="java">
+    public record Point(double x, double y) {
+    
+    }
+</code-block>
 
-}
-```
-
-```Java
-Point point = new Point(34.5, 23.0);
-
-System.out.println(point.x()); // 34.5
-System.out.println(point.y()); // 23.0
-System.out.println(point);     // Point[x=34.5, y=23.0]
-```
+<code-block lang="java">
+    Point point = new Point(34.5, 23.0);
+    
+    System.out.println(point.x()); // 34.5
+    System.out.println(point.y()); // 23.0
+    System.out.println(point);     // Point[x=34.5, y=23.0]
+</code-block>
 
 ### Aktivierung von Records {id="activation-of-records"}
 
-- Für Versionen vor Java 14 sind Records nicht als Sprachfunktion verfügbar.
-- Für die Versionen zwischen Java 14 und 16 das Flag `--enable-preview` verwendet werden, um Records zu verwenden.
-- Für Versionen ab Java 16 und höher sind Records eine Standardfunktion und das Flag `--enable-preview` ist für die Verwendung von Records nicht mehr erforderlich.
+<list>
+  <li><p>Für Versionen vor Java 14 sind Records nicht als Sprachfunktion verfügbar.</p></li>
+  <li><p>Für die Versionen zwischen Java 14 und 16 kann das Flag <code>--enable-preview</code> verwendet werden, um
+    Records zu aktivieren.</p></li>
+  <li><p>Für Versionen ab Java 16 und höher sind Records eine Standardfunktion und das Flag
+    <code>--enable-preview</code> ist für die Verwendung von Records nicht mehr erforderlich.</p></li>
+</list>
 
-Um eine `.java`-Datei vor Java 16 mit dem Preview Feature zu kompilieren, muss folgender Befehl verwendet werden:
+<p>Um eine <code>.java</code>-Datei vor Java 16 mit dem Preview Feature zu kompilieren, muss folgender Befehl verwendet
+werden:</p>
 
-```Console
-javac --enable-preview --release 14 Main.java
-```
+<code-block lang="console">
+    javac --enable-preview --release 14 Main.java
+</code-block>
 
-Zum Ausführen dient der folgende Befehl:
+<p>Zum Ausführen dient der folgende Befehl:</p>
 
-```Console
-java --enable-preview Main
-```
+<code-block lang="console">
+    java --enable-preview Main
+</code-block>
 
 ## Coding Conventions {id="coding-conventions"}
 
-- Klassen sollten nach der <tooltip term="PascalCase-Notation"><format color="%GlossaryLinkColor%">PascalCase-Notation</format></tooltip> benannt werden.
-- Jede Art von Methode – siehe <format color="%LinkColor%">[Kapitel 9 – Methoden: Coding-Conventions](09-java-methods.md#coding-conventions)</format>.
-- Jeder Art von Variable (außer <format color="%LinkColor%">[Konstanten](#constants)</format>) – siehe <format color="%LinkColor%">[Kapitel 3 – Variablen: Coding Conventions](03-java-variables.md#coding-conventions).</format>
-- <format color="%LinkColor%">[Konstruktoren](#constructors)</format> müssen genau wie die Klasse benannt werden.
-- <format color="%LinkColor%">[Getter & Setter](#getter-and-setter)</format> sollten mit `get` bzw. mit `set` beginnen.
-- <format color="%LinkColor%">[Getter](#getter-and-setter)</format> für <format color="%LinkColor%">[Booleans](02-java-data-types.md#data-type-boolean)</format> sollten mit `is` beginnen. Alternativ kann auch `has` verwendet werden.
-- <format color="%LinkColor%">[Konstanten](#constants)</format> sollten nach der <tooltip term="Constants-Notation"><format color="%GlossaryLinkColor%">SCREAMING_SNAKE_CASE-Notation</format></tooltip> geschrieben werden.
+<list>
+  <li><p>Klassen sollten nach der
+    <tooltip term="PascalCase-Notation"><format color="%GlossaryLinkColor%">PascalCase-Notation</format></tooltip>
+    benannt werden.</p></li>
+  <li><p>Jede Art von Methode – siehe <format color="%LinkColor%"><a href="09-java-methods.md#coding-conventions">
+    Kapitel 9 – Methoden: Coding-Conventions</a></format>.</p></li>
+  <li><p>Jeder Art von Variable (außer <format color="%LinkColor%"><a href="#constants">Konstanten</a></format>) – siehe
+    <format color="%LinkColor%"><a href="03-java-variables.md#coding-conventions">
+    Kapitel 3 – Variablen: Coding Conventions</a></format>.</p></li>
+  <li><p><format color="%LinkColor%"><a href="#constructors">Konstruktoren</a></format> müssen genau wie die Klasse
+    benannt werden.</p></li>
+  <li><p><format color="%LinkColor%"><a href="#getter-and-setter">Getter & Setter</a></format> sollten mit
+    <code>get</code> bzw. mit <code>set</code> beginnen.</p></li>
+  <li><p><format color="%LinkColor%"><a href="#getter-and-setter">Getter</a></format> für
+    <format color="%LinkColor%"><a href="02-java-data-types.md#data-type-boolean">Booleans</a></format> sollten mit
+    <code>is</code> beginnen. Alternativ kann auch <code>has</code> verwendet werden.</p></li>
+  <li><p><format color="%LinkColor%"><a href="#constants">Konstanten</a></format> sollten nach der
+    <tooltip term="Constants-Notation"><format color="%GlossaryLinkColor%">SCREAMING_SNAKE_CASE-Notation</format>
+    </tooltip> geschrieben werden.</p></li>
+</list>
 

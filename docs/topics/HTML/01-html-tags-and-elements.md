@@ -1,13 +1,22 @@
 # 01 HTML – Tags und Elemente
 
-Grundlegend besteht ein Element aus drei Teilen.
-- Öffnungs-Tag
-- Inhalt
-- Schließungs-Tag
+<p>Grundlegend besteht ein Element aus drei Teilen.</p>
 
-```html
-<tag>Content</tag>
-```
+<list>
+  <li>
+    <p>Opening Tag</p>
+  </li>
+  <li>
+    <p>Content</p>
+  </li>
+  <li>
+    <p>Closing Tag</p>
+  </li>
+</list>
+
+<code-block lang="html">
+    &lt;tag&gt;Content&lt;/tag&gt;
+</code-block>
 
 <table>
     <tr>
@@ -356,7 +365,7 @@ Grundlegend besteht ein Element aus drei Teilen.
         <td><code>&lt;img&gt;</code></td>
         <td>image</td>
         <td>Multimedia-Tags</td>
-        <td>Bindet eine Bild ein.</td>
+        <td>Bindet ein Bild ein.</td>
     </tr>
     <tr>
         <td>48</td>
@@ -408,7 +417,7 @@ Grundlegend besteht ein Element aus drei Teilen.
             <p>Metadaten-Tags</p>
             <p>Skript- und Stil-Tags</p>
         </td>
-        <td>Verknüpft das Dokument mit externen Ressourcen (z.B. CSS).</td>
+        <td>Verknüpft das Dokument mit externen Ressourcen (z. B. CSS).</td>
     </tr>
     <tr>
         <td>55</td>
@@ -817,4 +826,4 @@ Grundlegend besteht ein Element aus drei Teilen.
 ## Semantische Elemente {id="semantic-elements"}
 ## Neutrale Elemente {id="neutral-elements"}
 ## Leere Elemente {id="self-closing-tags"}
-## Elementstrukturen
+## Elementstrukturen {id="element-structures"}
